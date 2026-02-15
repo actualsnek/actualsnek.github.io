@@ -3,425 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>actualsnek — Reading Guides</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>actualsnek</title>
     <style>
-        :root {
-            --gold: #c8952a;
-            --gold-light: #e8c56a;
-            --gold-line: rgba(200,149,42,0.35);
-            --parchment: #f7f0e3;
-            --parchment-card: #faf6ed;
-            --rust: #7a3010;
-            --text: #2a1a0e;
-            --text-muted: #6b5035;
-            --text-faint: #9c7d5a;
-            --shadow: rgba(28,18,8,0.12);
-            --shadow-deep: rgba(28,18,8,0.25);
-            --dark: #1a0f05;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior:smooth; }
 
         body {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            background: var(--parchment);
-            color: var(--text);
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            background: #5f9ea0;
+            color: #000;
             min-height: 100vh;
+            padding: 20px;
         }
 
-        body::before {
-            content:'';
-            position:fixed; inset:0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events:none; z-index:0;
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #f5f5f5;
+            border: 3px solid #333;
         }
 
-        /* ── HERO ── */
-        .hero {
-            position:relative;
-            background: linear-gradient(170deg, #0e0804 0%, #1e1008 50%, #0e0804 100%);
-            padding: 100px 40px 80px;
-            text-align:center;
-            overflow:hidden;
-        }
-        .hero::before {
-            content:'';
-            position:absolute; inset:0;
-            background:
-                radial-gradient(ellipse 90% 60% at 50% -10%, rgba(200,149,42,0.2) 0%, transparent 65%),
-                radial-gradient(ellipse 50% 30% at 20% 110%, rgba(200,149,42,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse 50% 30% at 80% 110%, rgba(200,149,42,0.08) 0%, transparent 60%);
-            pointer-events:none;
-        }
-        .hero::after {
-            content:'';
-            position:absolute;
-            top:16px; left:16px; right:16px; bottom:16px;
-            border:1px solid rgba(200,149,42,0.2);
-            pointer-events:none;
+        /* ═══ HEADER ═══ */
+        .header {
+            background: #d3d3d3;
+            padding: 25px 18px;
+            text-align: center;
+            border-bottom: 3px solid #333;
         }
 
-        .hero-eyebrow {
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.55em;
-            color:rgba(200,149,42,0.6);
-            text-transform:uppercase;
-            display:block;
-            margin-bottom:24px;
-            position:relative;
-            animation: fadeUp 0.7s ease both 0.1s;
+        .ornament {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
         }
 
-        .hero-name {
-            font-family:'Cinzel', serif;
-            font-size:clamp(44px, 8vw, 96px);
-            font-weight:900;
-            color:#fff;
-            letter-spacing:0.04em;
-            line-height:1;
-            position:relative;
-            text-shadow: 0 4px 40px rgba(200,149,42,0.25);
-            animation: fadeUp 0.7s ease both 0.25s;
+        .ornament-left,
+        .ornament-right {
+            width: 80px;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #8b4513 0px, #8b4513 8px, transparent 8px, transparent 12px);
         }
 
-        .hero-name span {
-            color: var(--gold-light);
+        .symbol {
+            font-size: 28px;
+            color: #b8860b;
         }
 
-        .hero-tagline {
-            font-family:'Cormorant Garamond', serif;
-            font-size:clamp(16px, 2.5vw, 22px);
-            font-style:italic;
-            color:rgba(255,255,255,0.4);
-            margin-top:18px;
-            letter-spacing:0.08em;
-            position:relative;
-            animation: fadeUp 0.7s ease both 0.4s;
+        /* ═══ TAGLINE ═══ */
+        .tagline {
+            background: #ffd700;
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            border-bottom: 2px solid #333;
+            letter-spacing: 0.5px;
         }
 
-        .hero-divider {
-            width:60px; height:1px;
-            background:linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin:28px auto 0;
-            position:relative;
-            animation: fadeUp 0.7s ease both 0.5s;
+        /* ═══ MAIN CONTENT ═══ */
+        .content {
+            padding: 30px 25px;
         }
 
-        /* ── MAIN ── */
-        .main {
-            max-width:960px;
-            margin:0 auto;
-            padding:70px 40px 80px;
-            position:relative;
-            z-index:1;
+        .guides {
+            margin-bottom: 30px;
         }
 
-        .section-label {
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.5em;
-            color:var(--text-faint);
-            text-transform:uppercase;
-            display:block;
-            margin-bottom:6px;
+        /* ═══ GUIDE ITEMS (90s Button Style) ═══ */
+        .guide-item {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #000;
+            padding: 10px 12px;
+            background: #dcdcdc;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            font-size: 13px;
+            transition: all 0.1s;
         }
 
-        .section-title {
-            font-family:'Cinzel', serif;
-            font-size:clamp(18px, 2.5vw, 24px);
-            font-weight:600;
-            color:var(--rust);
-            letter-spacing:0.06em;
-            margin-bottom:32px;
-            padding-bottom:14px;
-            border-bottom:1px solid var(--gold-line);
-            position:relative;
+        .guide-item:hover {
+            background: #c0c0c0;
         }
 
-        .section-title::after {
-            content:'';
-            position:absolute;
-            bottom:-1px; left:0;
-            width:60px; height:2px;
-            background:var(--gold);
+        .guide-item:active {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
         }
 
-        /* ── GUIDE CARDS ── */
-        .guides-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-            gap:22px;
-            margin-bottom:60px;
+        .guide-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .guide-card {
-            background:var(--parchment-card);
-            border:1px solid rgba(200,149,42,0.2);
-            border-radius:2px;
-            padding:28px 26px 22px;
-            text-decoration:none;
-            color:inherit;
-            display:flex;
-            flex-direction:column;
-            gap:10px;
-            box-shadow:0 2px 12px var(--shadow);
-            transition:box-shadow 0.25s, border-color 0.25s, transform 0.2s;
-            position:relative;
-            overflow:hidden;
+        .guide-number {
+            font-weight: bold;
+            color: #000;
+            font-size: 13px;
+            min-width: 20px;
         }
 
-        .guide-card::before {
-            content:'';
-            position:absolute;
-            top:0; left:0; right:0;
-            height:2px;
-            background:linear-gradient(90deg, var(--gold), var(--rust));
-            transform:scaleX(0);
-            transform-origin:left;
-            transition:transform 0.3s;
+        .guide-name {
+            color: #00008b;
+            font-weight: bold;
+            font-size: 13px;
         }
 
-        .guide-card:hover {
-            box-shadow:0 8px 32px var(--shadow-deep);
-            border-color:rgba(200,149,42,0.4);
-            transform:translateY(-3px);
+        .guide-category {
+            color: #696969;
+            font-size: 10px;
+            margin-left: 5px;
+            font-style: italic;
         }
 
-        .guide-card:hover::before {
-            transform:scaleX(1);
+        /* ═══ SOCIAL LINKS ═══ */
+        .social-section {
+            border-top: 2px solid #999;
+            padding-top: 25px;
         }
 
-        .card-category {
-            font-family:'Cormorant SC', serif;
-            font-size:10.5px;
-            letter-spacing:0.3em;
-            color:var(--gold);
-            text-transform:uppercase;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
         }
 
-        .card-title {
-            font-family:'Cinzel', serif;
-            font-size:18px;
-            font-weight:700;
-            color:var(--text);
-            letter-spacing:0.04em;
-            line-height:1.25;
+        .social-link {
+            display: block;
+            transition: opacity 0.2s;
         }
 
-        .card-subtitle {
-            font-family:'Cormorant Garamond', serif;
-            font-size:15px;
-            font-style:italic;
-            color:var(--text-muted);
-            line-height:1.5;
+        .social-link:hover {
+            opacity: 0.7;
         }
 
-        .card-meta {
-            display:flex;
-            align-items:center;
-            gap:10px;
-            margin-top:6px;
-        }
-
-        .card-count {
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.15em;
-            color:var(--text-faint);
-            text-transform:uppercase;
-        }
-
-        .card-arrow {
-            margin-left:auto;
-            color:var(--gold);
-            font-size:18px;
-            opacity:0.6;
-            transition:opacity 0.2s, transform 0.2s;
-        }
-
-        .guide-card:hover .card-arrow {
-            opacity:1;
-            transform:translateX(4px);
-        }
-
-        /* COMING SOON card */
-        .guide-card.coming-soon {
-            opacity:0.5;
-            pointer-events:none;
-            cursor:default;
-        }
-
-        .coming-soon-badge {
-            font-family:'Cormorant SC', serif;
-            font-size:10px;
-            letter-spacing:0.2em;
-            color:var(--text-faint);
-            text-transform:uppercase;
-            border:1px solid rgba(200,149,42,0.2);
-            padding:3px 8px;
-            border-radius:1px;
-            display:inline-block;
-            margin-top:2px;
-        }
-
-        /* ── ABOUT ── */
-        .about-block {
-            background:linear-gradient(135deg, #1a0f05 0%, #2c1810 100%);
-            border:1px solid rgba(200,149,42,0.2);
-            border-radius:2px;
-            padding:36px 36px 32px;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .about-block::before {
-            content:'';
-            position:absolute; inset:0;
-            background:radial-gradient(ellipse 70% 60% at 0% 0%, rgba(200,149,42,0.1) 0%, transparent 60%);
-            pointer-events:none;
-        }
-
-        .about-block p {
-            font-size:17px;
-            line-height:1.85;
-            color:rgba(255,255,255,0.65);
-            position:relative;
-        }
-
-        .about-block p em {
-            color:var(--gold-light);
-            font-style:italic;
-        }
-
-        .about-block .twitter-link {
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            margin-top:22px;
-            font-family:'Cinzel', serif;
-            font-size:13px;
-            font-weight:600;
-            letter-spacing:0.1em;
-            color:var(--gold-light);
-            text-decoration:none;
-            border-bottom:1px solid rgba(200,149,42,0.4);
-            padding-bottom:2px;
-            transition:color 0.2s, border-color 0.2s;
-            position:relative;
-        }
-
-        .about-block .twitter-link:hover {
-            color:#fff;
-            border-bottom-color:rgba(255,255,255,0.4);
-        }
-
-        /* ── FOOTER ── */
+        /* ═══ FOOTER ═══ */
         .footer {
-            text-align:center;
-            padding:30px 40px 44px;
-            border-top:1px solid var(--gold-line);
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.3em;
-            color:var(--text-faint);
-            text-transform:uppercase;
+            background: #696969;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-top: 3px solid #333;
+            font-size: 11px;
         }
 
-        /* ── ANIMATION ── */
-        @keyframes fadeUp {
-            from { opacity:0; transform:translateY(14px); }
-            to   { opacity:1; transform:translateY(0); }
-        }
-
-        @media (max-width:640px) {
-            .hero { padding:70px 20px 60px; }
-            .main { padding:50px 20px 60px; }
-            .guides-grid { grid-template-columns:1fr; }
-            .about-block { padding:26px 22px; }
+        /* ═══ MOBILE RESPONSIVE ═══ */
+        @media (max-width: 640px) {
+            body { padding: 10px; }
+            .header { padding: 20px 15px; }
+            .ornament { gap: 10px; }
+            .ornament-left, .ornament-right { width: 50px; }
+            .symbol { font-size: 24px; }
+            .content { padding: 20px 15px; }
+            .guide-content { flex-wrap: wrap; }
+            .social-links { gap: 20px; }
+            .social-link svg { width: 35px; height: 35px; }
         }
     </style>
 </head>
 <body>
 
-<header class="hero">
-    <span class="hero-eyebrow">Reading Guides by</span>
-    <h1 class="hero-name">actual<span>snek</span></h1>
-    <p class="hero-tagline">Curated guides to the books that matter</p>
-    <div class="hero-divider"></div>
-</header>
-
-<main class="main">
-
-    <span class="section-label">Guides</span>
-    <h2 class="section-title">All Reading Guides</h2>
-
-    <div class="guides-grid">
-
-        <!-- LIVE: Greek Mythology -->
-        <a href="./greek-mythology/index.html" class="guide-card">
-            <span class="card-category">Ancient World</span>
-            <div class="card-title">Greek Mythology</div>
-            <div class="card-subtitle">Primary texts, best editions &amp; translations — from Homer to Ovid</div>
-            <div class="card-meta">
-                <span class="card-count">12 works · Full bibliographies</span>
-                <span class="card-arrow">→</span>
-            </div>
-        </a>
-
-        <!-- COMING SOON placeholders -->
-        <div class="guide-card coming-soon">
-            <span class="card-category">Philosophy</span>
-            <div class="card-title">Stoicism</div>
-            <div class="card-subtitle">From Marcus Aurelius to Epictetus — the complete primary sources</div>
-            <div class="card-meta">
-                <span class="coming-soon-badge">Coming Soon</span>
+    <div class="container">
+        
+        <!-- ═════════════════════════════════════════════════════════════════
+             HEADER: Ornamental design (Greek/Indian inspired)
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="header">
+            <div class="ornament">
+                <div class="ornament-left"></div>
+                <span class="symbol">❋</span>
+                <div class="ornament-right"></div>
             </div>
         </div>
 
-        <div class="guide-card coming-soon">
-            <span class="card-category">Ancient World</span>
-            <div class="card-title">Roman History</div>
-            <div class="card-subtitle">Livy, Suetonius, Tacitus — primary histories of Rome</div>
-            <div class="card-meta">
-                <span class="coming-soon-badge">Coming Soon</span>
-            </div>
+        <!-- ═════════════════════════════════════════════════════════════════
+             TAGLINE
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="tagline">
+            dumping 101 for personal use
         </div>
 
-        <div class="guide-card coming-soon">
-            <span class="card-category">Ancient World</span>
-            <div class="card-title">Norse Mythology</div>
-            <div class="card-subtitle">Eddas, Sagas &amp; primary sources of the Norse world</div>
-            <div class="card-meta">
-                <span class="coming-soon-badge">Coming Soon</span>
+        <!-- ═════════════════════════════════════════════════════════════════
+             MAIN CONTENT
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="content">
+            
+            <!-- ─────────────────────────────────────────────────────────────
+                 GUIDES LIST
+                 
+                 To add a new guide:
+                 1. Create new folder in repo (e.g., "stoicism-101/")
+                 2. Add index.html inside that folder
+                 3. Copy the guide-item template below and update:
+                    - href path
+                    - guide number
+                    - guide name
+                    - category label
+            ───────────────────────────────────────────────────────────── -->
+            <div class="guides">
+                
+                <!-- Guide #1 -->
+                <a href="./greek-mythology/index.html" class="guide-item">
+                    <div class="guide-content">
+                        <span class="guide-number">1.</span>
+                        <span class="guide-name">greek-myth-101</span>
+                        <span class="guide-category">(reading guide)</span>
+                    </div>
+                </a>
+
+                <!-- Guide #2 - Add your next guide here:
+                <a href="./your-folder-name/index.html" class="guide-item">
+                    <div class="guide-content">
+                        <span class="guide-number">2.</span>
+                        <span class="guide-name">your-guide-name</span>
+                        <span class="guide-category">(category)</span>
+                    </div>
+                </a>
+                -->
+
+                <!-- Guide #3 - Add another guide here:
+                <a href="./another-folder/index.html" class="guide-item">
+                    <div class="guide-content">
+                        <span class="guide-number">3.</span>
+                        <span class="guide-name">guide-name</span>
+                        <span class="guide-category">(category)</span>
+                    </div>
+                </a>
+                -->
+
             </div>
+
+            <!-- ─────────────────────────────────────────────────────────────
+                 SOCIAL LINKS
+            ───────────────────────────────────────────────────────────── -->
+            <div class="social-section">
+                <div class="social-links">
+                    
+                    <!-- Twitter -->
+                    <a href="https://x.com/actualsnek_" target="_blank" class="social-link" title="Twitter">
+                        <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#1DA1F2" d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Goodreads -->
+                    <a href="#" class="social-link" title="Goodreads">
+                        <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" d="M12 6v12"/>
+                        </svg>
+                    </a>
+
+                    <!-- Letterboxd -->
+                    <a href="#" class="social-link" title="Letterboxd">
+                        <svg width="38" height="38" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="70" fill="#ff8000" opacity="0.8"/>
+                            <circle cx="250" cy="100" r="70" fill="#00e054" opacity="0.8"/>
+                            <circle cx="400" cy="100" r="70" fill="#40bcf4" opacity="0.8"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ═════════════════════════════════════════════════════════════════
+             FOOTER
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="footer">
+            actualsnek
         </div>
 
     </div>
-
-    <span class="section-label">About</span>
-    <h2 class="section-title">Who Made This</h2>
-
-    <div class="about-block">
-        <p>
-            These are <em>curated reading guides</em> — not AI-generated fluff, not affiliate listicles.
-            Each guide is researched to find the best editions, best translators, and the right order to read them in.
-            The goal is to make the greatest texts in history accessible to anyone who wants to actually read them.
-        </p>
-        <a href="https://x.com/actualsnek_" target="_blank" class="twitter-link">
-            ✦ &nbsp; Follow on X (Twitter)
-        </a>
-    </div>
-
-</main>
-
-<footer class="footer">
-    actualsnek &nbsp;·&nbsp; actualsnek.github.io
-</footer>
 
 </body>
 </html>
