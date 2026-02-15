@@ -3,425 +3,3684 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>actualsnek — Reading Guides</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Greek Mythology — Reading Guide</title>
+    <!-- FONTS: swap font names here to change typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --gold: #c8952a;
-            --gold-light: #e8c56a;
-            --gold-line: rgba(200,149,42,0.35);
-            --parchment: #f7f0e3;
-            --parchment-card: #faf6ed;
-            --rust: #7a3010;
-            --text: #2a1a0e;
-            --text-muted: #6b5035;
-            --text-faint: #9c7d5a;
-            --shadow: rgba(28,18,8,0.12);
-            --shadow-deep: rgba(28,18,8,0.25);
-            --dark: #1a0f05;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior:smooth; }
+        /* ── THEME COLOURS: edit hex values here to restyle the whole site ── */
+        :root {
+            --cream: #f5f1e8;
+            --ink: #2d2520;
+            --ink-light: #6b6155;
+            --gold: #b8985f;
+            --gold-light: #c9ab78;
+            --border: #d9d0c1;
+            --hover-bg: #f0ebe0;
+            --antique-dark: #8b7355;
+            --sage: #7a9b76;
+            --terracotta: #c77350;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            background: var(--parchment);
-            color: var(--text);
-            min-height: 100vh;
+            font-family: 'Crimson Pro', serif;
+            background: var(--cream);
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(139, 115, 85, 0.02) 2px, rgba(139, 115, 85, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 115, 85, 0.02) 2px, rgba(139, 115, 85, 0.02) 4px);
+            color: var(--ink);
+            line-height: 1.65;
+            font-size: 18px;
+            font-weight: 400;
         }
 
-        body::before {
-            content:'';
-            position:fixed; inset:0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events:none; z-index:0;
+        .twitter-link {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 46px;
+            height: 46px;
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.03) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(45, 37, 32, 0.1);
+            z-index: 999;
         }
 
-        /* ── HERO ── */
+        .twitter-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.2);
+            border-color: var(--gold);
+        }
+
+        .twitter-link svg {
+            width: 20px;
+            height: 20px;
+            fill: #1a4f8b;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            max-width: 1600px;
+            margin: 0 auto;
+            gap: 60px;
+            padding: 60px 40px;
+        }
+
+        .reading-order {
+            position: sticky;
+            top: 40px;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            padding: 28px 20px;
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 30% 40%, rgba(139, 115, 85, 0.03) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(45, 37, 32, 0.06);
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+            transition: scrollbar-color 0.3s;
+        }
+
+        .reading-order:hover {
+            scrollbar-color: var(--border) transparent;
+        }
+
+        .reading-order::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .reading-order::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .reading-order::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .reading-order:hover::-webkit-scrollbar-thumb {
+            background: var(--border);
+        }
+
+        .reading-order h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            margin-bottom: 22px;
+            color: var(--ink-light);
+            font-weight: 600;
+        }
+
+        .reading-order ol {
+            list-style: none;
+            counter-reset: reading-counter;
+        }
+
+        .reading-order li {
+            counter-increment: reading-counter;
+            margin-bottom: 18px;
+            font-size: 0.92rem;
+            line-height: 1.4;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .reading-order li::before {
+            content: counter(reading-counter);
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .reading-order .title {
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .reading-order .title a {
+            color: var(--ink);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .reading-order .title a:hover {
+            color: var(--gold);
+        }
+
+        .reading-order .author {
+            color: var(--ink-light);
+            font-size: 0.82rem;
+        }
+
+        .main-content {
+            max-width: 1100px;
+        }
+
         .hero {
-            position:relative;
-            background: linear-gradient(170deg, #0e0804 0%, #1e1008 50%, #0e0804 100%);
-            padding: 100px 40px 80px;
-            text-align:center;
-            overflow:hidden;
-        }
-        .hero::before {
-            content:'';
-            position:absolute; inset:0;
-            background:
-                radial-gradient(ellipse 90% 60% at 50% -10%, rgba(200,149,42,0.2) 0%, transparent 65%),
-                radial-gradient(ellipse 50% 30% at 20% 110%, rgba(200,149,42,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse 50% 30% at 80% 110%, rgba(200,149,42,0.08) 0%, transparent 60%);
-            pointer-events:none;
-        }
-        .hero::after {
-            content:'';
-            position:absolute;
-            top:16px; left:16px; right:16px; bottom:16px;
-            border:1px solid rgba(200,149,42,0.2);
-            pointer-events:none;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .hero-eyebrow {
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.55em;
-            color:rgba(200,149,42,0.6);
-            text-transform:uppercase;
-            display:block;
-            margin-bottom:24px;
-            position:relative;
-            animation: fadeUp 0.7s ease both 0.1s;
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: var(--ink);
+            line-height: 1.1;
         }
 
-        .hero-name {
-            font-family:'Cinzel', serif;
-            font-size:clamp(44px, 8vw, 96px);
-            font-weight:900;
-            color:#fff;
-            letter-spacing:0.04em;
-            line-height:1;
-            position:relative;
-            text-shadow: 0 4px 40px rgba(200,149,42,0.25);
-            animation: fadeUp 0.7s ease both 0.25s;
+        .hero .greek {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 28px;
+            font-weight: 400;
         }
 
-        .hero-name span {
-            color: var(--gold-light);
+        .hero .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--ink-light);
+            max-width: 680px;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
-        .hero-tagline {
-            font-family:'Cormorant Garamond', serif;
-            font-size:clamp(16px, 2.5vw, 22px);
-            font-style:italic;
-            color:rgba(255,255,255,0.4);
-            margin-top:18px;
-            letter-spacing:0.08em;
-            position:relative;
-            animation: fadeUp 0.7s ease both 0.4s;
-        }
-
-        .hero-divider {
-            width:60px; height:1px;
-            background:linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin:28px auto 0;
-            position:relative;
-            animation: fadeUp 0.7s ease both 0.5s;
-        }
-
-        /* ── MAIN ── */
-        .main {
-            max-width:960px;
-            margin:0 auto;
-            padding:70px 40px 80px;
-            position:relative;
-            z-index:1;
-        }
-
-        .section-label {
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.5em;
-            color:var(--text-faint);
-            text-transform:uppercase;
-            display:block;
-            margin-bottom:6px;
+        .section {
+            margin-bottom: 100px;
         }
 
         .section-title {
-            font-family:'Cinzel', serif;
-            font-size:clamp(18px, 2.5vw, 24px);
-            font-weight:600;
-            color:var(--rust);
-            letter-spacing:0.06em;
-            margin-bottom:32px;
-            padding-bottom:14px;
-            border-bottom:1px solid var(--gold-line);
-            position:relative;
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--ink);
         }
 
-        .section-title::after {
-            content:'';
-            position:absolute;
-            bottom:-1px; left:0;
-            width:60px; height:2px;
-            background:var(--gold);
+        .section-intro {
+            font-size: 1.08rem;
+            color: var(--ink-light);
+            margin-bottom: 50px;
+            max-width: 680px;
+            font-weight: 400;
         }
 
-        /* ── GUIDE CARDS ── */
-        .guides-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-            gap:22px;
-            margin-bottom:60px;
+        .beginner-notice {
+            background: #f0ebe0;
+            background-image: radial-gradient(circle at 70% 30%, rgba(139, 115, 85, 0.04) 0%, transparent 50%);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            margin-bottom: 50px;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(45, 37, 32, 0.06);
         }
 
-        .guide-card {
-            background:var(--parchment-card);
-            border:1px solid rgba(200,149,42,0.2);
-            border-radius:2px;
-            padding:28px 26px 22px;
-            text-decoration:none;
-            color:inherit;
-            display:flex;
-            flex-direction:column;
-            gap:10px;
-            box-shadow:0 2px 12px var(--shadow);
-            transition:box-shadow 0.25s, border-color 0.25s, transform 0.2s;
-            position:relative;
-            overflow:hidden;
+        .beginner-notice p {
+            font-size: 0.96rem;
+            color: var(--ink-light);
+            margin-bottom: 20px;
         }
 
-        .guide-card::before {
-            content:'';
-            position:absolute;
-            top:0; left:0; right:0;
-            height:2px;
-            background:linear-gradient(90deg, var(--gold), var(--rust));
-            transform:scaleX(0);
-            transform-origin:left;
-            transition:transform 0.3s;
+        .beginner-books {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .guide-card:hover {
-            box-shadow:0 8px 32px var(--shadow-deep);
-            border-color:rgba(200,149,42,0.4);
-            transform:translateY(-3px);
+        .beginner-book {
+            display: flex;
+            gap: 14px;
+            align-items: start;
         }
 
-        .guide-card:hover::before {
-            transform:scaleX(1);
+        .beginner-book img {
+            width: 56px;
+            height: 84px;
+            object-fit: cover;
+            border: 1px solid var(--border);
         }
 
-        .card-category {
-            font-family:'Cormorant SC', serif;
-            font-size:10.5px;
-            letter-spacing:0.3em;
-            color:var(--gold);
-            text-transform:uppercase;
+        .beginner-book-info {
+            font-size: 0.86rem;
         }
 
-        .card-title {
-            font-family:'Cinzel', serif;
-            font-size:18px;
-            font-weight:700;
-            color:var(--text);
-            letter-spacing:0.04em;
-            line-height:1.25;
+        .beginner-book-info .title {
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
         }
 
-        .card-subtitle {
-            font-family:'Cormorant Garamond', serif;
-            font-size:15px;
-            font-style:italic;
-            color:var(--text-muted);
-            line-height:1.5;
+        .beginner-book-info .author {
+            color: var(--ink-light);
+            margin-bottom: 4px;
         }
 
-        .card-meta {
-            display:flex;
-            align-items:center;
-            gap:10px;
-            margin-top:6px;
+        .beginner-book-actions {
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
         }
 
-        .card-count {
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.15em;
-            color:var(--text-faint);
-            text-transform:uppercase;
+        .beginner-book-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            font-size: 0.7rem;
         }
 
-        .card-arrow {
-            margin-left:auto;
-            color:var(--gold);
-            font-size:18px;
-            opacity:0.6;
-            transition:opacity 0.2s, transform 0.2s;
+        .beginner-book-actions a.read-icon {
+            background: rgba(122, 155, 118, 0.1);
+            color: var(--sage);
+            border-color: rgba(122, 155, 118, 0.3);
         }
 
-        .guide-card:hover .card-arrow {
-            opacity:1;
-            transform:translateX(4px);
+        .beginner-book-actions a.read-icon:hover {
+            background: var(--sage);
+            color: white;
+            border-color: var(--sage);
         }
 
-        /* COMING SOON card */
-        .guide-card.coming-soon {
-            opacity:0.5;
-            pointer-events:none;
-            cursor:default;
+        .beginner-book-actions a.cart-icon {
+            color: var(--terracotta);
+            border-color: rgba(199, 115, 80, 0.3);
+            background: rgba(199, 115, 80, 0.05);
         }
 
-        .coming-soon-badge {
-            font-family:'Cormorant SC', serif;
-            font-size:10px;
-            letter-spacing:0.2em;
-            color:var(--text-faint);
-            text-transform:uppercase;
-            border:1px solid rgba(200,149,42,0.2);
-            padding:3px 8px;
-            border-radius:1px;
-            display:inline-block;
-            margin-top:2px;
+        .beginner-book-actions a.cart-icon:hover {
+            background: var(--terracotta);
+            color: white;
+            border-color: var(--terracotta);
         }
 
-        /* ── ABOUT ── */
-        .about-block {
-            background:linear-gradient(135deg, #1a0f05 0%, #2c1810 100%);
-            border:1px solid rgba(200,149,42,0.2);
-            border-radius:2px;
-            padding:36px 36px 32px;
-            position:relative;
-            overflow:hidden;
+        /* COMPACT EPIC BOOK LAYOUT - Similar to beginner books */
+        .epic-book {
+            display: flex;
+            gap: 16px;
+            align-items: start;
+            padding: 12px;
+            scroll-margin-top: 80px;
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(139, 115, 85, 0.03) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(45, 37, 32, 0.06);
         }
 
-        .about-block::before {
-            content:'';
-            position:absolute; inset:0;
-            background:radial-gradient(ellipse 70% 60% at 0% 0%, rgba(200,149,42,0.1) 0%, transparent 60%);
-            pointer-events:none;
+        .epic-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.12);
+            border-color: var(--gold-light);
         }
 
-        .about-block p {
-            font-size:17px;
-            line-height:1.85;
-            color:rgba(255,255,255,0.65);
-            position:relative;
+        .epic-book-cover {
+            width: 70px;
+            height: 105px;
+            object-fit: cover;
+            object-position: center;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(45, 37, 32, 0.1);
         }
 
-        .about-block p em {
-            color:var(--gold-light);
-            font-style:italic;
+        .epic-book-info {
+            flex: 1;
+            font-size: 0.88rem;
         }
 
-        .about-block .twitter-link {
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            margin-top:22px;
-            font-family:'Cinzel', serif;
-            font-size:13px;
-            font-weight:600;
-            letter-spacing:0.1em;
-            color:var(--gold-light);
-            text-decoration:none;
-            border-bottom:1px solid rgba(200,149,42,0.4);
-            padding-bottom:2px;
-            transition:color 0.2s, border-color 0.2s;
-            position:relative;
+        .epic-book-title {
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
+            font-size: 0.92rem;
         }
 
-        .about-block .twitter-link:hover {
-            color:#fff;
-            border-bottom-color:rgba(255,255,255,0.4);
+        .epic-book-title a {
+            color: var(--ink);
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
-        /* ── FOOTER ── */
-        .footer {
-            text-align:center;
-            padding:30px 40px 44px;
-            border-top:1px solid var(--gold-line);
-            font-family:'Cormorant SC', serif;
-            font-size:11px;
-            letter-spacing:0.3em;
-            color:var(--text-faint);
-            text-transform:uppercase;
+        .epic-book-title a:hover {
+            color: var(--gold);
         }
 
-        /* ── ANIMATION ── */
-        @keyframes fadeUp {
-            from { opacity:0; transform:translateY(14px); }
-            to   { opacity:1; transform:translateY(0); }
+        .epic-book-date {
+            color: var(--ink-light);
+            font-size: 0.72rem;
+            font-style: italic;
+            margin-bottom: 3px;
         }
 
-        @media (max-width:640px) {
-            .hero { padding:70px 20px 60px; }
-            .main { padding:50px 20px 60px; }
-            .guides-grid { grid-template-columns:1fr; }
-            .about-block { padding:26px 22px; }
+        .epic-book-author {
+            color: var(--ink-light);
+            margin-bottom: 6px;
+            font-size: 0.82rem;
+        }
+
+        .epic-book-author a {
+            color: var(--ink-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .epic-book-author a:hover {
+            color: var(--gold);
+        }
+
+        .epic-book-meta {
+            color: var(--ink-light);
+            font-size: 0.72rem;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .epic-book-meta div {
+            margin-bottom: 2px;
+        }
+
+        .epic-book-actions {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+
+        .epic-book-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            font-size: 0.75rem;
+            background: rgba(250, 247, 240, 0.5);
+        }
+
+        .epic-book-actions a.goodreads-icon {
+            color: var(--gold);
+            border-color: rgba(184, 152, 95, 0.3);
+            background: rgba(184, 152, 95, 0.08);
+        }
+
+        .epic-book-actions a.goodreads-icon:hover {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+        }
+
+        .epic-book-actions a.read-icon {
+            color: var(--sage);
+            border-color: rgba(122, 155, 118, 0.3);
+            background: rgba(122, 155, 118, 0.08);
+        }
+
+        .epic-book-actions a.read-icon:hover {
+            background: var(--sage);
+            color: white;
+            border-color: var(--sage);
+        }
+
+        .epic-book-actions a.cart-icon {
+            color: var(--terracotta);
+            border-color: rgba(199, 115, 80, 0.3);
+            background: rgba(199, 115, 80, 0.08);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .epic-book-actions a.cart-icon:hover {
+            background: var(--terracotta);
+            color: white;
+            border-color: var(--terracotta);
+        }
+
+        .epic-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 14px;
+        }
+
+        @media (min-width: 1400px) {
+            .epic-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .epic-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .beginner-book-actions a.cart-icon:hover {
+            background: var(--terracotta);
+            color: white;
+            border-color: var(--terracotta);
+        }
+
+        /* GLOBAL SORT CONTROLS - FIXED POSITION */
+        .sort-container {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--cream);
+            padding: 16px 0;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sort-container.sorting-active {
+            background: #fff9f0;
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .sort-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            font-weight: 600;
+        }
+
+        .sort-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .sort-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 8px 16px;
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.02) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            color: var(--antique-dark);
+            cursor: pointer;
+            font-size: 0.78rem;
+            transition: all 0.15s ease;
+            border-radius: 3px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .sort-btn:hover {
+            background: var(--hover-bg);
+            border-color: var(--gold-light);
+            color: var(--ink);
+            transform: translateY(-1px);
+        }
+
+        .sort-btn.active {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(184, 153, 95, 0.3);
+        }
+
+        .clear-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid #ddd;
+            color: #999;
+            cursor: pointer;
+            font-size: 0.78rem;
+            transition: all 0.15s ease;
+            border-radius: 2px;
+            font-weight: 500;
+            display: none;
+            margin-left: 4px;
+        }
+
+        .clear-btn.active {
+            display: block;
+        }
+
+        .clear-btn:hover {
+            background: #fee;
+            border-color: #faa;
+            color: #c33;
+        }
+
+        .direction-buttons {
+            display: flex;
+            gap: 6px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+
+        .direction-buttons.active {
+            opacity: 1;
+            max-height: 50px;
+            pointer-events: auto;
+        }
+
+        .dir-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.02) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            color: var(--antique-dark);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.15s ease;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .dir-btn:hover {
+            background: var(--hover-bg);
+            border-color: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        .dir-btn.active {
+            background: rgba(122, 155, 118, 0.15);
+            border-color: var(--sage);
+            color: var(--sage);
+            font-weight: 600;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.03) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            padding: 32px;
+            max-width: 540px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(45, 37, 32, 0.25);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--ink-light);
+            background: none;
+            border: none;
+            padding: 6px 10px;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--ink);
+        }
+
+        .modal-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--ink);
+            padding-right: 32px;
+        }
+
+        .version-item {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.15s;
+        }
+
+        .version-item:hover {
+            background: var(--hover-bg);
+        }
+
+        .version-item:last-child {
+            border-bottom: none;
+        }
+
+        .version-info {
+            flex: 1;
+        }
+
+        .version-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.68rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .version-label.bilingual {
+            color: #2e7d32;
+        }
+
+        .version-translator {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .version-publisher {
+            font-size: 0.78rem;
+            color: var(--ink-light);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .version-link {
+            margin-left: 16px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .version-link a {
+            color: var(--antique-dark);
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            background: rgba(250, 247, 240, 0.5);
+        }
+
+        .version-link a:hover {
+            color: white;
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .subsection {
+            margin-top: 60px;
+        }
+
+        .subsection-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--ink);
+            border-bottom: 1px solid var(--gold-light);
+            padding-bottom: 10px;
+        }
+
+        .simple-list {
+            background: #faf7f0;
+            background-image: radial-gradient(circle at 40% 60%, rgba(139, 115, 85, 0.03) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            padding: 36px;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(45, 37, 32, 0.06);
+        }
+
+        .list-group {
+            margin-bottom: 36px;
+        }
+
+        .list-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .list-group h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .list-group ul {
+            list-style: none;
+        }
+
+        .list-group li {
+            padding: 9px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 0.96rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-group li:last-child {
+            border-bottom: none;
+        }
+        
+        .list-item-content {
+            flex: 1;
+        }
+        
+        .list-item-icons {
+            display: flex;
+            gap: 8px;
+            margin-left: 12px;
+        }
+        
+        .list-item-icons a {
+            color: var(--antique-dark);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            text-decoration: none;
+            background: rgba(250, 247, 240, 0.5);
+        }
+        
+        .list-item-icons a:first-child {
+            color: var(--sage);
+            border-color: rgba(122, 155, 118, 0.3);
+            background: rgba(122, 155, 118, 0.08);
+        }
+        
+        .list-item-icons a:first-child:hover {
+            color: white;
+            background: var(--sage);
+            border-color: var(--sage);
+        }
+        
+        .list-item-icons a:last-child {
+            color: var(--terracotta);
+            border-color: rgba(199, 115, 80, 0.3);
+            background: rgba(199, 115, 80, 0.08);
+        }
+        
+        .list-item-icons a:last-child:hover {
+            color: white;
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .list-group .book-title-simple {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .list-group .author-simple {
+            color: var(--ink-light);
+            font-size: 0.92rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--ink-light);
+            font-size: 0.86rem;
+            border-top: 1px solid var(--border);
+            margin-top: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer .author-credit {
+            font-size: 0.8rem;
+            color: var(--ink-light);
+        }
+
+        footer .author-credit a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        footer .author-credit a:hover {
+            color: var(--antique-dark);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1200px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .reading-order {
+                position: relative;
+                top: 0;
+                max-width: 600px;
+            }
+
+            .sort-container {
+                position: relative;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            .layout {
+                padding: 40px 20px;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero .quote {
+                font-size: 1.1rem;
+            }
+
+            .beginner-books {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                padding: 26px;
+            }
+
+            .sort-container {
+                flex-direction: column;
+                align-items: flex-start;
+                position: relative;
+            }
+
+            .twitter-link {
+                bottom: 16px;
+                right: 16px;
+                width: 42px;
+                height: 42px;
+            }
+
+            .twitter-link svg {
+                width: 18px;
+                height: 18px;
+            }
         }
     </style>
 </head>
 <body>
 
-<header class="hero">
-    <span class="hero-eyebrow">Reading Guides by</span>
-    <h1 class="hero-name">actual<span>snek</span></h1>
-    <p class="hero-tagline">Curated guides to the books that matter</p>
-    <div class="hero-divider"></div>
-</header>
+<!-- SOCIAL LINK: update href to your Twitter/X profile -->
+<a href="https://twitter.com/actualsnek_" target="_blank" class="twitter-link" title="Follow @actualsnek_">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+    </svg>
+</a>
 
-<main class="main">
+<div class="layout">
+    
+    <aside class="reading-order">
+        <h3>Reading Order</h3>
+        <!-- READING ORDER: add/remove <li> items to change the sidebar list -->
+        <ol>
+            <li>
+                <div class="title"><a href="#anchor-mythos">Mythos or Mythology</a></div>
+                <div class="author">Stephen Fry or Edith Hamilton</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-daulaires">D'Aulaires' Book</a></div>
+                <div class="author">d'Aulaire (visual learners)</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-theogony">Theogony</a></div>
+                <div class="author">Hesiod</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-worksanddays">Works and Days</a></div>
+                <div class="author">Hesiod</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-homerichymns">Homeric Hymns</a></div>
+                <div class="author">Anonymous</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-iliad">The Iliad</a></div>
+                <div class="author">Homer</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-odyssey">The Odyssey</a></div>
+                <div class="author">Homer</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-argonautica">Argonautica</a></div>
+                <div class="author">Apollonius of Rhodes</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-metamorphoses">Metamorphoses</a></div>
+                <div class="author">Ovid</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-aeneid">The Aeneid</a></div>
+                <div class="author">Virgil</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-library">Library</a></div>
+                <div class="author">Apollodorus</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-oresteia">The Oresteia</a></div>
+                <div class="author">Aeschylus</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-oedipusrex">Oedipus Rex</a></div>
+                <div class="author">Sophocles</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-antigone">Antigone</a></div>
+                <div class="author">Sophocles</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-medea">Medea</a></div>
+                <div class="author">Euripides</div>
+            </li>
+            <li>
+                <div class="title"><a href="#anchor-trojanwomen">The Trojan Women</a></div>
+                <div class="author">Euripides</div>
+            </li>
+        </ol>
+    </aside>
 
-    <span class="section-label">Guides</span>
-    <h2 class="section-title">All Reading Guides</h2>
+    <main class="main-content">
+        
+        <header class="hero">
+            <h1>Greek Mythology</h1>
+            <div class="greek">Μυθολογία</div>
+            <p class="quote">"Sing, O goddess, the anger of Achilles son of Peleus, that brought countless ills upon the Achaeans."</p>
+        </header>
 
-    <div class="guides-grid">
+        <section class="section">
+            <h2 class="section-title">The Idiotēs Handbook</h2>
+            <p class="section-intro">New to Greek mythology? Start with these three essential guides — the perfect gateway to the ancient sources</p>
 
-        <!-- LIVE: Greek Mythology -->
-        <a href="./greek-mythology/index.html" class="guide-card">
-            <span class="card-category">Ancient World</span>
-            <div class="card-title">Greek Mythology</div>
-            <div class="card-subtitle">Primary texts, best editions &amp; translations — from Homer to Ovid</div>
-            <div class="card-meta">
-                <span class="card-count">12 works · Full bibliographies</span>
-                <span class="card-arrow">→</span>
+            <span id="anchor-mythos"></span><span id="anchor-daulaires"></span>
+            <div class="beginner-notice">
+                <p><strong>New to mythology?</strong> These three books provide perfect starting points — clear, engaging overviews that prepare you for the primary sources.</p>
+                
+                <div class="beginner-books">
+                    <div class="beginner-book">
+                        <img src="https://covers.openlibrary.org/b/isbn/1452668094-M.jpg" alt="Mythos by Stephen Fry">
+                        <div class="beginner-book-info">
+                            <div class="title">Mythos</div>
+                            <div class="author">Stephen Fry</div>
+                            <div class="beginner-book-actions">
+                                <a href="https://archive.org/details/mythos0000frys" target="_blank" class="read-icon" title="Read">
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                                <a href="https://www.amazon.in/s?k=Mythos+Stephen+Fry" target="_blank" class="cart-icon" title="Buy">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="beginner-book">
+                        <img src="https://covers.openlibrary.org/b/isbn/0316341517-M.jpg" alt="Mythology by Edith Hamilton">
+                        <div class="beginner-book-info">
+                            <div class="title">Mythology</div>
+                            <div class="author">Edith Hamilton</div>
+                            <div class="beginner-book-actions">
+                                <a href="https://archive.org/details/mythology00hami_0" target="_blank" class="read-icon" title="Read">
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                                <a href="https://www.amazon.in/s?k=Mythology+Edith+Hamilton" target="_blank" class="cart-icon" title="Buy">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="beginner-book">
+                        <img src="https://covers.openlibrary.org/b/isbn/0440406943-M.jpg" alt="D'Aulaires' Book of Greek Myths">
+                        <div class="beginner-book-info">
+                            <div class="title">D'Aulaires' Book of Greek Myths</div>
+                            <div class="author">Ingri & Edgar Parin d'Aulaire</div>
+                            <div class="beginner-book-actions">
+                                <a href="https://archive.org/details/daulairesbo00daul" target="_blank" class="read-icon" title="Read">
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                                <a href="https://www.amazon.in/s?k=D'Aulaires+Book+of+Greek+Myths" target="_blank" class="cart-icon" title="Buy">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </a>
+        </section>
 
-        <!-- COMING SOON placeholders -->
-        <div class="guide-card coming-soon">
-            <span class="card-category">Philosophy</span>
-            <div class="card-title">Stoicism</div>
-            <div class="card-subtitle">From Marcus Aurelius to Epictetus — the complete primary sources</div>
-            <div class="card-meta">
-                <span class="coming-soon-badge">Coming Soon</span>
+        <!-- GLOBAL SORT CONTAINER -->
+        <div class="sort-container" id="globalSort">
+            <span class="sort-label">Sort All Books</span>
+            <div class="sort-buttons">
+                <button class="sort-btn" data-sort="year">Year</button>
+                <button class="sort-btn" data-sort="pages">Pages</button>
+                <button class="sort-btn" data-sort="alpha">A-Z</button>
             </div>
+            <div class="direction-buttons" id="directionButtons">
+                <button class="dir-btn active" data-dir="asc" title="Oldest / Least / A–Z">↑</button>
+                <button class="dir-btn" data-dir="desc" title="Newest / Most / Z–A">↓</button>
+            </div>
+            <button class="clear-btn" id="clearBtn">✕ Clear Sort</button>
         </div>
 
-        <div class="guide-card coming-soon">
-            <span class="card-category">Ancient World</span>
-            <div class="card-title">Roman History</div>
-            <div class="card-subtitle">Livy, Suetonius, Tacitus — primary histories of Rome</div>
-            <div class="card-meta">
-                <span class="coming-soon-badge">Coming Soon</span>
-            </div>
-        </div>
+        <section class="section">
+            <!-- EPICS: add new epic-book cards inside the epic-list div below -->
+            <h2 class="section-title">The Epics</h2>
+            <p class="section-intro">Foundational narrative poetry — the core of Greek mythology</p>
 
-        <div class="guide-card coming-soon">
-            <span class="card-category">Ancient World</span>
-            <div class="card-title">Norse Mythology</div>
-            <div class="card-subtitle">Eddas, Sagas &amp; primary sources of the Norse world</div>
-            <div class="card-meta">
-                <span class="coming-soon-badge">Coming Soon</span>
-            </div>
-        </div>
+            <div class="epic-list">
+                
+                <!-- ═══════════════════════════════════════════════════════════
+     BOOK CARD — to add/edit a book, copy one block below and update:
+       data-year  → composition year as negative int (BCE) or positive (CE)
+       data-pages → page count (used for sort)
+       data-title → book title (used for sort)
+       img src    → book cover image URL  ← COVER IMAGE
+       img alt    → book title for accessibility
+       .epic-book-title a href → Wikipedia or info page link
+       .epic-book-date  → display date e.g. "c. 750 BCE"
+       .epic-book-author a → author Wikipedia link
+       .epic-book-meta divs → Translator / Publisher / Page count
+       .goodreads-icon href → Goodreads URL  ← GOODREADS LINK
+       .read-icon href      → Free read URL (Gutenberg, Theoi etc)  ← READ FREE LINK
+       .cart-icon onclick   → showVersions('modal-id') — links to modal below  ← BUY MODAL
+═══════════════════════════════════════════════════════════ -->
+<div class="epic-book" id="anchor-theogony" data-year="-700" data-pages="81" data-title="Theogony">
+                    <img src="https://covers.openlibrary.org/b/isbn/0192839381-M.jpg" class="epic-book-cover" alt="Theogony">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Theogony" target="_blank">Theogony</a></div>
+                        <div class="epic-book-date">c. 700 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Hesiod" target="_blank">Hesiod</a></div>
+                        <div class="epic-book-meta">
+                            <div>Trans. M. L. West</div>
+                            <div>Oxford UP, 1999</div>
+                            <div>81 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/27418" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.theoi.com/Text/HesiodTheogony.html" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('theogony'); return false;" class="cart-icon" title="Buy">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="epic-book" id="anchor-worksanddays" data-year="-700" data-pages="79" data-title="Works and Days">
+                    <img src="https://covers.openlibrary.org/b/isbn/0192839381-M.jpg" class="epic-book-cover" alt="Works and Days">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Works_and_Days" target="_blank">Works and Days</a></div>
+                        <div class="epic-book-date">c. 700 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Hesiod" target="_blank">Hesiod</a></div>
+                        <div class="epic-book-meta">
+                            <div>Trans. M. L. West</div>
+                            <div>Oxford UP, 1999</div>
+                            <div>79 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/118071" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.theoi.com/Text/HesiodWorksDays.html" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('worksanddays'); return false;" class="cart-icon" title="Buy">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="epic-book" id="anchor-iliad" data-year="-750" data-pages="599" data-title="The Iliad">
+                    <img src="https://covers.openlibrary.org/b/isbn/0226470490-M.jpg" class="epic-book-cover" alt="Iliad">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Iliad" target="_blank">The Iliad</a></div>
+                        <div class="epic-book-date">c. 750 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Homer" target="_blank">Homer</a></div>
+                        <div class="epic-book-meta">
+                            <div>Trans. Richmond Lattimore</div>
+                            <div>Univ. of Chicago Press, 2011</div>
+                            <div>599 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/11054461" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.gutenberg.org/ebooks/6130" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('iliad'); return false;" class="cart-icon" title="Buy">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="epic-book" id="anchor-odyssey" data-year="-725" data-pages="390" data-title="The Odyssey">
+                    <img src="https://covers.openlibrary.org/b/isbn/006124418X-M.jpg" class="epic-book-cover" alt="Odyssey">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Odyssey" target="_blank">The Odyssey</a></div>
+                        <div class="epic-book-date">c. 725 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Homer" target="_blank">Homer</a></div>
+                        <div class="epic-book-meta">
+                            <div>Trans. Richmond Lattimore</div>
+                            <div>Harper Perennial, 1967</div>
+                            <div>390 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/1297872" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.gutenberg.org/ebooks/1727" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('odyssey'); return false;" class="cart-icon" title="Buy">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="epic-book" id="anchor-homerichymns" data-year="-650" data-pages="144" data-title="Homeric Hymns">
+                    <img src="https://covers.openlibrary.org/b/isbn/1421438607-M.jpg" class="epic-book-cover" alt="Homeric Hymns">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Homeric_Hymns" target="_blank">Homeric Hymns</a></div>
+                        <div class="epic-book-date">c. 650 BCE</div>
+                        <div class="epic-book-author">Anonymous</div>
+                        <div class="epic-book-meta">
+                            <div>Trans. Apostolos N. Athanassakis</div>
+                            <div>Johns Hopkins UP, 2020</div>
+                            <div>144 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/48694197" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.sacred-texts.com/cla/homer/hymns.htm" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('hymns'); return false;" class="cart-icon" title="Buy">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="epic-book" id="anchor-argonautica" data-year="-250" data-pages="300" data-title="Argonautica">
+                    <img src="https://covers.openlibrary.org/b/isbn/0140455345-M.jpg" class="epic-book-cover" alt="Argonautica">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Argonautica" target="_blank">Argonautica</a></div>
+                        <div class="epic-book-date">c. 250 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Apollonius_of_Rhodes" target="_blank">Apollonius of Rhodes</a></div>
+                        <div class="epic-book-meta">
+                            <div>Jason and the Golden Fleece</div>
+                            <div>~300 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/88380" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.theoi.com/Text/ApolloniusRhodius1.html" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('argonautica'); return false;" class="cart-icon" title="Buy">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <!-- TRAGEDIES: add new epic-book cards inside the epic-list divs below -->
+            <h2 class="section-title">Tragedies</h2>
+            <p class="section-intro">The dramatic masterworks of Aeschylus, Sophocles, and Euripides — expanded essential collection</p>
+
+            <h3 class="subsection-title">Essential Tragedies</h3>
+            <div class="epic-list sortable-grid">
+<div class="epic-book" id="anchor-oedipusrex" data-year="-429" data-pages="128" data-title="Oedipus Rex">
+                    <img src="https://archive.org/services/img/oedipustheking00soph" class="epic-book-cover" alt="Oedipus Rex">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Oedipus_Rex" target="_blank">Oedipus Rex</a></div>
+                        <div class="epic-book-date">c. 429 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 2010</div>
+                        <div>128 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/7405" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/oedipustheking00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('oedipus'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" id="anchor-antigone" data-year="-442" data-pages="96" data-title="Antigone">
+                    <img src="https://archive.org/services/img/antigone00soph" class="epic-book-cover" alt="Antigone">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Antigone_(Sophocles_play)" target="_blank">Antigone</a></div>
+                        <div class="epic-book-date">c. 442 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/28525" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/antigone00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('antigone'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" id="anchor-medea" data-year="-431" data-pages="96" data-title="Medea">
+                    <img src="https://archive.org/services/img/medeaofeuri00euri" class="epic-book-cover" alt="Medea">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Medea_(play)" target="_blank">Medea</a></div>
+                        <div class="epic-book-date">431 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Rex Warner</div>
+                        <div>Dover Publications, 1993</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/44148" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/medeaofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('medea'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" id="anchor-oresteia" data-year="-458" data-pages="335" data-title="The Oresteia">
+                    <img src="https://archive.org/services/img/oresteia00aesc" class="epic-book-cover" alt="The Oresteia">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Oresteia" target="_blank">The Oresteia</a></div>
+                        <div class="epic-book-date">458 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Aeschylus" target="_blank">Aeschylus</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Robert Fagles</div>
+                        <div>Penguin Classics, 1984</div>
+                        <div>335 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/22161" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/oresteia00aesc" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('oresteia'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-406" data-pages="104" data-title="The Bacchae">
+                    <img src="https://archive.org/services/img/bacchaeofeuri00euri" class="epic-book-cover" alt="The Bacchae">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/The_Bacchae" target="_blank">The Bacchae</a></div>
+                        <div class="epic-book-date">406 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. William Arrowsmith</div>
+                        <div>University of Chicago Press, 1959</div>
+                        <div>104 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752830" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/bacchaeofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('bacchae'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-428" data-pages="96" data-title="Hippolytus">
+                    <img src="https://archive.org/services/img/hippolytusofeuri00euri" class="epic-book-cover" alt="Hippolytus">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Hippolytus_(play)" target="_blank">Hippolytus</a></div>
+                        <div class="epic-book-date">428 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 1942</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752831" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/hippolytusofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('hippolytus'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" id="anchor-trojanwomen" data-year="-415" data-pages="96" data-title="The Trojan Women">
+                    <img src="https://archive.org/services/img/trojanwomen00euri" class="epic-book-cover" alt="The Trojan Women">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/The_Trojan_Women" target="_blank">The Trojan Women</a></div>
+                        <div class="epic-book-date">415 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Richmond Lattimore</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752844" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/trojanwomen00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('trojanwomen'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-457" data-pages="88" data-title="Prometheus Bound">
+                    <img src="https://archive.org/services/img/prometheusbou00aesc" class="epic-book-cover" alt="Prometheus Bound">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Prometheus_Bound" target="_blank">Prometheus Bound</a></div>
+                        <div class="epic-book-date">c. 457 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Aeschylus" target="_blank">Aeschylus</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>88 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752820" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/prometheusbou00aesc" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('prometheus'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-415" data-pages="96" data-title="Electra">
+                    <img src="https://archive.org/services/img/electra00soph" class="epic-book-cover" alt="Electra">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Electra_(Sophocles_play)" target="_blank">Electra</a></div>
+                        <div class="epic-book-date">c. 415 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752833" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/electra00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('electra'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-442" data-pages="96" data-title="Ajax">
+                    <img src="https://archive.org/services/img/ajax00soph" class="epic-book-cover" alt="Ajax">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Ajax_(play)" target="_blank">Ajax</a></div>
+                        <div class="epic-book-date">c. 442 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. John Moore</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752834" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/ajax00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('ajax'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-401" data-pages="96" data-title="Oedipus at Colonus">
+                    <img src="https://archive.org/services/img/oedipusatcolonu00soph" class="epic-book-cover" alt="Oedipus at Colonus">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Oedipus_at_Colonus" target="_blank">Oedipus at Colonus</a></div>
+                        <div class="epic-book-date">401 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752835" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/oedipusatcolonu00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('oedipuscolons'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-438" data-pages="88" data-title="Alcestis">
+                    <img src="https://archive.org/services/img/alcestisofeuri00euri" class="epic-book-cover" alt="Alcestis">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Alcestis_(play)" target="_blank">Alcestis</a></div>
+                        <div class="epic-book-date">438 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Richmond Lattimore</div>
+                        <div>University of Chicago Press, 1955</div>
+                        <div>88 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752836" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/alcestisofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('alcestis'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-424" data-pages="96" data-title="Hecuba">
+                    <img src="https://archive.org/services/img/hecubaofeuri00euri" class="epic-book-cover" alt="Hecuba">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Hecuba_(play)" target="_blank">Hecuba</a></div>
+                        <div class="epic-book-date">c. 424 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. William Arrowsmith</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752837" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/hecubaofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('hecuba'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-409" data-pages="96" data-title="Philoctetes">
+                    <img src="https://archive.org/services/img/philoctetes00soph" class="epic-book-cover" alt="Philoctetes">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Philoctetes_(Sophocles_play)" target="_blank">Philoctetes</a></div>
+                        <div class="epic-book-date">409 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752838" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/philoctetes00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('philoctetes'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-406" data-pages="120" data-title="Iphigenia in Aulis">
+                    <img src="https://archive.org/services/img/iphigeniaataulis00euri" class="epic-book-cover" alt="Iphigenia in Aulis">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Iphigenia_in_Aulis" target="_blank">Iphigenia in Aulis</a></div>
+                        <div class="epic-book-date">406 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Charles R. Walker</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>120 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752846" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/iphigeniaataulis00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('iphiaulis'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-412" data-pages="104" data-title="Helen">
+                    <img src="https://archive.org/services/img/helenofeuri00euri" class="epic-book-cover" alt="Helen">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Helen_(play)" target="_blank">Helen</a></div>
+                        <div class="epic-book-date">412 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Richmond Lattimore</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>104 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752840" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/helenofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('helen'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-409" data-pages="112" data-title="The Phoenician Women">
+                    <img src="https://archive.org/services/img/phoenicianwomen00euri" class="epic-book-cover" alt="The Phoenician Women">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/The_Phoenician_Women" target="_blank">The Phoenician Women</a></div>
+                        <div class="epic-book-date">c. 409 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Elizabeth Wyckoff</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>112 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752841" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/phoenicianwomen00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('phoenician'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-416" data-pages="104" data-title="Heracles">
+                    <img src="https://archive.org/services/img/heraclesofeuri00euri" class="epic-book-cover" alt="Heracles">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Heracles_(Euripides)" target="_blank">Heracles</a></div>
+                        <div class="epic-book-date">c. 416 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. William Arrowsmith</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>104 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752847" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/heraclesofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('heracles'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-408" data-pages="96" data-title="Orestes">
+                    <img src="https://archive.org/services/img/orestesofeuri00euri" class="epic-book-cover" alt="Orestes">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Orestes_(play)" target="_blank">Orestes</a></div>
+                        <div class="epic-book-date">408 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. William Arrowsmith</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752845" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/orestesofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('orestes'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-414" data-pages="104" data-title="Iphigenia in Tauris">
+                    <img src="https://archive.org/services/img/iphigeniaintau00euri" class="epic-book-cover" alt="Iphigenia in Tauris">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Iphigenia_in_Tauris" target="_blank">Iphigenia in Tauris</a></div>
+                        <div class="epic-book-date">c. 414 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Witter Bynner</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>104 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752843" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/iphigeniaintau00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('iphitaurians'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-472" data-pages="96" data-title="The Persians">
+                    <img src="https://archive.org/services/img/persiansoofaesc00aesc" class="epic-book-cover" alt="The Persians">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/The_Persians" target="_blank">The Persians</a></div>
+                        <div class="epic-book-date">472 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Aeschylus" target="_blank">Aeschylus</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Seth Benardete</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752850" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/persiansoofaesc00aesc" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('persians'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="subsection-title">Remaining Plays</h3>
+            <div class="epic-list sortable-grid">
+<div class="epic-book" data-year="-467" data-pages="96" data-title="Seven Against Thebes">
+                    <img src="https://archive.org/services/img/sevenagainstthe00aesc" class="epic-book-cover" alt="Seven Against Thebes">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Seven_Against_Thebes" target="_blank">Seven Against Thebes</a></div>
+                        <div class="epic-book-date">467 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Aeschylus" target="_blank">Aeschylus</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. David Grene</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752851" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/sevenagainstthe00aesc" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('seventhebes'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-463" data-pages="88" data-title="The Suppliants">
+                    <img src="https://archive.org/services/img/suppliants00aesc" class="epic-book-cover" alt="The Suppliants">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/The_Suppliants_(Aeschylus)" target="_blank">The Suppliants</a></div>
+                        <div class="epic-book-date">c. 463 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Aeschylus" target="_blank">Aeschylus</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Seth Benardete</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>88 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752852" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/suppliants00aesc" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('suppliantsaesc'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-425" data-pages="96" data-title="Andromache">
+                    <img src="https://archive.org/services/img/andromacheofeuri00euri" class="epic-book-cover" alt="Andromache">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Andromache_(play)" target="_blank">Andromache</a></div>
+                        <div class="epic-book-date">c. 425 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. John Frederick Nims</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752853" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/andromacheofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('andromache'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-422" data-pages="88" data-title="The Suppliants">
+                    <img src="https://archive.org/services/img/suppliants00euri" class="epic-book-cover" alt="The Suppliants">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/The_Suppliants_(Euripides)" target="_blank">The Suppliants</a></div>
+                        <div class="epic-book-date">c. 422 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Frank William Jones</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>88 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752854" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/suppliants00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('suppliantseuri'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-413" data-pages="104" data-title="Ion">
+                    <img src="https://archive.org/services/img/ionofeuri00euri" class="epic-book-cover" alt="Ion">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Ion_(play)" target="_blank">Ion</a></div>
+                        <div class="epic-book-date">c. 413 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Ronald Frederick Willetts</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>104 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752855" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/ionofeuri00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('ion'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-438" data-pages="88" data-title="The Women of Trachis">
+                    <img src="https://archive.org/services/img/womenoftrachis00soph" class="epic-book-cover" alt="The Women of Trachis">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Women_of_Trachis" target="_blank">The Women of Trachis</a></div>
+                        <div class="epic-book-date">c. 438 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Sophocles" target="_blank">Sophocles</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Michael Jameson</div>
+                        <div>University of Chicago Press, 2013</div>
+                        <div>88 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752856" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/womenoftrachis00soph" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('trachis'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-430" data-pages="88" data-title="Heracleidae">
+                    <img src="https://archive.org/services/img/heracleidae00euri" class="epic-book-cover" alt="Heracleidae">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Heracleidae" target="_blank">Heracleidae</a></div>
+                        <div class="epic-book-date">c. 430 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Ralph Gladstone</div>
+                        <div>University of Chicago Press, 1955</div>
+                        <div>88 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752857" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/heracleidae00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('heracleidae'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-420" data-pages="96" data-title="Electra">
+                    <img src="https://archive.org/services/img/electra00euri" class="epic-book-cover" alt="Electra">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Electra_(Euripides)" target="_blank">Electra</a></div>
+                        <div class="epic-book-date">c. 420 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Emily Townsend Vermeule</div>
+                        <div>University of Chicago Press, 1959</div>
+                        <div>96 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752858" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/electra00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('electraeuri'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-412" data-pages="72" data-title="Cyclops">
+                    <img src="https://archive.org/services/img/cyclops00euri" class="epic-book-cover" alt="Cyclops">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Cyclops_(play)" target="_blank">Cyclops</a></div>
+                        <div class="epic-book-date">c. 412 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. William Arrowsmith</div>
+                        <div>University of Chicago Press, 1956</div>
+                        <div>72 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752859" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/cyclops00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('cyclops'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="epic-book" data-year="-440" data-pages="80" data-title="Rhesus">
+                    <img src="https://archive.org/services/img/rhesus00euri" class="epic-book-cover" alt="Rhesus">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Rhesus_(play)" target="_blank">Rhesus</a></div>
+                        <div class="epic-book-date">c. 440 BCE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Euripides" target="_blank">Euripides (disputed)</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Richmond Lattimore</div>
+                        <div>University of Chicago Press, 1958</div>
+                        <div>80 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/752860" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://archive.org/details/rhesus00euri" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('rhesus'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="section">
+            <!-- LATER COLLECTIONS: add new epic-book cards inside the epic-list div below -->
+            <h2 class="section-title">Later Collections</h2>
+            <p class="section-intro">Comprehensive mythological compilations</p>
+
+            <div class="epic-list sortable-grid">
+                
+<div class="epic-book" id="anchor-library" data-year="100" data-pages="288" data-title="The Library">
+                    <img src="https://archive.org/services/img/libraryapollodo01apol" class="epic-book-cover" alt="The Library">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Bibliotheca_(Pseudo-Apollodorus)" target="_blank">The Library</a></div>
+                        <div class="epic-book-date">c. 100 CE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Bibliotheca_(Pseudo-Apollodorus)" target="_blank">Apollodorus</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Robin Hard</div>
+                        <div>Oxford World's Classics, 2008</div>
+                        <div>288 pages</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/374128" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.theoi.com/Text/Apollodorus1.html" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('library'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+<div class="epic-book" id="anchor-metamorphoses" data-year="8" data-pages="723" data-title="Metamorphoses">
+                    <img src="https://archive.org/services/img/metamorphoses00ovid_1" class="epic-book-cover" alt="Metamorphoses">
+                    <div class="epic-book-info">
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Metamorphoses" target="_blank">Metamorphoses</a></div>
+                        <div class="epic-book-date">8 CE</div>
+                        <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Ovid" target="_blank">Ovid</a></div>
+                        <div class="epic-book-meta">
+                        <div>Trans. Charles Martin</div>
+                        <div>W. W. Norton, 2004</div>
+                        <div>723 pages</div>
+                        <div style="margin-top:4px;font-style:italic;color:var(--terracotta);font-size:0.65rem;">Note: Ovid is Roman, not Greek — essential for Greek myth study, but offers a Roman perspective</div>
+                        </div>
+                        <div class="epic-book-actions">
+                            <a href="https://www.goodreads.com/book/show/344301" target="_blank" class="goodreads-icon" title="Goodreads">
+                                <i class="fab fa-goodreads-g"></i>
+                            </a>
+                            <a href="https://www.gutenberg.org/ebooks/26073" target="_blank" class="read-icon" title="Read">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                            <a href="#" onclick="showVersions('metamorphoses'); return false;" class="cart-icon" title="Buy / Versions">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <span id="anchor-aeneid"></span>
+            <h2 class="section-title">Further Reading</h2>
+            <p class="section-intro">Supplementary texts, comedy, and modern perspectives on Greek mythology</p>
+
+            <div class="simple-list">
+                
+                <div class="list-group">
+                    <h4>Epic Continuations</h4>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Posthomerica (Fall of Troy)</span> — <span class="author-simple">Quintus of Smyrna</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/QuintusSmyrnaeus1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Quintus+Smyrna+Posthomerica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Epic Cycle Fragments</span> — <span class="author-simple">Various (Cypria, Little Iliad, Aethiopis, etc.)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/EpicCycle.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Epic+Cycle+Greek" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Shield of Heracles</span> — <span class="author-simple">Hesiod (attributed)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/HesiodShield.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Hesiod+Shield+Heracles" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Catalogue of Women</span> — <span class="author-simple">Hesiod (fragments)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/HesiodCatalogues.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Hesiod+Catalogue+Women" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="list-group">
+                    <h4>Lyric & Choral Poetry</h4>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Olympian Odes</span> — <span class="author-simple">Pindar</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0162" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Pindar+Olympian+Odes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Pythian Odes</span> — <span class="author-simple">Pindar</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0162" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Pindar+Pythian+Odes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Nemean & Isthmian Odes</span> — <span class="author-simple">Pindar</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0162" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Pindar+Complete+Odes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Greek Lyric Poetry</span> — <span class="author-simple">Various (Sappho, Alcaeus, Anacreon)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.sacred-texts.com/cla/usappho/index.htm" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Greek+Lyric+Poetry" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Hymns and Epigrams</span> — <span class="author-simple">Callimachus</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/CallimachusHymns.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Callimachus+Hymns" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="list-group">
+                    <h4>Travel & Historical Description</h4>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Description of Greece</span> — <span class="author-simple">Pausanias</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/Pausanias1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Pausanias+Description+Greece" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">The Histories</span> — <span class="author-simple">Herodotus</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/2707" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Herodotus+Histories" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="list-group">
+                    <h4>Handbooks & Reference Works</h4>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Fabulae (Myths)</span> — <span class="author-simple">Hyginus</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/HyginusFabulae1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Hyginus+Fabulae" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Astronomica (Poetic Astronomy)</span> — <span class="author-simple">Hyginus</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/HyginusAstronomica1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Hyginus+Astronomica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Imagines</span> — <span class="author-simple">Philostratus</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/PhilostratusElder1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Philostratus+Imagines" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="list-group">
+                    <h4>Roman Retellings</h4>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">The Aeneid</span> — <span class="author-simple">Virgil</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/228" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Aeneid+Virgil" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Heroides</span> — <span class="author-simple">Ovid</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/33214" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Ovid+Heroides" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Thebaid</span> — <span class="author-simple">Statius</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/StatiusThebaid1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Statius+Thebaid" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Metamorphoses (The Golden Ass)</span> — <span class="author-simple">Apuleius</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/1666" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Apuleius+Golden+Ass" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Argonautica</span> — <span class="author-simple">Valerius Flaccus</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.theoi.com/Text/ValeriusFlaccus1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Valerius+Flaccus+Argonautica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="list-group">
+                    <h4>Comedy & Satire</h4>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">The Frogs</span> — <span class="author-simple">Aristophanes</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/7998" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Frogs+Aristophanes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">The Birds</span> — <span class="author-simple">Aristophanes</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/3013" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Birds+Aristophanes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Lysistrata</span> — <span class="author-simple">Aristophanes</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/7700" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Lysistrata+Aristophanes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">The Clouds</span> — <span class="author-simple">Aristophanes</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/2562" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Clouds+Aristophanes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Cyclops</span> — <span class="author-simple">Euripides (satyr play)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.gutenberg.org/ebooks/48595" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Cyclops+Euripides" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="list-group">
+                    <h4>Modern Retellings</h4>
+                    <p style="font-size: 0.88rem; color: var(--ink-light); margin-bottom: 14px; font-style: italic;">Contemporary retellings that offer fresh perspectives on classical myths. Optional companions to the original texts.</p>
+                    <ul>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Circe</span> — <span class="author-simple">Madeline Miller (2018)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.goodreads.com/book/show/35959740" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Circe+Madeline+Miller" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">The Song of Achilles</span> — <span class="author-simple">Madeline Miller (2011)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.goodreads.com/book/show/13623848" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Song+of+Achilles" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Mythos, Heroes, Troy (trilogy)</span> — <span class="author-simple">Stephen Fry (2017-2020)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.goodreads.com/book/show/35074096" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Stephen+Fry+Mythos+trilogy" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">Ariadne</span> — <span class="author-simple">Jennifer Saint (2021)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.goodreads.com/book/show/54854718" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Ariadne+Jennifer+Saint" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-item-content">
+                                <span class="book-title-simple">A Thousand Ships</span> — <span class="author-simple">Natalie Haynes (2019)</span>
+                            </span>
+                            <div class="list-item-icons">
+                                <a href="https://www.goodreads.com/book/show/50892384" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Thousand+Ships+Natalie+Haynes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER: update credit text and links below -->
+<footer>
+            <p>A personal reading guide through Greek mythology</p>
+            <p class="author-credit">by <!-- SOCIAL LINK: update href to your Twitter/X profile -->
+<a href="https://twitter.com/actualsnek_" target="_blank">@actualsnek_</a></p>
+        </footer>
+
+    </main>
+</div>
+
+<!-- MODALS -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     BUY MODAL — each book card's cart icon opens the matching modal.
+     To add a version entry inside any modal, copy a <div class="version-item">
+     block and update:
+       .version-label     → edition label e.g. "Recommended" / "Alternative"
+       .version-translator → translator name and details
+       .version-publisher  → publisher and year
+       .version-link a href → Amazon buy link  ← BUY LINK (Amazon)
+     Modal id must match the showVersions('id') call in the card above.
+═══════════════════════════════════════════════════════════ -->
+<!-- SINGLE MODAL TEMPLATE (dynamically populated with JavaScript) -->
+<div id="universal-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeUniversalModal()">&times;</button>
+        <h3 class="modal-title" id="modal-title"></h3>
+        <div id="modal-versions"></div>
     </div>
+</div>
 
-    <span class="section-label">About</span>
-    <h2 class="section-title">Who Made This</h2>
+<script>
+// Modal data
+const modalData = {
+  "theogony": {
+    "title": "Theogony \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Recommended",
+        "translator": "Trans. M. L. West",
+        "publisher": "Oxford University Press, 1999",
+        "link": "https://www.amazon.in/s?k=Theogony+Hesiod",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Glenn W. Most",
+        "publisher": "Loeb Classical Library, Harvard UP, 2007",
+        "link": "https://www.amazon.in/dp/0674996348",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Richmond Lattimore",
+        "publisher": "University of Michigan Press, 1959",
+        "link": "https://www.amazon.in/dp/0472061100",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "worksanddays": {
+    "title": "Works and Days \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Recommended",
+        "translator": "Trans. M. L. West",
+        "publisher": "Oxford University Press, 1999",
+        "link": "https://www.amazon.in/s?k=Works+and+Days+Hesiod",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Glenn W. Most",
+        "publisher": "Loeb Classical Library, Harvard UP, 2007",
+        "link": "https://www.amazon.in/dp/0674996348",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Richmond Lattimore",
+        "publisher": "University of Michigan Press, 1959",
+        "link": "https://www.amazon.in/dp/0472061100",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "iliad": {
+    "title": "The Iliad \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Recommended",
+        "translator": "Trans. Richmond Lattimore",
+        "publisher": "University of Chicago Press, 2011",
+        "link": "https://www.amazon.in/dp/0226470490",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. A. T. Murray, rev. William F. Wyatt",
+        "publisher": "Loeb Classical Library, Harvard UP (2 vols), 1999",
+        "link": "https://www.amazon.in/Iliad-1-Loeb-Classical-Library/dp/0674995619",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Robert Fagles",
+        "publisher": "Penguin Classics, 1990",
+        "link": "https://www.amazon.in/dp/0140275363",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Modern",
+        "translator": "Trans. Caroline Alexander",
+        "publisher": "Ecco, 2015",
+        "link": "https://www.amazon.in/dp/0062046284",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "odyssey": {
+    "title": "The Odyssey \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Recommended",
+        "translator": "Trans. Richmond Lattimore",
+        "publisher": "Harper Perennial, 1967",
+        "link": "https://www.amazon.in/dp/006124418X",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. A. T. Murray, rev. George E. Dimock",
+        "publisher": "Loeb Classical Library, Harvard UP (2 vols), 1995",
+        "link": "https://www.amazon.in/Odyssey-Books-1-12-Loeb-Classical/dp/0674995619",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Robert Fagles",
+        "publisher": "Penguin Classics, 1996",
+        "link": "https://www.amazon.in/dp/0140268863",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Modern",
+        "translator": "Trans. Emily Wilson",
+        "publisher": "W. W. Norton, 2017",
+        "link": "https://www.amazon.in/dp/0393089053",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "hymns": {
+    "title": "Homeric Hymns \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Recommended",
+        "translator": "Trans. Apostolos N. Athanassakis",
+        "publisher": "Johns Hopkins University Press, 2020",
+        "link": "https://www.amazon.in/dp/1421438607",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Martin L. West",
+        "publisher": "Loeb Classical Library, Harvard UP, 2003",
+        "link": "https://www.amazon.in/dp/0674996062",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Jules Cashford",
+        "publisher": "Penguin Classics, 2003",
+        "link": "https://www.amazon.in/dp/0140437827",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "oresteia": {
+    "title": "The Oresteia \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Oresteia+Aeschylus",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Alan H. Sommerstein",
+        "publisher": "Loeb Classical Library, Harvard UP, 2008",
+        "link": "https://www.amazon.in/dp/0674996259",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Richmond Lattimore",
+        "publisher": "University of Chicago Press, 1953",
+        "link": "https://www.amazon.in/dp/0226307786",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "oedipus": {
+    "title": "Oedipus Rex \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Oedipus+Rex+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Hugh Lloyd-Jones",
+        "publisher": "Loeb Classical Library, Harvard UP, 1994",
+        "link": "https://www.amazon.in/dp/0674995589",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Robert Fagles",
+        "publisher": "Penguin Classics, 1984",
+        "link": "https://www.amazon.in/dp/0140444254",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "antigone": {
+    "title": "Antigone \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Antigone+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Hugh Lloyd-Jones",
+        "publisher": "Loeb Classical Library, Harvard UP, 1994",
+        "link": "https://www.amazon.in/dp/0674995589",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Modern",
+        "translator": "Trans. Anne Carson",
+        "publisher": "Bloodaxe Books, 2015",
+        "link": "https://www.amazon.in/dp/1780373104",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "medea": {
+    "title": "Medea \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Medea+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. David Kovacs",
+        "publisher": "Loeb Classical Library, Harvard UP, 1994",
+        "link": "https://www.amazon.in/dp/0674995775",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Diane Arnson Svarlien",
+        "publisher": "Hackett Publishing, 2008",
+        "link": "https://www.amazon.in/dp/0872209199",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "bacchae": {
+    "title": "The Bacchae \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Bacchae+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. David Kovacs",
+        "publisher": "Loeb Classical Library, Harvard UP, 2003",
+        "link": "https://www.amazon.in/dp/0674996062",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. C. K. Williams",
+        "publisher": "FSG, 1990",
+        "link": "https://www.amazon.in/dp/0374524645",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "prometheus": {
+    "title": "Prometheus Bound \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Prometheus+Bound+Aeschylus",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Alan H. Sommerstein",
+        "publisher": "Loeb Classical Library, Harvard UP, 2008",
+        "link": "https://www.amazon.in/dp/0674996259",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. James Scully",
+        "publisher": "Oxford University Press, 1975",
+        "link": "https://www.amazon.in/dp/0195028171",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "ajax": {
+    "title": "Ajax \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Ajax+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Hugh Lloyd-Jones",
+        "publisher": "Loeb Classical Library, Harvard UP, 1994",
+        "link": "https://www.amazon.in/dp/0674995589",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Herbert Golder",
+        "publisher": "Oxford University Press, 2010",
+        "link": "https://www.amazon.in/dp/0195085450",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "electra": {
+    "title": "Electra \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Electra+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. Hugh Lloyd-Jones",
+        "publisher": "Loeb Classical Library, Harvard UP, 1994",
+        "link": "https://www.amazon.in/dp/0674995589",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Frank McGuinness",
+        "publisher": "Faber & Faber, 1997",
+        "link": "https://www.amazon.in/dp/0571194257",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "hippolytus": {
+    "title": "Hippolytus \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Hippolytus+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. David Kovacs",
+        "publisher": "Loeb Classical Library, Harvard UP, 1995",
+        "link": "https://www.amazon.in/dp/0674995600",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Michael R. Halleran",
+        "publisher": "Aris & Phillips, 1995",
+        "link": "https://www.amazon.in/dp/0856687979",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "library": {
+    "title": "The Library \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/dp/0199536325",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. J. G. Frazer",
+        "publisher": "Loeb Classical Library, Harvard UP (2 vols), 1921",
+        "link": "https://www.amazon.in/Apollodorus-Library-English-Loeb-Classical/dp/0674991354",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Keith Aldrich",
+        "publisher": "University of Kansas, 1975",
+        "link": "https://www.amazon.in/dp/0700601953",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "metamorphoses": {
+    "title": "Metamorphoses \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/dp/0393326594",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Latin-English (Bilingual)",
+        "translator": "Trans. Frank Justus Miller, rev. G. P. Goold",
+        "publisher": "Loeb Classical Library, Harvard UP (2 vols), 1916/1984",
+        "link": "https://www.amazon.in/Ovid-Metamorphoses-1-Loeb-Classical/dp/0674990013",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. A. D. Melville",
+        "publisher": "Oxford World's Classics, 2008",
+        "link": "https://www.amazon.in/dp/0199537372",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "aeneid": {
+    "title": "The Aeneid \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Latin-English (Bilingual)",
+        "translator": "Trans. H. Rushton Fairclough, rev. G. P. Goold",
+        "publisher": "Loeb Classical Library, Harvard UP (2 vols), 1999",
+        "link": "https://www.amazon.in/Aeneid-Books-1-6-Loeb-Classical/dp/0674995619",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Robert Fitzgerald",
+        "publisher": "Vintage, 1990",
+        "link": "https://www.amazon.in/dp/0679729526",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "oedipuscolons": {
+    "title": "Oedipus at Colonus \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Oedipus+at+Colonus+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Oedipus+at+Colonus+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "alcestis": {
+    "title": "Alcestis \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Alcestis+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Alcestis+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "hecuba": {
+    "title": "Hecuba \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Hecuba+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Hecuba+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "philoctetes": {
+    "title": "Philoctetes \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Philoctetes+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Philoctetes+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "iphiaulis": {
+    "title": "Iphigenia in Aulis \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Iphigenia+in+Aulis+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Iphigenia+in+Aulis+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "helen": {
+    "title": "Helen \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Helen+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Helen+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "phoenician": {
+    "title": "The Phoenician Women \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Phoenician+Women+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=The+Phoenician+Women+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "heracles": {
+    "title": "Heracles \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Heracles+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Heracles+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "orestes": {
+    "title": "Orestes \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Orestes+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Orestes+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "iphitaurians": {
+    "title": "Iphigenia in Tauris \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Iphigenia+in+Tauris+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Iphigenia+in+Tauris+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "persians": {
+    "title": "The Persians \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Persians+Aeschylus",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=The+Persians+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "seventhebes": {
+    "title": "Seven Against Thebes \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Seven+Against+Thebes+Aeschylus",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Seven+Against+Thebes+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "suppliantsaesc": {
+    "title": "The Suppliants \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Suppliants+Aeschylus",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=The+Suppliants+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "andromache": {
+    "title": "Andromache \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Andromache+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Andromache+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "suppliantseuri": {
+    "title": "The Suppliants \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Suppliants+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=The+Suppliants+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "ion": {
+    "title": "Ion \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Ion+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Ion+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "trachis": {
+    "title": "The Women of Trachis \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Women+of+Trachis+Sophocles",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=The+Women+of+Trachis+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "heracleidae": {
+    "title": "Heracleidae \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Heracleidae+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Heracleidae+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "electraeuri": {
+    "title": "Electra \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Electra+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Electra+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "cyclops": {
+    "title": "Cyclops \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Cyclops+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Cyclops+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "rhesus": {
+    "title": "Rhesus \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=Rhesus+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Loeb Classical Library",
+        "publisher": "Harvard University Press",
+        "link": "https://www.amazon.in/s?k=Rhesus+Loeb",
+        "bilingual": true,
+        "has_style": false
+      }
+    ]
+  },
+  "argonautica": {
+    "title": "Argonautica \u2014 Buy Versions",
+    "versions": [
+      {
+        "label": "Recommended",
+        "translator": "Apollonius of Rhodes",
+        "publisher": "Jason and the Golden Fleece",
+        "link": "https://www.amazon.in/s?k=Argonautica+Apollonius",
+        "bilingual": false,
+        "has_style": false
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. William H. Race",
+        "publisher": "Loeb Classical Library, Harvard UP, 2008",
+        "link": "https://www.amazon.in/s?k=Apollonius+Rhodes+Loeb",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. Peter Green",
+        "publisher": "University of California Press, 1997",
+        "link": "https://www.amazon.in/s?k=Argonautica+Peter+Green",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  },
+  "trojanwomen": {
+    "title": "The Trojan Women \u2014 Other Versions",
+    "versions": [
+      {
+        "label": "Current Edition",
+        "translator": "Recommended Buy",
+        "publisher": "Direct Amazon Link",
+        "link": "https://www.amazon.in/s?k=The+Trojan+Women+Euripides",
+        "bilingual": false,
+        "has_style": true
+      },
+      {
+        "label": "Greek-English (Bilingual)",
+        "translator": "Trans. David Kovacs",
+        "publisher": "Loeb Classical Library, Harvard UP, 1999",
+        "link": "https://www.amazon.in/s?k=Euripides+Trojan+Women+Loeb",
+        "bilingual": true,
+        "has_style": false
+      },
+      {
+        "label": "Alternative",
+        "translator": "Trans. James Scully & C. John Herington",
+        "publisher": "Oxford University Press, 1995",
+        "link": "https://www.amazon.in/s?k=Trojan+Women+Scully",
+        "bilingual": false,
+        "has_style": false
+      }
+    ]
+  }
+};
 
-    <div class="about-block">
-        <p>
-            These are <em>curated reading guides</em> — not AI-generated fluff, not affiliate listicles.
-            Each guide is researched to find the best editions, best translators, and the right order to read them in.
-            The goal is to make the greatest texts in history accessible to anyone who wants to actually read them.
-        </p>
-        <a href="https://x.com/actualsnek_" target="_blank" class="twitter-link">
-            ✦ &nbsp; Follow on X (Twitter)
-        </a>
-    </div>
+// Updated showVersions function
+function showVersions(bookId) {
+    const data = modalData[bookId];
+    if (!data) {
+        console.error('No modal data for:', bookId);
+        return;
+    }
+    
+    // Set title
+    document.getElementById('modal-title').textContent = data.title;
+    
+    // Build versions HTML
+    const versionsContainer = document.getElementById('modal-versions');
+    versionsContainer.innerHTML = '';
+    
+    data.versions.forEach(version => {
+        const versionItem = document.createElement('div');
+        versionItem.className = 'version-item';
+        
+        let labelClass = 'version-label';
+        let labelStyle = '';
+        
+        if (version.bilingual) {
+            labelClass += ' bilingual';
+        }
+        if (version.has_style) {
+            labelStyle = ' style="color:var(--terracotta);"';
+        }
+        
+        versionItem.innerHTML = `
+            <div class="version-info">
+                <div class="${labelClass}"${labelStyle}>${version.label}</div>
+                <div class="version-translator">${version.translator}</div>
+                <div class="version-publisher">${version.publisher}</div>
+            </div>
+            <div class="version-link">
+                <a href="${version.link}" target="_blank" title="Buy on Amazon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        `;
+        
+        versionsContainer.appendChild(versionItem);
+    });
+    
+    // Show modal
+    document.getElementById('universal-modal').classList.add('active');
+}
 
-</main>
+// Updated closeModal function (backwards compatible)
+function closeModal(bookId) {
+    closeUniversalModal();
+}
 
-<footer class="footer">
-    actualsnek &nbsp;·&nbsp; actualsnek.github.io
-</footer>
+function closeUniversalModal() {
+    document.getElementById('universal-modal').classList.remove('active');
+}
+
+// Close modal on backdrop click
+document.getElementById('universal-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeUniversalModal();
+    }
+});
+
+
+// GLOBAL SORT SYSTEM
+let currentSort = null;
+let currentDirection = 'asc';
+let originalOrder = {};
+
+// Store original order on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const grids = document.querySelectorAll('.sortable-grid, .epic-list');
+    grids.forEach((grid, index) => {
+        originalOrder[index] = Array.from(grid.children);
+    });
+});
+
+// Sort button handlers
+document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const sortType = this.dataset.sort;
+        
+        // Remove active from all sort buttons
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        
+        // Set this button as active
+        this.classList.add('active');
+        
+        // Show direction buttons and clear button
+        document.getElementById('directionButtons').classList.add('active');
+        document.getElementById('clearBtn').classList.add('active');
+        document.getElementById('globalSort').classList.add('sorting-active');
+        
+        // Perform sort
+        currentSort = sortType;
+        sortAllBooks();
+    });
+});
+
+// Direction button handlers
+document.querySelectorAll('.dir-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const direction = this.dataset.dir;
+        
+        // Remove active from all direction buttons
+        document.querySelectorAll('.dir-btn').forEach(b => b.classList.remove('active'));
+        
+        // Set this button as active
+        this.classList.add('active');
+        
+        // Update direction and re-sort
+        currentDirection = direction;
+        sortAllBooks();
+    });
+});
+
+// Clear button handler
+document.getElementById('clearBtn').addEventListener('click', function() {
+    // Remove all active states
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('directionButtons').classList.remove('active');
+    document.getElementById('globalSort').classList.remove('sorting-active');
+    this.classList.remove('active');
+    
+    // Reset direction to ascending
+    document.querySelectorAll('.dir-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.dir-btn[data-dir="asc"]').classList.add('active');
+    currentDirection = 'asc';
+    
+    // Restore original order for all grids
+    const grids = document.querySelectorAll('.sortable-grid, .epic-list');
+    grids.forEach((grid, index) => {
+        grid.innerHTML = '';
+        originalOrder[index].forEach(book => grid.appendChild(book));
+    });
+    
+    currentSort = null;
+});
+
+function sortAllBooks() {
+    if (!currentSort) return;
+    
+    // Collect ALL books from ALL sortable grids AND epic-list
+    const grids = document.querySelectorAll('.sortable-grid, .epic-list');
+    let allBooks = [];
+    
+    grids.forEach(grid => {
+        const books = Array.from(grid.querySelectorAll('.book, .epic-book'));
+        books.forEach(book => {
+            allBooks.push({
+                element: book,
+                grid: grid
+            });
+        });
+    });
+    
+    // Sort all books
+    allBooks.sort((a, b) => {
+        let valueA, valueB;
+        
+        if (currentSort === 'year') {
+            valueA = parseInt(a.element.dataset.year);
+            valueB = parseInt(b.element.dataset.year);
+        } else if (currentSort === 'pages') {
+            valueA = parseInt(a.element.dataset.pages);
+            valueB = parseInt(b.element.dataset.pages);
+        } else if (currentSort === 'alpha') {
+            valueA = a.element.dataset.title.toLowerCase();
+            valueB = b.element.dataset.title.toLowerCase();
+            return currentDirection === 'asc' ? 
+                valueA.localeCompare(valueB) : 
+                valueB.localeCompare(valueA);
+        }
+        
+        // For numeric sorts
+        if (currentDirection === 'asc') {
+            return valueA - valueB;
+        } else {
+            return valueB - valueA;
+        }
+    });
+    
+    // Clear all grids
+    grids.forEach(grid => grid.innerHTML = '');
+    
+    // Put all sorted books in the first grid
+    const firstGrid = grids[0];
+    allBooks.forEach(item => {
+        firstGrid.appendChild(item.element);
+    });
+}
+
+</script>
 
 </body>
 </html>
