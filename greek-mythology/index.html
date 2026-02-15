@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Mythology Primary Texts — A Reading Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ HERO ░░ -->
+  <header class="hero">
+    <div class="hero-texture"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <div class="hero-ornament">✦ ✦ ✦</div>
+      <p class="hero-eyebrow">A Curated Reading Guide</p>
+      <h1 class="hero-title">
+        <span class="hero-title-greek">ΕΛΛΗΝΙΚΗ ΜΥΘΟΛΟΓΙΑ</span>
+        Greek Mythology
+        <span class="hero-title-sub">Primary Texts</span>
+      </h1>
+      <p class="hero-quote">
+        "Wonder is the beginning of wisdom."
+        <span class="hero-quote-attr">— Socrates</span>
+      </p>
+      <p class="hero-desc">
+        The complete canon of ancient Greek literature — epics, tragedies, hymns —<br>
+        with the finest English translations and bilingual editions available.
+      </p>
+      <nav class="hero-nav">
+        <a href="#epic-origins" class="hero-nav-link">Epic Origins</a>
+        <span class="hero-nav-sep">·</span>
+        <a href="#tragedy" class="hero-nav-link">Tragedy</a>
+      </nav>
+    </div>
+    <div class="hero-scroll-hint">↓</div>
+  </header>
+
+  <!-- ░░ HOW TO USE ░░ -->
+  <section class="how-to-use">
+    <div class="container">
+      <div class="htu-grid">
+        <div class="htu-card">
+          <span class="htu-icon">📖</span>
+          <h3>English Translation</h3>
+          <p>Best modern verse or prose translation. Start here.</p>
+        </div>
+        <div class="htu-card">
+          <span class="htu-icon">🔤</span>
+          <h3>Greek-English (Loeb)</h3>
+          <p>Original Greek facing English. For serious study.</p>
+        </div>
+        <div class="htu-card">
+          <span class="htu-icon">💎</span>
+          <h3>Premium Edition</h3>
+          <p>Folio Society or Easton Press — illustrated luxury.</p>
+        </div>
+        <div class="htu-card">
+          <span class="htu-icon">🛒</span>
+          <h3>Buying Links</h3>
+          <p>Amazon India · AbeBooks · Publisher direct.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SECTION: EPIC ORIGINS ░░ -->
+  <section id="epic-origins" class="book-section">
+    <div class="section-header">
+      <div class="section-header-inner">
+        <span class="section-number">I</span>
+        <div>
+          <h2 class="section-title">Epic Origins</h2>
+          <p class="section-subtitle">Homer · Hesiod · The Homeric Hymns</p>
+          <p class="section-desc">The oldest surviving works of Western literature. Begin here — everything else follows from these.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="books-epic"></div>
+  </section>
+
+  <!-- ░░ SECTION: TRAGEDY ░░ -->
+  <section id="tragedy" class="book-section section-alt">
+    <div class="section-header section-header-alt">
+      <div class="section-header-inner">
+        <span class="section-number">II</span>
+        <div>
+          <h2 class="section-title">Greek Tragedy</h2>
+          <p class="section-subtitle">Aeschylus · Sophocles · Euripides</p>
+          <p class="section-desc">The three great tragedians whose works define Western drama, philosophy, and our understanding of fate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Playwright sub-sections -->
+    <div class="container">
+      <div class="playwright-section" id="aeschylus-section">
+        <h3 class="playwright-name">Aeschylus <span class="playwright-dates">c. 525–456 BC</span></h3>
+        <p class="playwright-bio">Father of tragedy. Invented dramatic dialogue. Won the City Dionysia 13 times. Only 7 of his 70–90 plays survive.</p>
+        <div id="books-aeschylus"></div>
+      </div>
+
+      <div class="playwright-section" id="sophocles-section">
+        <h3 class="playwright-name">Sophocles <span class="playwright-dates">c. 497–406 BC</span></h3>
+        <p class="playwright-bio">Added the third actor. Won 24 victories at the Dionysia — never came last. Only 7 of his 120+ plays survive.</p>
+        <div id="books-sophocles"></div>
+      </div>
+
+      <div class="playwright-section" id="euripides-section">
+        <h3 class="playwright-name">Euripides <span class="playwright-dates">c. 480–406 BC</span></h3>
+        <p class="playwright-bio">The most modern of the three. Psychological realism, questioning of the gods, strong female characters. 18 plays survive.</p>
+        <div id="books-euripides"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-ornament">⊱ ─────────── ⊰</div>
+      <p class="footer-quote">"The unexamined life is not worth living." — Socrates</p>
+      <p class="footer-note">All editions curated for accuracy of translation and availability in India. Cover images via Google Books.</p>
+    </div>
+  </footer>
+
+  <script src="books-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
