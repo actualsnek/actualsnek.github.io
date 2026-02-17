@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +34,6 @@
             margin: 15px auto;
             background: #f5f5f5;
             border: 3px solid #333;
-            gap: 0;
         }
 
         /* ═══ SIDEBAR (Compact) ═══ */
@@ -156,7 +154,6 @@
             font-size: 11px;
             color: #696969;
             margin-bottom: 12px;
-            line-height: 1.4;
         }
 
         .subsection-title {
@@ -312,10 +309,6 @@
 
         .epic-book-author a:hover {
             text-decoration: underline;
-        }
-
-        .epic-book-meta {
-            display: none;
         }
 
         .epic-book-actions {
@@ -638,8 +631,12 @@
             text-decoration: underline;
         }
 
-        /* ═══ HIDE TWITTER LINK ═══ */
-        .twitter-link {
+        /* Toggle button and backdrop — hidden on desktop, shown by mobile media query */
+        .drawer-toggle {
+            display: none;
+        }
+
+        .drawer-backdrop {
             display: none;
         }
 
@@ -714,15 +711,6 @@
             }
         }
 
-        /* Hide toggle button on desktop */
-        .drawer-toggle {
-            display: none;
-        }
-
-        .drawer-backdrop {
-            display: none;
-        }
-
         .footer a {
             display: block;
             transition: opacity 0.2s;
@@ -738,16 +726,15 @@
             gap: 20px;
             align-items: center;
         }
+
+        .roman-label {
+            font-size: 9px;
+            font-weight: bold;
+            color: #8b4513;
+        }
     </style>
 </head>
 <body>
-
-<!-- SOCIAL LINK: update href to your Twitter/X profile -->
-<a href="https://twitter.com/actualsnek_" target="_blank" class="twitter-link" title="Follow @actualsnek_">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
-    </svg>
-</a>
 
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
 <button class="drawer-toggle" id="drawerToggle">📖 Reading Order</button>
@@ -756,7 +743,6 @@
     
     <aside class="reading-order">
         <h3>Reading Order</h3>
-        <!-- READING ORDER: add/remove <li> items to change the sidebar list -->
         <ol>
             <li>
                 <div class="title"><a href="#anchor-mythos">Mythos or Mythology</a></div>
@@ -891,7 +877,6 @@
             </div>
         </section>
 
-        <!-- GLOBAL SORT CONTAINER -->
         <div class="sort-container" id="globalSort">
             <span class="sort-label">Sort:</span>
             <div class="sort-buttons">
@@ -903,12 +888,11 @@
                 <button class="dir-btn" data-dir="desc" title="Newest / Z–A">↓</button>
             </div>
             <span class="sort-label" style="margin-left:6px;">Scope:</span>
-            <button class="sort-btn" id="scopeBtn" data-scope="section">Within Sections</button>
+            <button class="sort-btn" id="scopeBtn">Within Sections</button>
             <button class="clear-btn" id="clearBtn">✕ Clear Sort</button>
         </div>
 
         <section class="section">
-            <!-- EPICS: add new epic-book cards inside the epic-list div below -->
             <h2 class="section-title">The Epics</h2>
             <p class="section-intro">just bards screaming hexameter at each other around a fire</p>
 
@@ -1033,12 +1017,10 @@
                     </div>
                 </div>
 
-
             </div>
         </section>
 
         <section class="section">
-            <!-- TRAGEDIES: add new epic-book cards inside the epic-list divs below -->
             <h2 class="section-title">Tragedies</h2>
             <p class="section-intro">I know what evil I am about to do.</p>
 
@@ -1642,10 +1624,7 @@
             </div>
         </section>
 
-
-
         <section class="section">
-            <!-- LATER COLLECTIONS: add new epic-book cards inside the epic-list div below -->
             <h2 class="section-title">Later Collections</h2>
             <p class="section-intro">Comprehensive mythological compilations</p>
 
@@ -1674,15 +1653,9 @@
                 <div class="epic-book" id="anchor-metamorphoses" data-year="8" data-title="Metamorphoses">
                     <img src="./images/metamorphoses.jpg" class="epic-book-cover" alt="Metamorphoses">
                     <div class="epic-book-info">
-                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Metamorphoses" target="_blank">Metamorphoses</a> <span style="font-size:9px;font-weight:bold;color:#8b4513;">[Roman]</span></div>
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Metamorphoses" target="_blank">Metamorphoses</a> <span class="roman-label">[Roman]</span></div>
                         <div class="epic-book-date">8 CE</div>
                         <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Ovid" target="_blank">Ovid</a></div>
-                        <div class="epic-book-meta">
-                        <div>Trans. Charles Martin</div>
-                        <div>W. W. Norton, 2004</div>
-                        <div>723 pages</div>
-                        <div style="margin-top:4px;font-style:italic;color:var(--terracotta);font-size:0.65rem;">Note: Ovid is Roman, not Greek — essential for Greek myth study, but offers a Roman perspective</div>
-                        </div>
                         <div class="epic-book-actions">
                             <a href="https://www.goodreads.com/book/show/344301" target="_blank" class="goodreads-icon" title="Goodreads">
                                 <i class="fab fa-goodreads-g"></i>
@@ -1697,19 +1670,12 @@
                     </div>
                 </div>
 
-
                 <div class="epic-book" id="anchor-aeneid" data-year="-19" data-title="The Aeneid">
                     <img src="./images/aeneid.jpg" class="epic-book-cover" alt="The Aeneid">
                     <div class="epic-book-info">
-                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Aeneid" target="_blank">The Aeneid</a> <span style="font-size:9px;font-weight:bold;color:#8b4513;">[Roman]</span></div>
+                        <div class="epic-book-title"><a href="https://en.wikipedia.org/wiki/Aeneid" target="_blank">The Aeneid</a> <span class="roman-label">[Roman]</span></div>
                         <div class="epic-book-date">c. 19 BCE</div>
                         <div class="epic-book-author"><a href="https://en.wikipedia.org/wiki/Virgil" target="_blank">Virgil</a></div>
-                        <div class="epic-book-meta">
-                        <div>Trans. Robert Fagles</div>
-                        <div>Penguin Classics, 2006</div>
-                        <div>442 pages</div>
-                        <div style="margin-top:4px;font-style:italic;color:var(--terracotta);font-size:0.65rem;">Roman epic — Aeneas flees Troy & founds Rome. Direct sequel to the Iliad; same gods, same war, Roman lens.</div>
-                        </div>
                         <div class="epic-book-actions">
                             <a href="https://www.goodreads.com/book/show/12914" target="_blank" class="goodreads-icon" title="Goodreads">
                                 <i class="fab fa-goodreads-g"></i>
@@ -1987,7 +1953,7 @@
 
                 <div class="list-group">
                     <h4>Modern Retellings</h4>
-                    <p style="font-size: 0.88rem; color: var(--ink-light); margin-bottom: 14px; font-style: italic;">Contemporary retellings that offer fresh perspectives on classical myths. Optional companions to the original texts.</p>
+                    <p style="font-size: 0.88rem; color: #696969; margin-bottom: 14px; font-style: italic;">Contemporary retellings that offer fresh perspectives on classical myths. Optional companions to the original texts.</p>
                     <ul>
                         <li>
                             <span class="list-item-content">
@@ -2040,7 +2006,6 @@
             </div>
         </section>
 
-        <!-- FOOTER: update credit text and links below -->
 <footer>
             <div class="footer-icons">
                 <!-- Twitter -->
@@ -2073,9 +2038,6 @@
     </main>
 </div>
 
-<!-- MODALS -->
-
-<!-- SINGLE MODAL TEMPLATE (dynamically populated with JavaScript) -->
 <div id="universal-modal" class="modal">
     <div class="modal-content">
         <button class="modal-close" onclick="closeUniversalModal()">&times;</button>
@@ -2097,7 +2059,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Theogony+Hesiod",
         "bilingual": false,
         "has_style": false,
-        "pages": 81,
+        "pages": 81
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2106,7 +2068,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674996348",
         "bilingual": true,
         "has_style": false,
-        "pages": 81,
+        "pages": 81
       },
       {
         "label": "Alternative",
@@ -2115,7 +2077,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0472061100",
         "bilingual": false,
         "has_style": false,
-        "pages": 81,
+        "pages": 81
       }
     ]
   },
@@ -2129,7 +2091,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Works+and+Days+Hesiod",
         "bilingual": false,
         "has_style": false,
-        "pages": 79,
+        "pages": 79
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2138,7 +2100,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674996348",
         "bilingual": true,
         "has_style": false,
-        "pages": 79,
+        "pages": 79
       },
       {
         "label": "Alternative",
@@ -2147,7 +2109,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0472061100",
         "bilingual": false,
         "has_style": false,
-        "pages": 79,
+        "pages": 79
       }
     ]
   },
@@ -2161,7 +2123,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0226470490",
         "bilingual": false,
         "has_style": false,
-        "pages": 599,
+        "pages": 599
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2170,7 +2132,7 @@ const modalData = {
         "link": "https://www.amazon.in/Iliad-1-Loeb-Classical-Library/dp/0674995619",
         "bilingual": true,
         "has_style": false,
-        "pages": 599,
+        "pages": 599
       },
       {
         "label": "Alternative",
@@ -2179,7 +2141,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0140275363",
         "bilingual": false,
         "has_style": false,
-        "pages": 599,
+        "pages": 599
       },
       {
         "label": "Modern",
@@ -2188,7 +2150,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0062046284",
         "bilingual": false,
         "has_style": false,
-        "pages": 599,
+        "pages": 599
       }
     ]
   },
@@ -2202,7 +2164,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0393089053",
         "bilingual": false,
         "has_style": true,
-        "pages": 390,
+        "pages": 390
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2211,7 +2173,7 @@ const modalData = {
         "link": "https://www.amazon.in/Odyssey-Books-1-12-Loeb-Classical/dp/0674995619",
         "bilingual": true,
         "has_style": false,
-        "pages": 390,
+        "pages": 390
       },
       {
         "label": "Alternative",
@@ -2220,7 +2182,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0140268863",
         "bilingual": false,
         "has_style": false,
-        "pages": 390,
+        "pages": 390
       },
       {
         "label": "Scholarly",
@@ -2229,7 +2191,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/006124418X",
         "bilingual": false,
         "has_style": false,
-        "pages": 390,
+        "pages": 390
       }
     ]
   },
@@ -2243,7 +2205,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/1421438607",
         "bilingual": false,
         "has_style": false,
-        "pages": 144,
+        "pages": 144
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2252,7 +2214,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674996062",
         "bilingual": true,
         "has_style": false,
-        "pages": 144,
+        "pages": 144
       },
       {
         "label": "Alternative",
@@ -2261,7 +2223,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0140437827",
         "bilingual": false,
         "has_style": false,
-        "pages": 144,
+        "pages": 144
       }
     ]
   },
@@ -2275,7 +2237,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Oresteia+Aeschylus",
         "bilingual": false,
         "has_style": true,
-        "pages": 335,
+        "pages": 335
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2284,7 +2246,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674996259",
         "bilingual": true,
         "has_style": false,
-        "pages": 335,
+        "pages": 335
       },
       {
         "label": "Alternative",
@@ -2293,7 +2255,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0226307786",
         "bilingual": false,
         "has_style": false,
-        "pages": 335,
+        "pages": 335
       }
     ]
   },
@@ -2307,7 +2269,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Oedipus+Rex+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 128,
+        "pages": 128
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2316,7 +2278,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
         "has_style": false,
-        "pages": 128,
+        "pages": 128
       },
       {
         "label": "Alternative",
@@ -2325,7 +2287,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0140444254",
         "bilingual": false,
         "has_style": false,
-        "pages": 128,
+        "pages": 128
       }
     ]
   },
@@ -2339,7 +2301,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Antigone+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2348,7 +2310,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Modern",
@@ -2357,7 +2319,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/1780373104",
         "bilingual": false,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2371,7 +2333,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Medea+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2380,7 +2342,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674995775",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Alternative",
@@ -2389,7 +2351,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0872209199",
         "bilingual": false,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2403,7 +2365,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Bacchae+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 104,
+        "pages": 104
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2412,7 +2374,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674996062",
         "bilingual": true,
         "has_style": false,
-        "pages": 104,
+        "pages": 104
       },
       {
         "label": "Alternative",
@@ -2421,7 +2383,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0374524645",
         "bilingual": false,
         "has_style": false,
-        "pages": 104,
+        "pages": 104
       }
     ]
   },
@@ -2435,7 +2397,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Prometheus+Bound+Aeschylus",
         "bilingual": false,
         "has_style": true,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2444,7 +2406,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674996259",
         "bilingual": true,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Alternative",
@@ -2453,7 +2415,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0195028171",
         "bilingual": false,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       }
     ]
   },
@@ -2467,7 +2429,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Ajax+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2476,7 +2438,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Alternative",
@@ -2485,7 +2447,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0195085450",
         "bilingual": false,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2499,7 +2461,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Electra+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2508,7 +2470,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Alternative",
@@ -2517,7 +2479,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0571194257",
         "bilingual": false,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2531,7 +2493,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Hippolytus+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2540,7 +2502,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0674995600",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Alternative",
@@ -2549,7 +2511,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0856687979",
         "bilingual": false,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2563,7 +2525,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0199536325",
         "bilingual": false,
         "has_style": true,
-        "pages": 288,
+        "pages": 288
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2572,7 +2534,7 @@ const modalData = {
         "link": "https://www.amazon.in/Apollodorus-Library-English-Loeb-Classical/dp/0674991354",
         "bilingual": true,
         "has_style": false,
-        "pages": 288,
+        "pages": 288
       },
       {
         "label": "Alternative",
@@ -2581,7 +2543,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0700601953",
         "bilingual": false,
         "has_style": false,
-        "pages": 288,
+        "pages": 288
       }
     ]
   },
@@ -2595,7 +2557,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0393326594",
         "bilingual": false,
         "has_style": true,
-        "pages": 723,
+        "pages": 723
       },
       {
         "label": "Latin-English (Bilingual)",
@@ -2604,7 +2566,7 @@ const modalData = {
         "link": "https://www.amazon.in/Ovid-Metamorphoses-1-Loeb-Classical/dp/0674990013",
         "bilingual": true,
         "has_style": false,
-        "pages": 723,
+        "pages": 723
       },
       {
         "label": "Alternative",
@@ -2613,7 +2575,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0199537372",
         "bilingual": false,
         "has_style": false,
-        "pages": 723,
+        "pages": 723
       }
     ]
   },
@@ -2627,7 +2589,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Aeneid+Fagles",
         "bilingual": false,
         "has_style": true,
-        "pages": 442,
+        "pages": 442
       },
       {
         "label": "Latin-English (Bilingual)",
@@ -2636,7 +2598,7 @@ const modalData = {
         "link": "https://www.amazon.in/Aeneid-Books-1-6-Loeb-Classical/dp/0674995619",
         "bilingual": true,
         "has_style": false,
-        "pages": 442,
+        "pages": 442
       },
       {
         "label": "Alternative",
@@ -2645,7 +2607,7 @@ const modalData = {
         "link": "https://www.amazon.in/dp/0679729526",
         "bilingual": false,
         "has_style": false,
-        "pages": 442,
+        "pages": 442
       }
     ]
   },
@@ -2659,7 +2621,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Oedipus+at+Colonus+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2668,7 +2630,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Oedipus+at+Colonus+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2682,7 +2644,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Alcestis+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2691,7 +2653,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Alcestis+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       }
     ]
   },
@@ -2705,7 +2667,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Hecuba+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2714,7 +2676,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Hecuba+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2728,7 +2690,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Philoctetes+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2737,7 +2699,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Philoctetes+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2751,7 +2713,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Iphigenia+in+Aulis+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 120,
+        "pages": 120
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2760,7 +2722,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Iphigenia+in+Aulis+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 120,
+        "pages": 120
       }
     ]
   },
@@ -2774,7 +2736,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Helen+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 104,
+        "pages": 104
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2783,7 +2745,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Helen+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 104,
+        "pages": 104
       }
     ]
   },
@@ -2797,7 +2759,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Phoenician+Women+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 112,
+        "pages": 112
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2806,7 +2768,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Phoenician+Women+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 112,
+        "pages": 112
       }
     ]
   },
@@ -2820,7 +2782,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Heracles+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 104,
+        "pages": 104
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2829,7 +2791,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Heracles+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 104,
+        "pages": 104
       }
     ]
   },
@@ -2843,7 +2805,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Orestes+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2852,7 +2814,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Orestes+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2866,7 +2828,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Iphigenia+in+Tauris+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 104,
+        "pages": 104
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2875,7 +2837,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Iphigenia+in+Tauris+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 104,
+        "pages": 104
       }
     ]
   },
@@ -2889,7 +2851,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Persians+Aeschylus",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2898,7 +2860,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Persians+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2912,7 +2874,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Seven+Against+Thebes+Aeschylus",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2921,7 +2883,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Seven+Against+Thebes+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2935,7 +2897,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Suppliants+Aeschylus",
         "bilingual": false,
         "has_style": true,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2944,7 +2906,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Suppliants+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       }
     ]
   },
@@ -2958,7 +2920,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Andromache+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2967,7 +2929,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Andromache+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -2981,7 +2943,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Suppliants+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -2990,7 +2952,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Suppliants+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       }
     ]
   },
@@ -3004,7 +2966,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Ion+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 104,
+        "pages": 104
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3013,7 +2975,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Ion+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 104,
+        "pages": 104
       }
     ]
   },
@@ -3027,7 +2989,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Women+of+Trachis+Sophocles",
         "bilingual": false,
         "has_style": true,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3036,7 +2998,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Women+of+Trachis+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       }
     ]
   },
@@ -3050,7 +3012,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Heracleidae+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 88,
+        "pages": 88
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3059,7 +3021,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Heracleidae+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 88,
+        "pages": 88
       }
     ]
   },
@@ -3073,7 +3035,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Electra+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3082,7 +3044,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Electra+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   },
@@ -3096,7 +3058,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Cyclops+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 72,
+        "pages": 72
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3105,7 +3067,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Cyclops+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 72,
+        "pages": 72
       }
     ]
   },
@@ -3119,7 +3081,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Rhesus+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 80,
+        "pages": 80
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3128,7 +3090,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Rhesus+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 80,
+        "pages": 80
       }
     ]
   },
@@ -3142,7 +3104,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Argonautica+Peter+Green",
         "bilingual": false,
         "has_style": true,
-        "pages": 300,
+        "pages": 300
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3151,7 +3113,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Apollonius+Rhodes+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 300,
+        "pages": 300
       },
       {
         "label": "Alternative",
@@ -3160,7 +3122,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Argonautica+Apollonius",
         "bilingual": false,
         "has_style": false,
-        "pages": 300,
+        "pages": 300
       }
     ]
   },
@@ -3174,7 +3136,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=The+Trojan+Women+Euripides",
         "bilingual": false,
         "has_style": true,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Greek-English (Bilingual)",
@@ -3183,7 +3145,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Euripides+Trojan+Women+Loeb",
         "bilingual": true,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       },
       {
         "label": "Alternative",
@@ -3192,7 +3154,7 @@ const modalData = {
         "link": "https://www.amazon.in/s?k=Trojan+Women+Scully",
         "bilingual": false,
         "has_style": false,
-        "pages": 96,
+        "pages": 96
       }
     ]
   }
@@ -3224,7 +3186,7 @@ function showVersions(bookId) {
             labelClass += ' bilingual';
         }
         if (version.has_style) {
-            labelStyle = ' style="color:var(--terracotta);"';
+            labelStyle = ' style="color:#8b4513;"';
         }
         
         versionItem.innerHTML = `
@@ -3251,7 +3213,6 @@ function showVersions(bookId) {
     document.getElementById('universal-modal').classList.add('active');
 }
 
-
 function closeUniversalModal() {
     document.getElementById('universal-modal').classList.remove('active');
 }
@@ -3262,7 +3223,6 @@ document.getElementById('universal-modal').addEventListener('click', function(e)
         closeUniversalModal();
     }
 });
-
 
 // GLOBAL SORT SYSTEM
 let currentSort = null;
