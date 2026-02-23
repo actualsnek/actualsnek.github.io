@@ -27,6 +27,80 @@
             font-size: 12px;
         }
 
+        /* ═══════════════════════════════════════════════════════════
+           GREEK MYTHOLOGY SIDE PANELS — PERFECTLY SYMMETRIC
+           Both sides: IDENTICAL tile, same SVG, same opacity
+           
+           Motifs (top → bottom, 600px tile):
+           ① Meander border strip (Greek key — the eternal pattern)
+           ② Lightning bolt of Zeus — king of gods
+           ③ · · · three-dot divider · · ·
+           ④ Laurel wreath — victory, Apollo, immortality
+           ⑤ · · · three-dot divider · · ·
+           ⑥ Trident of Poseidon — sea, earthquakes, horses
+           ⑦ · · · three-dot divider · · ·
+           ⑧ Lyre of Apollo — music, poetry, the sun
+           ⑨ · · · three-dot divider · · ·
+           ⑩ Amphora — wine, Dionysus, ancient vessels
+           ⑪ · · · three-dot divider · · ·
+           ⑫ Caduceus serpent — Hermes, messenger, duality
+           ⑬ Meander border strip (closes the tile)
+           
+           Opacity: 0.25 — ink-whisper, never distracting
+        ═══════════════════════════════════════════════════════════ */
+
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            width: calc((100vw - 1106px) / 2);
+            min-width: 50px;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            /* SAME SVG on both sides — perfect symmetry */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 600' width='90' height='600'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- ① TOP MEANDER BORDER --%3E%3Cline x1='10' y1='12' x2='80' y2='12' stroke-width='0.7'/%3E%3Cpath d='M10,12 L10,20 L18,20 L18,12' stroke-width='0.7'/%3E%3Cpath d='M26,12 L26,20 L34,20 L34,12' stroke-width='0.7'/%3E%3Cpath d='M42,12 L42,20 L50,20 L50,12' stroke-width='0.7'/%3E%3Cpath d='M58,12 L58,20 L66,20 L66,12' stroke-width='0.7'/%3E%3Cpath d='M72,12 L72,20 L80,20 L80,12' stroke-width='0.7'/%3E%3Cline x1='10' y1='20' x2='80' y2='20' stroke-width='0.7'/%3E%3C!-- ② ZEUS LIGHTNING BOLT --%3E%3Cpath d='M53,42 L38,68 L48,68 L32,95 L55,72 L45,72 L60,42 Z' stroke-width='1'/%3E%3C!-- ③ dot divider --%3E%3Ccircle cx='35' cy='110' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='110' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='110' r='1.5' stroke-width='0.7'/%3E%3C!-- ④ LAUREL WREATH (Apollo / Victory) --%3E%3Ccircle cx='45' cy='152' r='18' stroke-width='0.55' stroke-dasharray='2,3.5'/%3E%3C!-- left leaves --%3E%3Cellipse cx='31' cy='143' rx='5' ry='2.3' transform='rotate(-42 31 143)' stroke-width='0.8'/%3E%3Cellipse cx='27' cy='152' rx='5' ry='2.3' transform='rotate(-4 27 152)' stroke-width='0.8'/%3E%3Cellipse cx='31' cy='161' rx='5' ry='2.3' transform='rotate(42 31 161)' stroke-width='0.8'/%3E%3C!-- right leaves --%3E%3Cellipse cx='59' cy='143' rx='5' ry='2.3' transform='rotate(42 59 143)' stroke-width='0.8'/%3E%3Cellipse cx='63' cy='152' rx='5' ry='2.3' transform='rotate(4 63 152)' stroke-width='0.8'/%3E%3Cellipse cx='59' cy='161' rx='5' ry='2.3' transform='rotate(-42 59 161)' stroke-width='0.8'/%3E%3C!-- top leaves --%3E%3Cellipse cx='38' cy='135' rx='5' ry='2.3' transform='rotate(-70 38 135)' stroke-width='0.8'/%3E%3Cellipse cx='52' cy='135' rx='5' ry='2.3' transform='rotate(70 52 135)' stroke-width='0.8'/%3E%3C!-- ribbon knot --%3E%3Cpath d='M41,169 Q45,173 49,169' stroke-width='0.9'/%3E%3Cpath d='M43,169 L42,174 M47,169 L48,174' stroke-width='0.7'/%3E%3C!-- ⑤ dot divider --%3E%3Ccircle cx='35' cy='190' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='190' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='190' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑥ TRIDENT OF POSEIDON --%3E%3Cline x1='45' y1='210' x2='45' y2='270' stroke-width='1'/%3E%3C!-- shaft bands --%3E%3Cline x1='41' y1='258' x2='49' y2='258' stroke-width='0.7'/%3E%3Cline x1='41' y1='263' x2='49' y2='263' stroke-width='0.7'/%3E%3C!-- three prongs --%3E%3Cline x1='45' y1='210' x2='45' y2='228' stroke-width='1.1'/%3E%3Cline x1='33' y1='215' x2='33' y2='228' stroke-width='1'/%3E%3Cline x1='57' y1='215' x2='57' y2='228' stroke-width='1'/%3E%3C!-- prong tips --%3E%3Cpath d='M43,210 L45,205 L47,210' stroke-width='0.9'/%3E%3Cpath d='M31,215 L33,210 L35,215' stroke-width='0.9'/%3E%3Cpath d='M55,215 L57,210 L59,215' stroke-width='0.9'/%3E%3C!-- crossbar connecting outer prongs to shaft --%3E%3Cline x1='33' y1='222' x2='45' y2='222' stroke-width='0.7'/%3E%3Cline x1='45' y1='222' x2='57' y2='222' stroke-width='0.7'/%3E%3C!-- ⑦ dot divider --%3E%3Ccircle cx='35' cy='288' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='288' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='288' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑧ LYRE OF APOLLO --%3E%3Cpath d='M33,340 Q24,353 24,367 Q24,386 45,391 Q66,386 66,367 Q66,353 57,340' stroke-width='1'/%3E%3Cpath d='M33,340 Q45,332 57,340' stroke-width='1'/%3E%3Cline x1='33' y1='340' x2='33' y2='321' stroke-width='1'/%3E%3Cline x1='57' y1='340' x2='57' y2='321' stroke-width='1'/%3E%3Crect x='29' y='317' width='32' height='5' rx='2.5' stroke-width='0.9'/%3E%3C!-- 5 strings --%3E%3Cline x1='36' y1='321' x2='36' y2='382' stroke-width='0.5'/%3E%3Cline x1='40' y1='321' x2='40' y2='385' stroke-width='0.5'/%3E%3Cline x1='44' y1='321' x2='44' y2='386' stroke-width='0.5'/%3E%3Cline x1='48' y1='321' x2='48' y2='385' stroke-width='0.5'/%3E%3Cline x1='52' y1='321' x2='52' y2='382' stroke-width='0.5'/%3E%3C!-- ⑨ dot divider --%3E%3Ccircle cx='35' cy='408' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='408' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='408' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑩ AMPHORA (Dionysus / wine / ancient Greece) --%3E%3Cpath d='M36,450 Q29,458 28,470 Q27,483 32,492 Q37,499 45,500 Q53,499 58,492 Q63,483 62,470 Q61,458 54,450 Z' stroke-width='1'/%3E%3Cpath d='M36,450 Q45,445 54,450' stroke-width='0.9'/%3E%3Crect x='42' y='441' width='6' height='10' rx='1' stroke-width='0.9'/%3E%3C!-- handles --%3E%3Cpath d='M28,470 Q20,468 21,459 Q22,452 36,454' stroke-width='0.8'/%3E%3Cpath d='M62,470 Q70,468 69,459 Q68,452 54,454' stroke-width='0.8'/%3E%3C!-- decorative lines on body --%3E%3Cline x1='30' y1='478' x2='60' y2='478' stroke-width='0.5'/%3E%3Cline x1='31' y1='488' x2='59' y2='488' stroke-width='0.5'/%3E%3C!-- ⑬ BOTTOM MEANDER BORDER --%3E%3Cline x1='10' y1='576' x2='80' y2='576' stroke-width='0.7'/%3E%3Cpath d='M10,576 L10,584 L18,584 L18,576' stroke-width='0.7'/%3E%3Cpath d='M26,576 L26,584 L34,584 L34,576' stroke-width='0.7'/%3E%3Cpath d='M42,576 L42,584 L50,584 L50,576' stroke-width='0.7'/%3E%3Cpath d='M58,576 L58,584 L66,584 L66,576' stroke-width='0.7'/%3E%3Cpath d='M72,576 L72,584 L80,584 L80,576' stroke-width='0.7'/%3E%3Cline x1='10' y1='584' x2='80' y2='584' stroke-width='0.7'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 90px 600px;
+            background-position: center 0px;
+            background-repeat: repeat-y;
+        }
+
+        body::before { left: 0; }
+        body::after  { right: 0; }
+
+        @media (max-width: 1200px) {
+            body::before,
+            body::after { display: none; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           HERO HEADER — Greek ink art overlay
+           Symmetric: left side = right side (mirrored)
+           Motifs: Laurel fronds from edges + Greek key top/bottom
+           + centered sun-ray medallion (Helios / Apollo)
+           Opacity: 0.12 — barely-there pencil breath
+        ═══════════════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.12;
+            background-image:
+                /* full-width overlay: meander borders + sun medallion + symmetric laurel fronds */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 80' preserveAspectRatio='none' width='900' height='80'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- TOP meander line --%3E%3Cline x1='0' y1='5' x2='900' y2='5' stroke-width='0.8'/%3E%3Cpath d='M0,5 L0,12 L10,12 L10,5 M20,5 L20,12 L30,12 L30,5 M40,5 L40,12 L50,12 L50,5 M60,5 L60,12 L70,12 L70,5 M80,5 L80,12 L90,12 L90,5 M100,5 L100,12 L110,12 L110,5 M120,5 L120,12 L130,12 L130,5 M140,5 L140,12 L150,12 L150,5 M160,5 L160,12 L170,12 L170,5 M180,5 L180,12 L190,12 L190,5 M200,5 L200,12 L210,12 L210,5 M220,5 L220,12 L230,12 L230,5 M240,5 L240,12 L250,12 L250,5 M260,5 L260,12 L270,12 L270,5 M280,5 L280,12 L290,12 L290,5 M300,5 L300,12 L310,12 L310,5 M320,5 L320,12 L330,12 L330,5 M340,5 L340,12 L350,12 L350,5 M360,5 L360,12 L370,12 L370,5 M380,5 L380,12 L390,12 L390,5 M400,5 L400,12 L410,12 L410,5 M420,5 L420,12 L430,12 L430,5 M440,5 L440,12 L450,12 L450,5 M460,5 L460,12 L470,12 L470,5 M480,5 L480,12 L490,12 L490,5 M500,5 L500,12 L510,12 L510,5 M520,5 L520,12 L530,12 L530,5 M540,5 L540,12 L550,12 L550,5 M560,5 L560,12 L570,12 L570,5 M580,5 L580,12 L590,12 L590,5 M600,5 L600,12 L610,12 L610,5 M620,5 L620,12 L630,12 L630,5 M640,5 L640,12 L650,12 L650,5 M660,5 L660,12 L670,12 L670,5 M680,5 L680,12 L690,12 L690,5 M700,5 L700,12 L710,12 L710,5 M720,5 L720,12 L730,12 L730,5 M740,5 L740,12 L750,12 L750,5 M760,5 L760,12 L770,12 L770,5 M780,5 L780,12 L790,12 L790,5 M800,5 L800,12 L810,12 L810,5 M820,5 L820,12 L830,12 L830,5 M840,5 L840,12 L850,12 L850,5 M860,5 L860,12 L870,12 L870,5 M880,5 L880,12 L890,12 L890,5' stroke-width='0.7'/%3E%3C!-- BOTTOM meander line --%3E%3Cline x1='0' y1='75' x2='900' y2='75' stroke-width='0.8'/%3E%3Cpath d='M0,75 L0,68 L10,68 L10,75 M20,75 L20,68 L30,68 L30,75 M40,75 L40,68 L50,68 L50,75 M60,75 L60,68 L70,68 L70,75 M80,75 L80,68 L90,68 L90,75 M100,75 L100,68 L110,68 L110,75 M120,75 L120,68 L130,68 L130,75 M140,75 L140,68 L150,68 L150,75 M160,75 L160,68 L170,68 L170,75 M180,75 L180,68 L190,68 L190,75 M200,75 L200,68 L210,68 L210,75 M220,75 L220,68 L230,68 L230,75 M240,75 L240,68 L250,68 L250,75 M260,75 L260,68 L270,68 L270,75 M280,75 L280,68 L290,68 L290,75 M300,75 L300,68 L310,68 L310,75 M320,75 L320,68 L330,68 L330,75 M340,75 L340,68 L350,68 L350,75 M360,75 L360,68 L370,68 L370,75 M380,75 L380,68 L390,68 L390,75 M400,75 L400,68 L410,68 L410,75 M420,75 L420,68 L430,68 L430,75 M440,75 L440,68 L450,68 L450,75 M460,75 L460,68 L470,68 L470,75 M480,75 L480,68 L490,68 L490,75 M500,75 L500,68 L510,68 L510,75 M520,75 L520,68 L530,68 L530,75 M540,75 L540,68 L550,68 L550,75 M560,75 L560,68 L570,68 L570,75 M580,75 L580,68 L590,68 L590,75 M600,75 L600,68 L610,68 L610,75 M620,75 L620,68 L630,68 L630,75 M640,75 L640,68 L650,68 L650,75 M660,75 L660,68 L670,68 L670,75 M680,75 L680,68 L690,68 L690,75 M700,75 L700,68 L710,68 L710,75 M720,75 L720,68 L730,68 L730,75 M740,75 L740,68 L750,68 L750,75 M760,75 L760,68 L770,68 L770,75 M780,75 L780,68 L790,68 L790,75 M800,75 L800,68 L810,68 L810,75 M820,75 L820,68 L830,68 L830,75 M840,75 L840,68 L850,68 L850,75 M860,75 L860,68 L870,68 L870,75 M880,75 L880,68 L890,68 L890,75' stroke-width='0.7'/%3E%3C!-- CENTER SUN / HELIOS medallion --%3E%3Ccircle cx='450' cy='40' r='10' stroke-width='0.9'/%3E%3Ccircle cx='450' cy='40' r='5' stroke-width='0.7'/%3E%3C!-- 8 rays --%3E%3Cline x1='450' y1='26' x2='450' y2='22' stroke-width='0.9'/%3E%3Cline x1='450' y1='54' x2='450' y2='58' stroke-width='0.9'/%3E%3Cline x1='436' y1='40' x2='432' y2='40' stroke-width='0.9'/%3E%3Cline x1='464' y1='40' x2='468' y2='40' stroke-width='0.9'/%3E%3Cline x1='440' y1='30' x2='437' y2='27' stroke-width='0.9'/%3E%3Cline x1='460' y1='50' x2='463' y2='53' stroke-width='0.9'/%3E%3Cline x1='460' y1='30' x2='463' y2='27' stroke-width='0.9'/%3E%3Cline x1='440' y1='50' x2='437' y2='53' stroke-width='0.9'/%3E%3C!-- LEFT laurel fronds growing from edge --%3E%3Cpath d='M0,30 Q30,26 55,34' stroke-width='0.8'/%3E%3Cellipse cx='12' cy='25' rx='6' ry='2.5' transform='rotate(-18 12 25)' stroke-width='0.7'/%3E%3Cellipse cx='26' cy='22' rx='6' ry='2.5' transform='rotate(-10 26 22)' stroke-width='0.7'/%3E%3Cellipse cx='40' cy='22' rx='6' ry='2.5' transform='rotate(-5 40 22)' stroke-width='0.7'/%3E%3Cpath d='M0,52 Q25,48 50,54' stroke-width='0.8'/%3E%3Cellipse cx='10' cy='47' rx='6' ry='2.5' transform='rotate(-15 10 47)' stroke-width='0.7'/%3E%3Cellipse cx='24' cy='44' rx='6' ry='2.5' transform='rotate(-8 24 44)' stroke-width='0.7'/%3E%3Cellipse cx='38' cy='44' rx='6' ry='2.5' transform='rotate(-3 38 44)' stroke-width='0.7'/%3E%3C!-- RIGHT laurel fronds growing from edge (mirror) --%3E%3Cpath d='M900,30 Q870,26 845,34' stroke-width='0.8'/%3E%3Cellipse cx='888' cy='25' rx='6' ry='2.5' transform='rotate(18 888 25)' stroke-width='0.7'/%3E%3Cellipse cx='874' cy='22' rx='6' ry='2.5' transform='rotate(10 874 22)' stroke-width='0.7'/%3E%3Cellipse cx='860' cy='22' rx='6' ry='2.5' transform='rotate(5 860 22)' stroke-width='0.7'/%3E%3Cpath d='M900,52 Q875,48 850,54' stroke-width='0.8'/%3E%3Cellipse cx='890' cy='47' rx='6' ry='2.5' transform='rotate(15 890 47)' stroke-width='0.7'/%3E%3Cellipse cx='876' cy='44' rx='6' ry='2.5' transform='rotate(8 876 44)' stroke-width='0.7'/%3E%3Cellipse cx='862' cy='44' rx='6' ry='2.5' transform='rotate(3 862 44)' stroke-width='0.7'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
         /* ═══ MAIN CONTAINER ═══ */
         .layout {
             display: grid;
@@ -1694,257 +1768,496 @@
             </div>
         </section>
 
+        <!-- ═══ ACCORDION STYLES — Further Reading only ═══ -->
+        <style>
+        .accordion-wrapper {
+            border: 2px solid #808080;
+            background: #f0ebe0;
+        }
+
+        .accordion-item {
+            border-bottom: 2px solid #808080;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: #d3c9a0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            cursor: pointer;
+            user-select: none;
+            font-size: 12px;
+            font-weight: bold;
+            color: #2f4f4f;
+            letter-spacing: 0.3px;
+            transition: background 0.1s;
+            margin: 0;
+        }
+
+        .accordion-header:hover {
+            background: #c8bc8a;
+        }
+
+        .accordion-header.open {
+            background: #ffd700;
+            border-bottom-color: #333;
+        }
+
+        .accordion-arrow {
+            font-size: 10px;
+            color: #8b4513;
+            width: 12px;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .accordion-header.open .accordion-arrow {
+            transform: rotate(90deg);
+        }
+
+        .accordion-count {
+            margin-left: auto;
+            font-size: 10px;
+            font-weight: normal;
+            color: #696969;
+            font-style: italic;
+        }
+
+        .accordion-body {
+            display: none;
+            padding: 4px 0;
+            background: #faf6ed;
+        }
+
+        .accordion-body.open {
+            display: block;
+        }
+
+        .acc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 7px 14px;
+            border-bottom: 1px dotted #ccc;
+            transition: background 0.1s;
+        }
+
+        .acc-item:last-child {
+            border-bottom: none;
+        }
+
+        .acc-item:hover {
+            background: #f5e9c8;
+        }
+
+        .acc-item-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .acc-book-title {
+            font-weight: bold;
+            font-size: 11px;
+            color: #00008b;
+        }
+
+        .acc-book-meta {
+            font-size: 10px;
+            color: #696969;
+            font-style: italic;
+        }
+
+        .acc-book-desc {
+            font-size: 10px;
+            color: #555;
+            margin-top: 2px;
+            font-style: italic;
+            border-left: 2px solid #ffd700;
+            padding-left: 5px;
+        }
+
+        .acc-icons {
+            display: flex;
+            gap: 4px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .acc-icons a {
+            display: inline-flex;
+            width: 18px;
+            height: 18px;
+            font-size: 9px;
+            text-decoration: none;
+            border: 1px solid #999;
+            align-items: center;
+            justify-content: center;
+            background: #dcdcdc;
+            border-top-color: #fff;
+            border-left-color: #fff;
+            color: #333;
+        }
+
+        .acc-icons a:hover {
+            background: #c0c0c0;
+        }
+
+        @media (max-width: 600px) {
+            .acc-item {
+                flex-wrap: wrap;
+            }
+            .acc-icons {
+                flex-basis: 100%;
+                margin-top: 4px;
+            }
+        }
+        </style>
+
         <section class="section">
             <h2 class="section-title">Further Reading</h2>
-            <p class="section-intro">Ancient continuations, Roman works, reference texts, and modern retellings</p>
+            <p class="section-intro">Ancient Greek works, Roman texts, reference mythography, and significant modern retellings — click a folder to expand</p>
 
-            <div class="simple-list">
+            <div class="accordion-wrapper">
 
-                <!-- ── CATEGORY 1 ── -->
-                <div class="list-group">
-                    <h4>Greek Continuations, Poetry & Fragments</h4>
-                    <ul>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Epic Cycle Fragments</span> — <span class="author-simple">Various (Cypria, Aethiopis, Little Iliad, etc.)</span>
-                            </span>
-                            <div class="list-item-icons">
+                <!-- ── FOLDER 1: Ancient Greek Works ── -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAcc(this)">
+                        <span class="accordion-arrow">▶</span>
+                        📜 Ancient Greek Works &amp; Continuations
+                        <span class="accordion-count">9 works</span>
+                    </div>
+                    <div class="accordion-body">
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Epic Cycle Fragments</div>
+                                <div class="acc-book-meta">Various (Cypria, Aethiopis, Little Iliad…) · c. 7th–6th cent. BCE</div>
+                                <div class="acc-book-desc">fills everything Homer left out — the full Trojan War cycle</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.theoi.com/Text/EpicCycle.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Epic+Cycle+Greek" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                            <div class="item-note">fills everything Homer left out — the full Trojan War cycle</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Posthomerica (Fall of Troy)</span> — <span class="author-simple">Quintus of Smyrna</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Posthomerica (Fall of Troy)</div>
+                                <div class="acc-book-meta">Quintus of Smyrna · c. 3rd cent. AD</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.theoi.com/Text/QuintusSmyrnaeus1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Quintus+Smyrna+Posthomerica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Hesiodic Fragments (Shield of Heracles & Catalogue of Women)</span> — <span class="author-simple">Hesiod (attributed)</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Hesiodic Fragments (Shield of Heracles &amp; Catalogue of Women)</div>
+                                <div class="acc-book-meta">Hesiod (attributed) · c. 6th cent. BCE</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.theoi.com/Text/HesiodShield.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Hesiod+Shield+Heracles+Catalogue" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">The Complete Odes</span> — <span class="author-simple">Pindar</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">The Complete Odes</div>
+                                <div class="acc-book-meta">Pindar · 498–446 BCE</div>
+                                <div class="acc-book-desc">only surviving choral lyric poet; myths retold obliquely through athletic victory songs</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0162" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Pindar+Complete+Odes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                            <div class="item-note">only surviving choral lyric poet; myths retold obliquely through athletic victory songs</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Greek Lyric Poetry</span> — <span class="author-simple">Various (Sappho, Alcaeus, Anacreon)</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Greek Lyric Poetry</div>
+                                <div class="acc-book-meta">Various (Sappho, Alcaeus, Anacreon) · c. 620–490 BCE</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.sacred-texts.com/cla/usappho/index.htm" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Greek+Lyric+Poetry" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Hymns and Epigrams</span> — <span class="author-simple">Callimachus</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Hymns and Epigrams</div>
+                                <div class="acc-book-meta">Callimachus · c. 3rd cent. BCE</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.theoi.com/Text/CallimachusHymns.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Callimachus+Hymns" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Dialogues of the Gods & Dialogues of the Dead</span> — <span class="author-simple">Lucian</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Dialogues of the Gods &amp; Dialogues of the Dead</div>
+                                <div class="acc-book-meta">Lucian · c. 160s–170s AD</div>
+                                <div class="acc-book-desc">satirical — gods bickering, heroes in Hades; hilarious and myth-rich</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.theoi.com/Text/LucianDialoguesGods.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Lucian+Dialogues+Gods" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                            <div class="item-note">satirical — gods bickering, heroes in Hades; hilarious and myth-rich, widely cited on Reddit classics threads</div>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
 
-                <!-- ── CATEGORY 2 ── -->
-                <div class="list-group">
-                    <h4>Roman Works</h4>
-                    <ul>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Tragedies (Medea, Oedipus, Thyestes, Phaedra, Agamemnon)</span> — <span class="author-simple">Seneca</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/SenecaMedea.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Seneca+Tragedies" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">The Frogs</div>
+                                <div class="acc-book-meta">Aristophanes · 405 BCE</div>
+                                <div class="acc-book-desc">only play where Dionysus himself is main character; essential for understanding his cult and role in theatre</div>
                             </div>
-                            <div class="item-note">Roman counterparts to the Greek tragedies; directly influenced Shakespeare and every Renaissance playwright</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Heroides</span> — <span class="author-simple">Ovid</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.gutenberg.org/ebooks/33214" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Ovid+Heroides" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <div class="item-note">fictional letters from mythological heroines — Penelope to Odysseus, Ariadne to Theseus; women's voices in myth</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Thebaid</span> — <span class="author-simple">Statius</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/StatiusThebaid1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Statius+Thebaid" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">The Golden Ass (Metamorphoses)</span> — <span class="author-simple">Apuleius</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.gutenberg.org/ebooks/1666" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Apuleius+Golden+Ass" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Argonautica</span> — <span class="author-simple">Valerius Flaccus</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/ValeriusFlaccus1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Valerius+Flaccus+Argonautica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- ── CATEGORY 3 ── -->
-                <div class="list-group">
-                    <h4>Mythography, Reference, etc.</h4>
-                    <ul>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Description of Greece</span> — <span class="author-simple">Pausanias</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/Pausanias1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Pausanias+Description+Greece" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <div class="item-note">only surviving ancient travel guide to Greece; documents local cults and myths.</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Fabulae (Myths)</span> — <span class="author-simple">Hyginus</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/HyginusFabulae1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Hyginus+Fabulae" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <div class="item-note">the other comprehensive myth handbook besides Apollodorus; covers variants not found elsewhere</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Astronomica (Poetic Astronomy)</span> — <span class="author-simple">Hyginus</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/HyginusAstronomica1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Hyginus+Astronomica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Imagines</span> — <span class="author-simple">Philostratus</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.theoi.com/Text/PhilostratusElder1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Philostratus+Imagines" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- ── CATEGORY 4 ── -->
-                <div class="list-group">
-                    <h4>Comedy, Satire & Modern Retellings</h4>
-                    <p style="font-size: 0.88rem; color: #696969; margin-bottom: 14px; font-style: italic;">Contemporary retellings that offer fresh perspectives on classical myths. Optional companions to the original texts.</p>
-                    <ul>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">The Frogs</span> — <span class="author-simple">Aristophanes</span>
-                            </span>
-                            <div class="list-item-icons">
+                            <div class="acc-icons">
                                 <a href="https://www.gutenberg.org/ebooks/7998" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Frogs+Aristophanes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                            <div class="item-note">only play where Dionysus himself is main character; essential for understanding his cult and role in theatre</div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">The Birds</span> — <span class="author-simple">Aristophanes</span>
-                            </span>
-                            <div class="list-item-icons">
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">The Birds</div>
+                                <div class="acc-book-meta">Aristophanes · 414 BCE</div>
+                            </div>
+                            <div class="acc-icons">
                                 <a href="https://www.gutenberg.org/ebooks/3013" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
                                 <a href="https://www.amazon.in/s?k=Birds+Aristophanes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Circe</span> — <span class="author-simple">Madeline Miller (2018)</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.goodreads.com/book/show/35959740" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Circe+Madeline+Miller" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+
+                    </div><!-- /accordion-body folder 1 -->
+                </div><!-- /accordion-item -->
+
+                <!-- ── FOLDER 2: Roman Works ── -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAcc(this)">
+                        <span class="accordion-arrow">▶</span>
+                        🏛️ Roman Works
+                        <span class="accordion-count">5 works</span>
+                    </div>
+                    <div class="accordion-body">
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Tragedies (Medea, Oedipus, Thyestes, Phaedra, Agamemnon)</div>
+                                <div class="acc-book-meta">Seneca · c. 50s AD</div>
+                                <div class="acc-book-desc">Roman counterparts to the Greek tragedies; directly influenced Shakespeare and every Renaissance playwright</div>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">The Song of Achilles</span> — <span class="author-simple">Madeline Miller (2011)</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.goodreads.com/book/show/13623848" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/SenecaMedea.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Seneca+Tragedies" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Heroides</div>
+                                <div class="acc-book-meta">Ovid · c. 25–16 BCE</div>
+                                <div class="acc-book-desc">fictional letters from mythological heroines — Penelope to Odysseus, Ariadne to Theseus; women's voices in myth</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.gutenberg.org/ebooks/33214" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Ovid+Heroides" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Thebaid</div>
+                                <div class="acc-book-meta">Statius · c. 80–91 AD</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/StatiusThebaid1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Statius+Thebaid" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">The Golden Ass (Metamorphoses)</div>
+                                <div class="acc-book-meta">Apuleius · c. 160s AD</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.gutenberg.org/ebooks/1666" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Apuleius+Golden+Ass" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Argonautica</div>
+                                <div class="acc-book-meta">Valerius Flaccus · c. 70–90 AD</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/ValeriusFlaccus1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Valerius+Flaccus+Argonautica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                    </div><!-- /accordion-body folder 2 -->
+                </div><!-- /accordion-item -->
+
+                <!-- ── FOLDER 3: Mythography & Reference ── -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAcc(this)">
+                        <span class="accordion-arrow">▶</span>
+                        📚 Mythography &amp; Reference
+                        <span class="accordion-count">4 works</span>
+                    </div>
+                    <div class="accordion-body">
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Description of Greece</div>
+                                <div class="acc-book-meta">Pausanias · c. 150–180 AD</div>
+                                <div class="acc-book-desc">only surviving ancient travel guide to Greece; documents local cults and myths</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/Pausanias1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Pausanias+Description+Greece" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Fabulae (Myths)</div>
+                                <div class="acc-book-meta">Hyginus · c. 1st–2nd cent. AD</div>
+                                <div class="acc-book-desc">the other comprehensive myth handbook besides Apollodorus; covers variants not found elsewhere</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/HyginusFabulae1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Hyginus+Fabulae" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Astronomica (Poetic Astronomy)</div>
+                                <div class="acc-book-meta">Hyginus · c. 1st–2nd cent. AD</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/HyginusAstronomica1.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Hyginus+Astronomica" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Imagines</div>
+                                <div class="acc-book-meta">Philostratus · c. 220s AD</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.theoi.com/Text/PhilostratusElder1A.html" target="_blank" title="Read"><i class="fas fa-book-open"></i></a>
+                                <a href="https://www.amazon.in/s?k=Philostratus+Imagines" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                    </div><!-- /accordion-body folder 3 -->
+                </div><!-- /accordion-item -->
+
+                <!-- ── FOLDER 4: Comedy & Modern Retellings ── -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAcc(this)">
+                        <span class="accordion-arrow">▶</span>
+                        ✨ Modern Retellings
+                        <span class="accordion-count">5 works</span>
+                    </div>
+                    <div class="accordion-body">
+                        <p style="padding:6px 14px 2px;font-size:10px;color:#696969;font-style:italic;">Significant contemporary retellings — optional companions to the originals.</p>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">The Song of Achilles</div>
+                                <div class="acc-book-meta">Madeline Miller · 2011</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.goodreads.com/book/show/13623848" target="_blank" title="Goodreads"><i class="fab fa-goodreads-g"></i></a>
                                 <a href="https://www.amazon.in/s?k=Song+of+Achilles" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Mythos, Heroes, Troy (trilogy)</span> — <span class="author-simple">Stephen Fry (2017–2020)</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.goodreads.com/book/show/35074096" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Circe</div>
+                                <div class="acc-book-meta">Madeline Miller · 2018</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.goodreads.com/book/show/35959740" target="_blank" title="Goodreads"><i class="fab fa-goodreads-g"></i></a>
+                                <a href="https://www.amazon.in/s?k=Circe+Madeline+Miller" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">The Penelopiad</div>
+                                <div class="acc-book-meta">Margaret Atwood · 2005</div>
+                                <div class="acc-book-desc">Penelope's story told from Hades — the most academically cited modern myth retelling alongside Miller</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.goodreads.com/book/show/11377.The_Penelopiad" target="_blank" title="Goodreads"><i class="fab fa-goodreads-g"></i></a>
+                                <a href="https://www.amazon.in/s?k=The+Penelopiad+Margaret+Atwood" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">Mythos, Heroes, Troy (trilogy)</div>
+                                <div class="acc-book-meta">Stephen Fry · 2017–2020</div>
+                            </div>
+                            <div class="acc-icons">
+                                <a href="https://www.goodreads.com/book/show/35074096" target="_blank" title="Goodreads"><i class="fab fa-goodreads-g"></i></a>
                                 <a href="https://www.amazon.in/s?k=Stephen+Fry+Mythos+trilogy" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">Ariadne</span> — <span class="author-simple">Jennifer Saint (2021)</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.goodreads.com/book/show/54854718" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
-                                <a href="https://www.amazon.in/s?k=Ariadne+Jennifer+Saint" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+
+                        <div class="acc-item">
+                            <div class="acc-item-text">
+                                <div class="acc-book-title">A Thousand Ships</div>
+                                <div class="acc-book-meta">Natalie Haynes · 2019</div>
                             </div>
-                        </li>
-                        <li>
-                            <span class="list-item-content">
-                                <span class="book-title-simple">A Thousand Ships</span> — <span class="author-simple">Natalie Haynes (2019)</span>
-                            </span>
-                            <div class="list-item-icons">
-                                <a href="https://www.goodreads.com/book/show/50892384" target="_blank" title="Goodreads"><i class="fas fa-book-open"></i></a>
+                            <div class="acc-icons">
+                                <a href="https://www.goodreads.com/book/show/50892384" target="_blank" title="Goodreads"><i class="fab fa-goodreads-g"></i></a>
                                 <a href="https://www.amazon.in/s?k=Thousand+Ships+Natalie+Haynes" target="_blank" title="Buy"><i class="fas fa-shopping-cart"></i></a>
                             </div>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
 
-            </div>
+                    </div><!-- /accordion-body folder 4 -->
+                </div><!-- /accordion-item -->
+
+            </div><!-- /accordion-wrapper -->
+
+            <script>
+            function toggleAcc(header) {
+                const body = header.nextElementSibling;
+                const isOpen = header.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.accordion-header.open').forEach(h => {
+                    h.classList.remove('open');
+                    h.nextElementSibling.classList.remove('open');
+                });
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    header.classList.add('open');
+                    body.classList.add('open');
+                }
+            }
+            </script>
+
         </section>
 
         <footer>
