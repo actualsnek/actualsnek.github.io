@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>actualsnek</title>
+    <link rel="icon" type="image/png" href="./greek-mythology/images/snake.png">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            background: #5f9ea0;
+            color: #000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #f5f5f5;
+            border: 3px solid #333;
+        }
+
+        /* ═══ HEADER ═══ */
+        .header {
+            background: #d3d3d3;
+            padding: 25px 18px;
+            text-align: center;
+            border-bottom: 3px solid #333;
+        }
+
+        .ornament {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ornament-left,
+        .ornament-right {
+            width: 80px;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #8b4513 0px, #8b4513 8px, transparent 8px, transparent 12px);
+        }
+
+        .symbol {
+            font-size: 28px;
+            color: #b8860b;
+        }
+
+        /* ═══ TAGLINE ═══ */
+        .tagline {
+            background: #ffd700;
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            border-bottom: 2px solid #333;
+            letter-spacing: 0.5px;
+        }
+
+        /* ═══ MAIN CONTENT ═══ */
+        .content {
+            padding: 30px 25px;
+        }
+
+        .guides {
+            margin-bottom: 30px;
+        }
+
+        /* ═══ GUIDE ITEMS (90s Button Style) ═══ */
+        .guide-item {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #000;
+            padding: 10px 12px;
+            background: #dcdcdc;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            font-size: 13px;
+            transition: all 0.1s;
+        }
+
+        .guide-item:hover {
+            background: #c0c0c0;
+        }
+
+        .guide-item:active {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .guide-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-number {
+            font-weight: bold;
+            color: #000;
+            font-size: 13px;
+            min-width: 20px;
+        }
+
+        .guide-name {
+            color: #00008b;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .guide-category {
+            color: #696969;
+            font-size: 10px;
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        /* ═══ SOCIAL LINKS ═══ */
+        .social-section {
+            border-top: 2px solid #999;
+            padding-top: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-link {
+            display: block;
+            transition: opacity 0.2s;
+        }
+
+        .social-link:hover {
+            opacity: 0.7;
+        }
+
+        /* ═══ FOOTER ═══ */
+        .footer {
+            background: #696969;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-top: 3px solid #333;
+            font-size: 11px;
+        }
+
+        /* ═══ MOBILE RESPONSIVE ═══ */
+        @media (max-width: 640px) {
+            body { padding: 10px; }
+            .header { padding: 20px 15px; }
+            .ornament { gap: 10px; }
+            .ornament-left, .ornament-right { width: 50px; }
+            .symbol { font-size: 24px; }
+            .content { padding: 20px 15px; }
+            .guide-content { flex-wrap: wrap; }
+            .social-links { gap: 20px; }
+            .social-link svg { width: 35px; height: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ═════════════════════════════════════════════════════════════════
+             HEADER: Ornamental design (Greek/Indian inspired)
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="header">
+            <div class="ornament">
+                <div class="ornament-left"></div>
+                <span class="symbol">❋</span>
+                <div class="ornament-right"></div>
+            </div>
+        </div>
+
+        <!-- ═════════════════════════════════════════════════════════════════
+             TAGLINE
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="tagline">
+            dumping '101' for personal use
+        </div>
+
+        <!-- ═════════════════════════════════════════════════════════════════
+             MAIN CONTENT
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="content">
+            
+            <!-- ─────────────────────────────────────────────────────────────
+                 GUIDES LIST
+                 
+                 To add a new guide:
+                 1. Create new folder in repo (e.g., "stoicism-101/")
+                 2. Add index.html inside that folder
+                 3. Copy the guide-item template below and update:
+                    - href path
+                    - guide number
+                    - guide name
+                    - category label
+            ───────────────────────────────────────────────────────────── -->
+            <div class="guides">
+                
+                <!-- Guide #1 -->
+                <a href="./greek-mythology/index.html" class="guide-item">
+                    <div class="guide-content">
+                        <span class="guide-number">1.</span>
+                        <span class="guide-name">greek-myth-101</span>
+                        <span class="guide-category">(reading guide)</span>
+                    </div>
+                </a>
+
+                <!-- Guide #2 - Add your next guide here:
+                <a href="./your-folder-name/index.html" class="guide-item">
+                    <div class="guide-content">
+                        <span class="guide-number">2.</span>
+                        <span class="guide-name">your-guide-name</span>
+                        <span class="guide-category">(category)</span>
+                    </div>
+                </a>
+                -->
+
+                <!-- Guide #3 - Add another guide here:
+                <a href="./another-folder/index.html" class="guide-item">
+                    <div class="guide-content">
+                        <span class="guide-number">3.</span>
+                        <span class="guide-name">guide-name</span>
+                        <span class="guide-category">(category)</span>
+                    </div>
+                </a>
+                -->
+
+            </div>
+
+            <!-- ─────────────────────────────────────────────────────────────
+                 SOCIAL LINKS
+            ───────────────────────────────────────────────────────────── -->
+            <div class="social-section">
+                <div class="social-links">
+                    
+                    <!-- Twitter -->
+                    <a href="https://x.com/actualsnek_" target="_blank" class="social-link" title="Twitter">
+                        <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#1DA1F2" d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Goodreads -->
+                    <a href="#" class="social-link" title="Goodreads">
+                        <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" d="M12 6v12"/>
+                        </svg>
+                    </a>
+
+                    <!-- Letterboxd -->
+                    <a href="#" class="social-link" title="Letterboxd">
+                        <svg width="38" height="38" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="70" fill="#ff8000" opacity="0.8"/>
+                            <circle cx="250" cy="100" r="70" fill="#00e054" opacity="0.8"/>
+                            <circle cx="400" cy="100" r="70" fill="#40bcf4" opacity="0.8"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ═════════════════════════════════════════════════════════════════
+             FOOTER
+        ═════════════════════════════════════════════════════════════════ -->
+        <div class="footer">
+            actualsnek
+        </div>
+
+    </div>
+
+</body>
+</html>
