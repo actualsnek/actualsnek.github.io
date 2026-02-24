@@ -27,27 +27,10 @@
             font-size: 12px;
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           GREEK MYTHOLOGY SIDE PANELS — PERFECTLY SYMMETRIC
-           Both sides: IDENTICAL 
-           
-           Motifs (top → bottom, 600px tile):
-           ① Meander border strip (Greek key — the eternal pattern)
-           ② Lightning bolt of Zeus — king of gods
-           ③ · · · three-dot divider · · ·
-           ④ Laurel wreath — victory, Apollo, immortality
-           ⑤ · · · three-dot divider · · ·
-           ⑥ Trident of Poseidon — sea, earthquakes, horses
-           ⑦ · · · three-dot divider · · ·
-           ⑧ Lyre of Apollo — music, poetry, the sun
-           ⑨ · · · three-dot divider · · ·
-           ⑩ Amphora — wine, Dionysus, ancient vessels
-           ⑪ · · · three-dot divider · · ·
-           ⑫ Caduceus serpent — Hermes, messenger, duality
-           ⑬ Meander border strip (closes the tile)
-           
-           Opacity: 0.25 — ink-whisper
-        ═══════════════════════════════════════════════════════════ */
+        /* ═══ SIDE PANELS — fixed background, 90×600px SVG tile (repeated-y)
+           Motifs: meander borders · Zeus bolt · laurel wreath · Poseidon trident
+                   Apollo lyre · Amphora · bottom meander  |  opacity: 0.25
+        ═══ */
 
         body::before,
         body::after {
@@ -61,9 +44,9 @@
             z-index: 0;
             opacity: 0.25;
             /* SAME SVG on both sides — perfect symmetry */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 600' width='90' height='600'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- ① TOP MEANDER BORDER --%3E%3Cline x1='10' y1='12' x2='80' y2='12' stroke-width='0.7'/%3E%3Cpath d='M10,12 L10,20 L18,20 L18,12' stroke-width='0.7'/%3E%3Cpath d='M26,12 L26,20 L34,20 L34,12' stroke-width='0.7'/%3E%3Cpath d='M42,12 L42,20 L50,20 L50,12' stroke-width='0.7'/%3E%3Cpath d='M58,12 L58,20 L66,20 L66,12' stroke-width='0.7'/%3E%3Cpath d='M72,12 L72,20 L80,20 L80,12' stroke-width='0.7'/%3E%3Cline x1='10' y1='20' x2='80' y2='20' stroke-width='0.7'/%3E%3C!-- ② ZEUS LIGHTNING BOLT --%3E%3Cpath d='M53,42 L38,68 L48,68 L32,95 L55,72 L45,72 L60,42 Z' stroke-width='1'/%3E%3C!-- ③ dot divider --%3E%3Ccircle cx='35' cy='110' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='110' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='110' r='1.5' stroke-width='0.7'/%3E%3C!-- ④ LAUREL WREATH (Apollo / Victory) --%3E%3Ccircle cx='45' cy='152' r='18' stroke-width='0.55' stroke-dasharray='2,3.5'/%3E%3C!-- left leaves --%3E%3Cellipse cx='31' cy='143' rx='5' ry='2.3' transform='rotate(-42 31 143)' stroke-width='0.8'/%3E%3Cellipse cx='27' cy='152' rx='5' ry='2.3' transform='rotate(-4 27 152)' stroke-width='0.8'/%3E%3Cellipse cx='31' cy='161' rx='5' ry='2.3' transform='rotate(42 31 161)' stroke-width='0.8'/%3E%3C!-- right leaves --%3E%3Cellipse cx='59' cy='143' rx='5' ry='2.3' transform='rotate(42 59 143)' stroke-width='0.8'/%3E%3Cellipse cx='63' cy='152' rx='5' ry='2.3' transform='rotate(4 63 152)' stroke-width='0.8'/%3E%3Cellipse cx='59' cy='161' rx='5' ry='2.3' transform='rotate(-42 59 161)' stroke-width='0.8'/%3E%3C!-- top leaves --%3E%3Cellipse cx='38' cy='135' rx='5' ry='2.3' transform='rotate(-70 38 135)' stroke-width='0.8'/%3E%3Cellipse cx='52' cy='135' rx='5' ry='2.3' transform='rotate(70 52 135)' stroke-width='0.8'/%3E%3C!-- ribbon knot --%3E%3Cpath d='M41,169 Q45,173 49,169' stroke-width='0.9'/%3E%3Cpath d='M43,169 L42,174 M47,169 L48,174' stroke-width='0.7'/%3E%3C!-- ⑤ dot divider --%3E%3Ccircle cx='35' cy='190' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='190' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='190' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑥ TRIDENT OF POSEIDON --%3E%3Cline x1='45' y1='210' x2='45' y2='270' stroke-width='1'/%3E%3C!-- shaft bands --%3E%3Cline x1='41' y1='258' x2='49' y2='258' stroke-width='0.7'/%3E%3Cline x1='41' y1='263' x2='49' y2='263' stroke-width='0.7'/%3E%3C!-- three prongs --%3E%3Cline x1='45' y1='210' x2='45' y2='228' stroke-width='1.1'/%3E%3Cline x1='33' y1='215' x2='33' y2='228' stroke-width='1'/%3E%3Cline x1='57' y1='215' x2='57' y2='228' stroke-width='1'/%3E%3C!-- prong tips --%3E%3Cpath d='M43,210 L45,205 L47,210' stroke-width='0.9'/%3E%3Cpath d='M31,215 L33,210 L35,215' stroke-width='0.9'/%3E%3Cpath d='M55,215 L57,210 L59,215' stroke-width='0.9'/%3E%3C!-- crossbar connecting outer prongs to shaft --%3E%3Cline x1='33' y1='222' x2='45' y2='222' stroke-width='0.7'/%3E%3Cline x1='45' y1='222' x2='57' y2='222' stroke-width='0.7'/%3E%3C!-- ⑦ dot divider --%3E%3Ccircle cx='35' cy='288' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='288' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='288' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑧ LYRE OF APOLLO --%3E%3Cpath d='M33,340 Q24,353 24,367 Q24,386 45,391 Q66,386 66,367 Q66,353 57,340' stroke-width='1'/%3E%3Cpath d='M33,340 Q45,332 57,340' stroke-width='1'/%3E%3Cline x1='33' y1='340' x2='33' y2='321' stroke-width='1'/%3E%3Cline x1='57' y1='340' x2='57' y2='321' stroke-width='1'/%3E%3Crect x='29' y='317' width='32' height='5' rx='2.5' stroke-width='0.9'/%3E%3C!-- 5 strings --%3E%3Cline x1='36' y1='321' x2='36' y2='382' stroke-width='0.5'/%3E%3Cline x1='40' y1='321' x2='40' y2='385' stroke-width='0.5'/%3E%3Cline x1='44' y1='321' x2='44' y2='386' stroke-width='0.5'/%3E%3Cline x1='48' y1='321' x2='48' y2='385' stroke-width='0.5'/%3E%3Cline x1='52' y1='321' x2='52' y2='382' stroke-width='0.5'/%3E%3C!-- ⑨ dot divider --%3E%3Ccircle cx='35' cy='408' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='408' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='408' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑩ AMPHORA (Dionysus / wine / ancient Greece) --%3E%3Cpath d='M36,450 Q29,458 28,470 Q27,483 32,492 Q37,499 45,500 Q53,499 58,492 Q63,483 62,470 Q61,458 54,450 Z' stroke-width='1'/%3E%3Cpath d='M36,450 Q45,445 54,450' stroke-width='0.9'/%3E%3Crect x='42' y='441' width='6' height='10' rx='1' stroke-width='0.9'/%3E%3C!-- handles --%3E%3Cpath d='M28,470 Q20,468 21,459 Q22,452 36,454' stroke-width='0.8'/%3E%3Cpath d='M62,470 Q70,468 69,459 Q68,452 54,454' stroke-width='0.8'/%3E%3C!-- decorative lines on body --%3E%3Cline x1='30' y1='478' x2='60' y2='478' stroke-width='0.5'/%3E%3Cline x1='31' y1='488' x2='59' y2='488' stroke-width='0.5'/%3E%3C!-- ⑬ BOTTOM MEANDER BORDER --%3E%3Cline x1='10' y1='576' x2='80' y2='576' stroke-width='0.7'/%3E%3Cpath d='M10,576 L10,584 L18,584 L18,576' stroke-width='0.7'/%3E%3Cpath d='M26,576 L26,584 L34,584 L34,576' stroke-width='0.7'/%3E%3Cpath d='M42,576 L42,584 L50,584 L50,576' stroke-width='0.7'/%3E%3Cpath d='M58,576 L58,584 L66,584 L66,576' stroke-width='0.7'/%3E%3Cpath d='M72,576 L72,584 L80,584 L80,576' stroke-width='0.7'/%3E%3Cline x1='10' y1='584' x2='80' y2='584' stroke-width='0.7'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 600' width='90' height='600'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- ① TOP MEANDER BORDER --%3E%3Cline x1='10' y1='12' x2='80' y2='12' stroke-width='0.7'/%3E%3Cpath d='M10,12 L10,20 L18,20 L18,12' stroke-width='0.7'/%3E%3Cpath d='M26,12 L26,20 L34,20 L34,12' stroke-width='0.7'/%3E%3Cpath d='M42,12 L42,20 L50,20 L50,12' stroke-width='0.7'/%3E%3Cpath d='M58,12 L58,20 L66,20 L66,12' stroke-width='0.7'/%3E%3Cpath d='M72,12 L72,20 L80,20 L80,12' stroke-width='0.7'/%3E%3Cline x1='10' y1='20' x2='80' y2='20' stroke-width='0.7'/%3E%3C!-- ② ZEUS LIGHTNING BOLT --%3E%3Cpath d='M53,42 L38,68 L48,68 L32,95 L55,72 L45,72 L60,42 Z' stroke-width='1'/%3E%3C!-- ③ dot divider --%3E%3Ccircle cx='35' cy='110' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='110' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='110' r='1.5' stroke-width='0.7'/%3E%3C!-- ④ LAUREL WREATH (Apollo / Victory) --%3E%3Ccircle cx='45' cy='152' r='18' stroke-width='0.55' stroke-dasharray='2,3.5'/%3E%3C!-- left leaves --%3E%3Cellipse cx='31' cy='143' rx='5' ry='2.3' transform='rotate(-42 31 143)' stroke-width='0.8'/%3E%3Cellipse cx='27' cy='152' rx='5' ry='2.3' transform='rotate(-4 27 152)' stroke-width='0.8'/%3E%3Cellipse cx='31' cy='161' rx='5' ry='2.3' transform='rotate(42 31 161)' stroke-width='0.8'/%3E%3C!-- right leaves --%3E%3Cellipse cx='59' cy='143' rx='5' ry='2.3' transform='rotate(42 59 143)' stroke-width='0.8'/%3E%3Cellipse cx='63' cy='152' rx='5' ry='2.3' transform='rotate(4 63 152)' stroke-width='0.8'/%3E%3Cellipse cx='59' cy='161' rx='5' ry='2.3' transform='rotate(-42 59 161)' stroke-width='0.8'/%3E%3C!-- top leaves --%3E%3Cellipse cx='38' cy='135' rx='5' ry='2.3' transform='rotate(-70 38 135)' stroke-width='0.8'/%3E%3Cellipse cx='52' cy='135' rx='5' ry='2.3' transform='rotate(70 52 135)' stroke-width='0.8'/%3E%3C!-- ribbon knot --%3E%3Cpath d='M41,169 Q45,173 49,169' stroke-width='0.9'/%3E%3Cpath d='M43,169 L42,174 M47,169 L48,174' stroke-width='0.7'/%3E%3C!-- ⑤ dot divider --%3E%3Ccircle cx='35' cy='190' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='190' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='190' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑥ TRIDENT OF POSEIDON --%3E%3Cline x1='45' y1='210' x2='45' y2='270' stroke-width='1'/%3E%3C!-- shaft bands --%3E%3Cline x1='41' y1='258' x2='49' y2='258' stroke-width='0.7'/%3E%3Cline x1='41' y1='263' x2='49' y2='263' stroke-width='0.7'/%3E%3C!-- three prongs --%3E%3Cline x1='45' y1='210' x2='45' y2='228' stroke-width='1.1'/%3E%3Cline x1='33' y1='215' x2='33' y2='228' stroke-width='1'/%3E%3Cline x1='57' y1='215' x2='57' y2='228' stroke-width='1'/%3E%3C!-- prong tips --%3E%3Cpath d='M43,210 L45,205 L47,210' stroke-width='0.9'/%3E%3Cpath d='M31,215 L33,210 L35,215' stroke-width='0.9'/%3E%3Cpath d='M55,215 L57,210 L59,215' stroke-width='0.9'/%3E%3C!-- crossbar connecting outer prongs to shaft --%3E%3Cline x1='33' y1='222' x2='45' y2='222' stroke-width='0.7'/%3E%3Cline x1='45' y1='222' x2='57' y2='222' stroke-width='0.7'/%3E%3C!-- ⑦ dot divider --%3E%3Ccircle cx='35' cy='288' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='288' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='288' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑧ LYRE OF APOLLO --%3E%3Cpath d='M33,340 Q24,353 24,367 Q24,386 45,391 Q66,386 66,367 Q66,353 57,340' stroke-width='1'/%3E%3Cpath d='M33,340 Q45,332 57,340' stroke-width='1'/%3E%3Cline x1='33' y1='340' x2='33' y2='321' stroke-width='1'/%3E%3Cline x1='57' y1='340' x2='57' y2='321' stroke-width='1'/%3E%3Crect x='29' y='317' width='32' height='5' rx='2.5' stroke-width='0.9'/%3E%3C!-- 5 strings --%3E%3Cline x1='36' y1='321' x2='36' y2='382' stroke-width='0.5'/%3E%3Cline x1='40' y1='321' x2='40' y2='385' stroke-width='0.5'/%3E%3Cline x1='44' y1='321' x2='44' y2='386' stroke-width='0.5'/%3E%3Cline x1='48' y1='321' x2='48' y2='385' stroke-width='0.5'/%3E%3Cline x1='52' y1='321' x2='52' y2='382' stroke-width='0.5'/%3E%3C!-- ⑨ dot divider --%3E%3Ccircle cx='35' cy='408' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='45' cy='408' r='1.5' stroke-width='0.7'/%3E%3Ccircle cx='55' cy='408' r='1.5' stroke-width='0.7'/%3E%3C!-- ⑩ AMPHORA (Dionysus / wine / ancient Greece) --%3E%3Cpath d='M36,450 Q29,458 28,470 Q27,483 32,492 Q37,499 45,500 Q53,499 58,492 Q63,483 62,470 Q61,458 54,450 Z' stroke-width='1'/%3E%3Cpath d='M36,450 Q45,445 54,450' stroke-width='0.9'/%3E%3Crect x='42' y='441' width='6' height='10' rx='1' stroke-width='0.9'/%3E%3C!-- handles --%3E%3Cpath d='M28,470 Q20,468 21,459 Q22,452 36,454' stroke-width='0.8'/%3E%3Cpath d='M62,470 Q70,468 69,459 Q68,452 54,454' stroke-width='0.8'/%3E%3C!-- decorative lines on body --%3E%3Cline x1='30' y1='478' x2='60' y2='478' stroke-width='0.5'/%3E%3Cline x1='31' y1='488' x2='59' y2='488' stroke-width='0.5'/%3E%3C!-- ⑪ BOTTOM MEANDER BORDER --%3E%3Cline x1='10' y1='576' x2='80' y2='576' stroke-width='0.7'/%3E%3Cpath d='M10,576 L10,584 L18,584 L18,576' stroke-width='0.7'/%3E%3Cpath d='M26,576 L26,584 L34,584 L34,576' stroke-width='0.7'/%3E%3Cpath d='M42,576 L42,584 L50,584 L50,576' stroke-width='0.7'/%3E%3Cpath d='M58,576 L58,584 L66,584 L66,576' stroke-width='0.7'/%3E%3Cpath d='M72,576 L72,584 L80,584 L80,576' stroke-width='0.7'/%3E%3Cline x1='10' y1='584' x2='80' y2='584' stroke-width='0.7'/%3E%3C/g%3E%3C/svg%3E");
             background-size: 90px 600px;
-            background-position: center 0px;
+            background-position: center 0;
             background-repeat: repeat-y;
         }
 
@@ -75,12 +58,7 @@
             body::after { display: none; }
         }
 
-        /* ═══ HERO HEADER — Greek ink art overlay
-           Symmetric: left side = right side (mirrored)
-           Motifs: Laurel fronds from edges + Greek key top/bottom
-           + centered sun-ray medallion (Helios / Apollo)
-           Opacity: 0.12 — barely-there pencil breath
-        ═══════════════════════════════════════════════════════════ */
+        /* ═══ HERO — SVG overlay: meander borders + sun medallion + symmetric laurel fronds  |  opacity: 0.12 ═══ */
         .hero::before {
             content: '';
             position: absolute;
@@ -98,7 +76,7 @@
         /* ═══ MAIN CONTAINER ═══ */
         .layout {
             display: grid;
-            grid-template-columns: 200px 1fr;
+            grid-template-columns: 220px 1fr;
             max-width: 1100px;
             margin: 15px auto;
             background: #f5f5f5;
@@ -111,8 +89,8 @@
             padding: 12px;
             border-right: 3px solid #333;
             position: sticky;
-            top: 15px;
-            max-height: calc(100vh - 30px);
+            top: 0;
+            max-height: 100vh;
             overflow-y: auto;
             align-self: start;
         }
@@ -122,8 +100,10 @@
             font-weight: bold;
             color: #2f4f4f;
             margin-bottom: 10px;
+            padding-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            border-bottom: 1px solid #999;
         }
 
         .reading-order ol {
@@ -143,9 +123,30 @@
             content: counter(item) ".";
             position: absolute;
             left: 0;
-            font-weight: bold;
-            color: #000;
+            font-weight: normal;
+            color: #aaa;
             font-size: 10px;
+        }
+
+        .reading-order li.group-start {
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #bbb;
+        }
+
+        .reading-order li.group-start:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .reading-order .group-label {
+            font-size: 9.5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #8b7355;
+            margin-bottom: 5px;
         }
 
         .reading-order .sidebar-title {
@@ -162,6 +163,17 @@
             text-decoration: underline;
         }
 
+        @keyframes bookFlash {
+            0%   { background: #ffd700; box-shadow: 0 0 0 4px #ffd700; }
+            60%  { background: #fff9c4; box-shadow: 0 0 0 4px #ffe066; }
+            100% { background: transparent; box-shadow: none; }
+        }
+
+        .book-flash {
+            animation: bookFlash 2.5s ease-out forwards;
+            border-radius: 2px;
+        }
+
         .reading-order .sidebar-author {
             color: #696969;
             font-size: 10px;
@@ -173,38 +185,47 @@
             position: relative;
             overflow: hidden;
             background: #ffd700;
-            padding: 12px 15px;
+            padding: 20px 15px;
             border-bottom: 3px solid #333;
             text-align: center;
+            grid-column: 1 / -1;
         }
 
         .hero h1 {
-            font-size: 20px;
+            font-size: 24px;
             color: #2f4f4f;
             font-weight: bold;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             letter-spacing: 0.5px;
         }
 
         .hero .greek {
-            font-size: 13px;
+            font-size: 15px;
             color: #8b4513;
             font-style: italic;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         .hero .quote {
             font-size: 11px;
-            color: #696969;
+            color: #5a4020;
             font-style: italic;
             max-width: 500px;
-            margin: 0 auto;
+            margin: 8px auto 0;
+            line-height: 1.6;
+        }
+
+        .hero .quote-attr {
+            font-size: 10px;
+            color: #8b4513;
+            opacity: 0.7;
         }
 
         /* ═══ SECTIONS (Tighter) ═══ */
         .section {
-            padding: 15px;
-            border-bottom: 2px solid #999;
+            padding: 20px 15px;
+            border-bottom: 1px solid #ffd700;
         }
 
         .section-title {
@@ -214,14 +235,13 @@
             margin-bottom: 10px;
             padding-bottom: 5px;
             padding-left: 10px;
-            border-bottom: 2px solid #8b4513;
-            border-left: 4px solid #ffd700;
+            border-left: 4px solid #8b4513;
         }
 
         .section-intro {
-            font-size: 10px;
-            color: #aaa;
-            margin-bottom: 12px;
+            font-size: 11px;
+            color: #6b6b6b;
+            margin-bottom: 16px;
             font-style: italic;
             padding-left: 14px;
         }
@@ -229,19 +249,19 @@
         .subsection-title {
             font-size: 11px;
             font-weight: bold;
-            color: #696969;
+            color: #2f4f4f;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             margin: 15px 0 10px 0;
-            padding-bottom: 4px;
-            border-bottom: 1px dashed #ccc;
+            padding: 4px 0 4px 8px;
+            border-bottom: 1px solid #999;
+            border-left: 3px solid #8b4513;
         }
 
         /* ═══ BEGINNER NOTICE (Simpler) ═══ */
         .beginner-notice {
-            background: #fffacd;
-            border: 2px solid #ffd700;
-            border-left: 5px solid #ffa500;
+            background: #f0ece0;
+            border-left: 5px solid #8b7355;
             padding: 10px;
             margin-bottom: 12px;
         }
@@ -261,16 +281,26 @@
         .beginner-book {
             display: flex;
             gap: 8px;
-            background: #fff;
+            background: #dcdcdc;
             padding: 6px;
-            border: 1px solid #ccc;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .beginner-book:hover {
+            background: #b8cece;
+            border-top-color: #5f9ea0;
+            border-left-color: #5f9ea0;
         }
 
         .beginner-book img {
             width: 40px;
             height: 60px;
             object-fit: cover;
-            border: 1px solid #999;
+            border: 1px solid #666;
         }
 
         .beginner-book-info {
@@ -313,24 +343,26 @@
         .epic-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 8px;
+            gap: 12px;
         }
 
         .epic-book {
             display: flex;
             flex-direction: column;
-            padding: 6px;
+            padding: 8px;
             background: #dcdcdc;
             border-top: 2px solid #fff;
             border-left: 2px solid #fff;
             border-right: 2px solid #808080;
             border-bottom: 2px solid #808080;
-            transition: background 0.1s;
+            transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
         }
 
         .epic-book:hover {
-            background: #c8d8d8;
+            background: #b8cece;
             border-top-color: #5f9ea0;
+            border-left-color: #5f9ea0;
+            box-shadow: inset 0 0 0 1px #5f9ea040;
         }
 
         .epic-book-cover {
@@ -488,11 +520,42 @@
             display: flex;
         }
 
+        .scope-wrapper {
+            display: none;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .scope-wrapper.active {
+            display: flex;
+        }
+
+        .icon-legend {
+            margin-left: auto;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 9px;
+            color: #888;
+            letter-spacing: 0.2px;
+        }
+
+        .icon-legend span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            white-space: nowrap;
+        }
+
+        .icon-legend i {
+            font-size: 9px;
+        }
+
         /* .item-note — used in sidebar reading-order list */
         .item-note {
             flex-basis: 100%;
             font-size: 9px;
-            color: #cd5c5c;
+            color: #8b7355;
             font-style: italic;
             margin-top: 2px;
         }
@@ -518,6 +581,7 @@
         .modal-content {
             background: #f5f5f5;
             border: 3px solid #333;
+            border-top: 4px solid #ffd700;
             padding: 15px;
             max-width: 450px;
             width: 90%;
@@ -564,6 +628,26 @@
 
         .version-item:last-child {
             border-bottom: none;
+        }
+
+        .version-item.is-recommended {
+            background: #fffbe6;
+            border-left: 4px solid #ffd700;
+            padding-left: 6px;
+        }
+
+        .version-item.is-recommended:hover {
+            background: #fff5c0;
+        }
+
+        .version-item.is-bilingual {
+            background: #f4faf4;
+            border-left: 4px solid #228b22;
+            padding-left: 6px;
+        }
+
+        .version-item.is-bilingual:hover {
+            background: #e8f5e8;
         }
 
         .version-info {
@@ -626,11 +710,11 @@
         /* ═══ FOOTER ═══ */
         footer {
             text-align: center;
-            padding: 12px;
-            background: #696969;
-            color: #fff;
+            padding: 14px 12px 12px;
+            background: #2f4f4f;
+            color: #d8ead8;
             font-size: 10px;
-            border-top: 3px solid #333;
+            border-top: 3px solid #ffd700;
         }
 
         footer a {
@@ -651,14 +735,46 @@
             display: none;
         }
 
+        .drawer-close-strip {
+            display: none;
+        }
+
         /* ═══ MOBILE RESPONSIVE ═══ */
         @media (max-width: 768px) {
+
+            body {
+                background: #f5f5f5;
+            }
+
+            /* ── LAYOUT ── */
             .layout {
-                margin: 10px;
+                margin: 0;
+                border-left: none;
+                border-right: none;
                 grid-template-columns: 1fr;
             }
 
-            /* Hide sidebar from normal flow on mobile */
+            /* ── HERO ── */
+            .hero {
+                padding: 16px 12px;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            .hero .greek {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .hero .quote {
+                font-size: 10px;
+                max-width: 100%;
+                padding: 0 8px;
+            }
+
+            /* ── SIDEBAR — bottom drawer ── */
             .reading-order {
                 display: none;
                 position: fixed;
@@ -671,15 +787,47 @@
                 border-right: none;
                 border-top: 3px solid #333;
                 z-index: 1000;
-                border-radius: 0;
+                padding-bottom: 24px;
             }
 
-            /* When drawer is open */
             .reading-order.drawer-open {
                 display: block;
             }
 
-            /* Backdrop overlay */
+            /* h3 hidden on mobile — drawer-close-strip already serves as the drawer title */
+            .reading-order h3 {
+                display: none;
+            }
+
+            /* ── IN-DRAWER CLOSE STRIP ── */
+            .drawer-close-strip {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: sticky;
+                top: 0;
+                background: #c8c8c8;
+                border-bottom: 1px solid #999;
+                padding: 6px 10px;
+                margin: -12px -12px 10px -12px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #2f4f4f;
+                z-index: 1;
+            }
+
+            .drawer-close-strip button {
+                background: none;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+                color: #2f4f4f;
+                padding: 0 4px;
+                line-height: 1;
+                font-family: inherit;
+            }
+
+            /* ── BACKDROP ── */
             .drawer-backdrop {
                 display: none;
                 position: fixed;
@@ -692,34 +840,93 @@
                 display: block;
             }
 
-            /* Floating toggle button */
+            /* ── DRAWER TOGGLE BUTTON ── */
             .drawer-toggle {
                 display: flex;
+                align-items: center;
+                gap: 6px;
                 position: fixed;
                 bottom: 16px;
-                right: 16px;
+                left: 50%;
+                transform: translateX(-50%);
                 z-index: 1001;
                 background: #ffd700;
                 border: 2px solid #333;
-                padding: 8px 12px;
+                padding: 8px 14px;
                 font-family: inherit;
-                font-size: 11px;
+                font-size: 12px;
                 font-weight: bold;
                 cursor: pointer;
                 box-shadow: 2px 2px 0 #333;
+                white-space: nowrap;
             }
 
+            /* ── SECTIONS ── */
             .section {
+                padding: 12px 10px;
+            }
+
+            .section-title {
+                font-size: 13px;
+            }
+
+            .subsection-title {
+                font-size: 10px;
+            }
+
+            /* ── BEGINNER BOOKS ── */
+            .beginner-books {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .beginner-book {
+                width: 100%;
+            }
+
+            /* ── BOOK CARDS ── */
+            .epic-list {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 8px;
+            }
+
+            .epic-book {
+                padding: 6px;
+            }
+
+            /* ── SORT BAR ── */
+            .sort-container {
+                padding: 6px 10px;
+                gap: 4px;
+            }
+
+            .icon-legend {
+                display: none;
+            }
+
+            /* ── MODAL ── */
+            .modal-content {
+                width: 95%;
+                max-height: 85vh;
                 padding: 12px;
             }
 
-            .epic-list {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            /* ── FOOTER ── */
+            footer {
+                padding: 12px 10px 24px;
             }
 
-            .sort-container {
-                padding: 6px 12px;
+            /* ── MAIN CONTENT — clear FAB ── */
+            .main-content {
+                padding-bottom: 72px;
             }
+        }
+
+        /* ── SMALL PHONES (≤380px) ── */
+        @media (max-width: 380px) {
+            .hero h1 { font-size: 18px; }
+            .epic-list { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+            .sort-btn, .dir-btn, .clear-btn { padding: 3px 6px; font-size: 9px; }
         }
 
         .footer-icons {
@@ -727,6 +934,22 @@
             justify-content: center;
             gap: 20px;
             align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .footer-icons a {
+            opacity: 0.8;
+            transition: opacity 0.15s;
+        }
+
+        .footer-icons a:hover {
+            opacity: 1;
+        }
+
+        .footer-icons svg {
+            display: block;
+            width: 24px;
+            height: 24px;
         }
 
         .roman-label {
@@ -825,7 +1048,7 @@
         .acc-book-title {
             font-size: 11.5px;
             font-weight: bold;
-            color: #1c1c5e;
+            color: #2f4f4f;
         }
 
         /* Author · date — follows title on same line, muted */
@@ -876,74 +1099,89 @@
 <body>
 
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
-<button class="drawer-toggle" id="drawerToggle">📖 Reading Order</button>
+<button class="drawer-toggle" id="drawerToggle"><i class="fas fa-book-open"></i> Reading Order</button>
 
 <div class="layout">
+    <header class="hero">
+        <h1>Greek Mythology</h1>
+        <div class="greek">Μυθολογία</div>
+        <p class="quote">"Sing, O goddess, the anger of Achilles son of Peleus, that brought countless ills upon the Achaeans."</p>
+        <div class="quote-attr">— Homer, Iliad I.1</div>
+    </header>
     <aside class="reading-order">
+        <div class="drawer-close-strip" id="drawerCloseStrip">
+            <span>Reading Order</span>
+            <button onclick="closeDrawer()" aria-label="Close drawer">✕</button>
+        </div>
         <h3>Reading Order</h3>
         <ol>
-            <li>
-                <div class="sidebar-title"><a href="#anchor-mythos">Mythos or Mythology</a></div>
+            <li class="group-start">
+                <div class="group-label">Primers</div>
+                <div class="sidebar-title"><a href="#anchor-mythos" onclick="scrollToBook('anchor-mythos'); return false;">Mythos or Mythology</a></div>
                 <div class="sidebar-author">Stephen Fry or Edith Hamilton</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#anchor-daulaires">D'Aulaires' Book</a></div>
+                <div class="sidebar-title"><a href="#anchor-daulaires" onclick="scrollToBook('anchor-daulaires'); return false;">D'Aulaires' Book</a></div>
                 <div class="sidebar-author">d'Aulaire (visual learners)</div>
             </li>
-            <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('theogony'); return false;">Theogony</a></div>
+            <li class="group-start">
+                <div class="group-label">Early Greek</div>
+                <div class="sidebar-title"><a href="#anchor-theogony" onclick="scrollToBook('anchor-theogony'); return false;">Theogony</a></div>
                 <div class="sidebar-author">Hesiod</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('worksanddays'); return false;">Works and Days</a></div>
+                <div class="sidebar-title"><a href="#anchor-worksanddays" onclick="scrollToBook('anchor-worksanddays'); return false;">Works and Days</a></div>
                 <div class="sidebar-author">Hesiod</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('hymns'); return false;">Homeric Hymns</a></div>
+                <div class="sidebar-title"><a href="#anchor-homerichymns" onclick="scrollToBook('anchor-homerichymns'); return false;">Homeric Hymns</a></div>
                 <div class="sidebar-author">Anonymous</div>
             </li>
-            <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('iliad'); return false;">The Iliad</a></div>
+            <li class="group-start">
+                <div class="group-label">The Epics</div>
+                <div class="sidebar-title"><a href="#anchor-iliad" onclick="scrollToBook('anchor-iliad'); return false;">The Iliad</a></div>
                 <div class="sidebar-author">Homer</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('odyssey'); return false;">The Odyssey</a></div>
+                <div class="sidebar-title"><a href="#anchor-odyssey" onclick="scrollToBook('anchor-odyssey'); return false;">The Odyssey</a></div>
                 <div class="sidebar-author">Homer</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('argonautica'); return false;">Argonautica</a></div>
+                <div class="sidebar-title"><a href="#anchor-argonautica" onclick="scrollToBook('anchor-argonautica'); return false;">Argonautica</a></div>
                 <div class="sidebar-author">Apollonius of Rhodes</div>
             </li>
-            <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('metamorphoses'); return false;">Metamorphoses</a></div>
-                <div class="sidebar-author">Ovid</div>
-            </li>
-            <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('aeneid'); return false;">The Aeneid</a></div>
-                <div class="sidebar-author">Virgil</div>
-            </li>
-            <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('oresteia'); return false;">The Oresteia</a></div>
+            <li class="group-start">
+                <div class="group-label">Tragedies</div>
+                <div class="sidebar-title"><a href="#anchor-oresteia" onclick="scrollToBook('anchor-oresteia'); return false;">The Oresteia</a></div>
                 <div class="sidebar-author">Aeschylus</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('oedipus'); return false;">Oedipus Rex</a></div>
+                <div class="sidebar-title"><a href="#anchor-oedipusrex" onclick="scrollToBook('anchor-oedipusrex'); return false;">Oedipus Rex</a></div>
                 <div class="sidebar-author">Sophocles</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('antigone'); return false;">Antigone</a></div>
+                <div class="sidebar-title"><a href="#anchor-antigone" onclick="scrollToBook('anchor-antigone'); return false;">Antigone</a></div>
                 <div class="sidebar-author">Sophocles</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('medea'); return false;">Medea</a></div>
+                <div class="sidebar-title"><a href="#anchor-medea" onclick="scrollToBook('anchor-medea'); return false;">Medea</a></div>
                 <div class="sidebar-author">Euripides</div>
             </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('trojanwomen'); return false;">The Trojan Women</a></div>
+                <div class="sidebar-title"><a href="#anchor-trojanwomen" onclick="scrollToBook('anchor-trojanwomen'); return false;">The Trojan Women</a></div>
                 <div class="sidebar-author">Euripides</div>
             </li>
+            <li class="group-start">
+                <div class="group-label">Later Collections</div>
+                <div class="sidebar-title"><a href="#anchor-metamorphoses" onclick="scrollToBook('anchor-metamorphoses'); return false;">Metamorphoses</a></div>
+                <div class="sidebar-author">Ovid</div>
+            </li>
             <li>
-                <div class="sidebar-title"><a href="#" onclick="showVersions('library'); return false;">Library</a></div>
+                <div class="sidebar-title"><a href="#anchor-aeneid" onclick="scrollToBook('anchor-aeneid'); return false;">The Aeneid</a></div>
+                <div class="sidebar-author">Virgil</div>
+            </li>
+            <li>
+                <div class="sidebar-title"><a href="#anchor-library" onclick="scrollToBook('anchor-library'); return false;">Library</a></div>
                 <div class="sidebar-author">Apollodorus</div>
                 <div class="item-note">reference — look up myths, genealogies & characters as you read</div>
             </li>
@@ -952,12 +1190,6 @@
 
     <main class="main-content">
         
-        <header class="hero">
-            <h1>Greek Mythology</h1>
-            <div class="greek">Μυθολογία</div>
-            <p class="quote">"Sing, O goddess, the anger of Achilles son of Peleus, that brought countless ills upon the Achaeans."</p>
-        </header>
-
         <section class="section">
             <h2 class="section-title">The Idiotēs Handbook</h2>
             <p class="section-intro">implying you read</p>
@@ -1024,9 +1256,16 @@
                 <button class="dir-btn active" data-dir="asc" title="Oldest / A–Z">↑</button>
                 <button class="dir-btn" data-dir="desc" title="Newest / Z–A">↓</button>
             </div>
-            <span class="sort-label" style="margin-left:6px;">Scope:</span>
-            <button class="sort-btn" id="scopeBtn">Within Sections</button>
+            <div class="scope-wrapper" id="scopeWrapper">
+                <span class="sort-label" style="margin-left:6px;">Scope:</span>
+                <button class="sort-btn" id="scopeBtn">Within Sections</button>
+            </div>
             <button class="clear-btn" id="clearBtn">✕ Clear Sort</button>
+            <div class="icon-legend">
+                <span><i class="fab fa-goodreads-g" style="color:#d4a574;"></i> goodreads</span>
+                <span><i class="fas fa-book-open" style="color:#7ec87e;"></i> read</span>
+                <span><i class="fas fa-shopping-cart" style="color:#e89090;"></i> buy</span>
+            </div>
         </div>
 
         <section class="section">
@@ -1162,7 +1401,7 @@
             <p class="section-intro">I know what evil I am about to do.</p>
 
             <h3 class="subsection-title">Essential Tragedies</h3>
-            <div class="epic-list sortable-grid">
+            <div class="epic-list">
                 <div class="epic-book" id="anchor-oedipusrex" data-year="-429" data-title="Oedipus Rex">
                     <img src="./images/oedipus-rex.jpg" class="epic-book-cover" alt="Oedipus Rex">
                     <div class="epic-book-info">
@@ -1547,7 +1786,7 @@
             </div>
 
             <h3 class="subsection-title">Remaining Plays</h3>
-            <div class="epic-list sortable-grid">
+            <div class="epic-list">
                 <div class="epic-book" data-year="-472" data-title="The Persians">
                     <img src="./images/persians.jpg" class="epic-book-cover" alt="The Persians">
                     <div class="epic-book-info">
@@ -1765,7 +2004,7 @@
             <h2 class="section-title">Later Collections</h2>
             <p class="section-intro">later classical lore</p>
 
-            <div class="epic-list sortable-grid">
+            <div class="epic-list">
                 
                 <div class="epic-book" id="anchor-library" data-year="100" data-title="The Library">
                     <img src="./images/the-library.jpg" class="epic-book-cover" alt="The Library">
@@ -1841,7 +2080,7 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAcc(this)">
                         <span class="accordion-arrow">▶</span>
-                        📜 Ancient Greek Works &amp; Continuations
+                        <i class="fas fa-scroll" style="color:#8b4513; font-size:11px;"></i> Ancient Greek Works &amp; Continuations
                         <span class="accordion-count">9 works</span>
                     </div>
                     <div class="accordion-body">
@@ -1902,7 +2141,7 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAcc(this)">
                         <span class="accordion-arrow">▶</span>
-                        🏛️ Roman Works
+                        <i class="fas fa-landmark" style="color:#8b4513; font-size:11px;"></i> Roman Works
                         <span class="accordion-count">5 works</span>
                     </div>
                     <div class="accordion-body">
@@ -1940,7 +2179,7 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAcc(this)">
                         <span class="accordion-arrow">▶</span>
-                        📚 Mythography &amp; Reference
+                        <i class="fas fa-book" style="color:#8b4513; font-size:11px;"></i> Mythography &amp; Reference
                         <span class="accordion-count">4 works</span>
                     </div>
                     <div class="accordion-body">
@@ -1973,7 +2212,7 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAcc(this)">
                         <span class="accordion-arrow">▶</span>
-                        ✨ Modern Retellings
+                        <i class="fas fa-feather-alt" style="color:#8b4513; font-size:11px;"></i> Modern Retellings
                         <span class="accordion-count">5 works</span>
                     </div>
                     <div class="accordion-body">
@@ -2023,9 +2262,9 @@
                 <!-- Goodreads -->
                 <a href="https://www.librarything.com/catalog/actualsnek" title="Goodreads">
                     <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                        <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                        <path fill="none" stroke="#654321" stroke-width="1.5" stroke-linecap="round" d="M12 6v12"/>
+                        <path fill="none" stroke="#c8a882" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path fill="none" stroke="#c8a882" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        <path fill="none" stroke="#c8a882" stroke-width="1.5" stroke-linecap="round" d="M12 6v12"/>
                     </svg>
                 </a>
 
@@ -2079,7 +2318,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 1988 (repr. 1999, 2008) — Paperback",
         "link": "https://www.amazon.in/dp/019953831X",
         "bilingual": false,
-        "has_style": false,
         "pages": 100
       },
       {
@@ -2088,7 +2326,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 2006 (2-vol set: Vol I — Theogony · Works and Days · Testimonia: 326 pp; Vol II — The Shield · Catalogue of Women · Fragments: 422 pp) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996224",
         "bilingual": true,
-        "has_style": false,
         "pages": 326
       },
       {
@@ -2097,7 +2334,6 @@ const modalData = {
         "publisher": "University of Michigan Press, 1959 (incl. Works and Days & Shield of Herakles) — Paperback",
         "link": "https://www.amazon.in/dp/0472439030",
         "bilingual": false,
-        "has_style": false,
         "pages": 171
       }
     ]
@@ -2111,7 +2347,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 1988 (repr. 1999, 2008) — same volume as Theogony — Paperback",
         "link": "https://www.amazon.in/dp/019953831X",
         "bilingual": false,
-        "has_style": false,
         "pages": 100
       },
       {
@@ -2120,7 +2355,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 2006 (same Vol I as Theogony — 326 pp — both poems share one volume) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996224",
         "bilingual": true,
-        "has_style": false,
         "pages": 326
       },
       {
@@ -2129,7 +2363,6 @@ const modalData = {
         "publisher": "University of Michigan Press, 1959 (incl. Theogony & Shield of Herakles) — same volume — Paperback",
         "link": "https://www.amazon.in/dp/0472439030",
         "bilingual": false,
-        "has_style": false,
         "pages": 171
       }
     ]
@@ -2143,7 +2376,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2011 (first publ. 1951) — Paperback",
         "link": "https://www.amazon.in/dp/0226470490",
         "bilingual": false,
-        "has_style": false,
         "pages": 608
       },
       {
@@ -2152,7 +2384,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 1999 (2 vols — Vol I, Books 1–12: 591 pp; Vol II, Books 13–24: 660 pp) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995791",
         "bilingual": true,
-        "has_style": false,
         "pages": 591
       },
       {
@@ -2161,7 +2392,6 @@ const modalData = {
         "publisher": "Penguin Classics Deluxe Edition, 1998 — Paperback",
         "link": "https://www.amazon.in/dp/0140275363",
         "bilingual": false,
-        "has_style": false,
         "pages": 704
       },
       {
@@ -2170,7 +2400,6 @@ const modalData = {
         "publisher": "Ecco (HarperCollins), 2016 — Paperback",
         "link": "https://www.amazon.in/dp/0062046284",
         "bilingual": false,
-        "has_style": false,
         "pages": 608
       }
     ]
@@ -2184,7 +2413,6 @@ const modalData = {
         "publisher": "W. W. Norton & Company, 2018 — Paperback",
         "link": "https://www.amazon.in/dp/0393356256",
         "bilingual": false,
-        "has_style": true,
         "pages": 592
       },
       {
@@ -2193,7 +2421,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 1995 (2 vols — Vol I, Books 1–12: 481 pp; Vol II, Books 13–24: 467 pp) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995619",
         "bilingual": true,
-        "has_style": false,
         "pages": 481
       },
       {
@@ -2202,7 +2429,6 @@ const modalData = {
         "publisher": "Penguin Classics, 1997 — Paperback",
         "link": "https://www.amazon.in/dp/0140268863",
         "bilingual": false,
-        "has_style": false,
         "pages": 541
       },
       {
@@ -2211,7 +2437,6 @@ const modalData = {
         "publisher": "Harper Perennial, 1999 (first publ. 1967) — Paperback",
         "link": "https://www.amazon.in/dp/006124418X",
         "bilingual": false,
-        "has_style": false,
         "pages": 368
       }
     ]
@@ -2225,7 +2450,6 @@ const modalData = {
         "publisher": "Johns Hopkins University Press, 2020 (3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/1421438607",
         "bilingual": false,
-        "has_style": false,
         "pages": 144
       },
       {
@@ -2234,7 +2458,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 2003 — Hardcover",
         "link": "https://www.amazon.in/dp/0674996062",
         "bilingual": true,
-        "has_style": false,
         "pages": 480
       },
       {
@@ -2243,7 +2466,6 @@ const modalData = {
         "publisher": "Penguin Classics, 2003 — Paperback",
         "link": "https://www.amazon.in/dp/0140437827",
         "bilingual": false,
-        "has_style": false,
         "pages": 416
       }
     ]
@@ -2257,7 +2479,6 @@ const modalData = {
         "publisher": "Penguin Classics, 1977 (3 plays: Agamemnon · The Libation Bearers · The Eumenides, with introduction by W. B. Stanford) — Paperback",
         "link": "https://www.amazon.in/dp/0140443339",
         "bilingual": false,
-        "has_style": true,
         "pages": 336
       },
       {
@@ -2266,7 +2487,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2009 (Volume II: Oresteia — Agamemnon · Libation-Bearers · Eumenides) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996283",
         "bilingual": true,
-        "has_style": false,
         "pages": 544
       },
       {
@@ -2275,7 +2495,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 1953 (reprinted 2013) — Paperback",
         "link": "https://www.amazon.in/dp/0226307786",
         "bilingual": false,
-        "has_style": false,
         "pages": 176
       }
     ]
@@ -2289,7 +2508,6 @@ const modalData = {
         "publisher": "Penguin Classics, 1984 (The Three Theban Plays: Antigone · Oedipus the King · Oedipus at Colonus) — Paperback",
         "link": "https://www.amazon.in/dp/0140444254",
         "bilingual": false,
-        "has_style": true,
         "pages": 432
       },
       {
@@ -2298,7 +2516,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume I: Ajax · Electra · Oedipus Tyrannus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995570",
         "bilingual": true,
-        "has_style": false,
         "pages": 488
       },
       {
@@ -2307,7 +2524,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2010 (3rd ed., in 'Sophocles I: Oedipus the King · Oedipus at Colonus · Antigone') — Paperback",
         "link": "https://www.amazon.in/dp/0226311511",
         "bilingual": false,
-        "has_style": false,
         "pages": 256
       }
     ]
@@ -2321,7 +2537,6 @@ const modalData = {
         "publisher": "Penguin Classics, 1984 (The Three Theban Plays: Antigone · Oedipus the King · Oedipus at Colonus) — Paperback",
         "link": "https://www.amazon.in/dp/0140444254",
         "bilingual": false,
-        "has_style": true,
         "pages": 432
       },
       {
@@ -2330,7 +2545,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume II: Antigone · Women of Trachis · Philoctetes · Oedipus at Colonus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
-        "has_style": false,
         "pages": 584
       },
       {
@@ -2339,7 +2553,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Sophocles I: Oedipus the King · Oedipus at Colonus · Antigone', Grene & Lattimore series) — Paperback",
         "link": "https://www.amazon.in/dp/0226311511",
         "bilingual": false,
-        "has_style": false,
         "pages": 256
       }
     ]
@@ -2353,7 +2566,6 @@ const modalData = {
         "publisher": "Hackett Publishing Company, 2008 (with introduction by Robin Mitchell-Boyask) — Paperback",
         "link": "https://www.amazon.in/dp/0872209237",
         "bilingual": false,
-        "has_style": true,
         "pages": 106
       },
       {
@@ -2362,7 +2574,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume I: Cyclops · Alcestis · Medea) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995600",
         "bilingual": true,
-        "has_style": false,
         "pages": 440
       },
       {
@@ -2371,7 +2582,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 1997 (in 'Medea · Hippolytus · Electra · Helen') — Paperback",
         "link": "https://www.amazon.in/dp/0199537968",
         "bilingual": false,
-        "has_style": false,
         "pages": 288
       }
     ]
@@ -2385,7 +2595,6 @@ const modalData = {
         "publisher": "Hackett Publishing Company, 1998 (with introduction and notes) — Paperback",
         "link": "https://www.amazon.in/dp/0872203921",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -2394,7 +2603,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2003 (Volume VI: Bacchae · Iphigenia at Aulis · Rhesus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996011",
         "bilingual": true,
-        "has_style": false,
         "pages": 480
       },
       {
@@ -2403,7 +2611,6 @@ const modalData = {
         "publisher": "Farrar, Straus and Giroux (FSG), 1990 — Paperback",
         "link": "https://www.amazon.in/dp/0374522065",
         "bilingual": false,
-        "has_style": false,
         "pages": 100
       }
     ]
@@ -2417,7 +2624,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1975 (Greek Tragedy in New Translations series; includes fragments of companion plays) — Paperback",
         "link": "https://www.amazon.in/dp/0195061659",
         "bilingual": false,
-        "has_style": true,
         "pages": 144
       },
       {
@@ -2426,7 +2632,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 2009 (Volume I: Persians · Seven against Thebes · Suppliants · Prometheus Bound) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996275",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -2435,7 +2640,6 @@ const modalData = {
         "publisher": "Penguin Classics, 1961 (in 'Prometheus Bound · The Suppliants · Seven Against Thebes · The Persians') — Paperback",
         "link": "https://www.amazon.in/dp/0140441123",
         "bilingual": false,
-        "has_style": false,
         "pages": 160
       }
     ]
@@ -2449,7 +2653,6 @@ const modalData = {
         "publisher": "Focus Classical Library, Hackett Publishing, 2010 (in 'Odysseus at Troy: Ajax, Hecuba, and Trojan Women', with introductions, notes and essays) — Paperback",
         "link": "https://www.amazon.in/dp/1585103969",
         "bilingual": false,
-        "has_style": true,
         "pages": 279
       },
       {
@@ -2458,7 +2661,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume I: Ajax · Electra · Oedipus Tyrannus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995570",
         "bilingual": true,
-        "has_style": false,
         "pages": 496
       },
       {
@@ -2467,7 +2669,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Sophocles II: Ajax · Women of Trachis · Electra · Philoctetes · The Trackers', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311554",
         "bilingual": false,
-        "has_style": false,
         "pages": 336
       }
     ]
@@ -2481,7 +2682,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2001 (Greek Tragedy in New Translations series) — Paperback",
         "link": "https://www.amazon.in/dp/0195049608",
         "bilingual": false,
-        "has_style": true,
         "pages": 144
       },
       {
@@ -2490,7 +2690,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume I: Ajax · Electra · Oedipus Tyrannus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995570",
         "bilingual": true,
-        "has_style": false,
         "pages": 496
       },
       {
@@ -2499,7 +2698,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Sophocles II: Ajax · Women of Trachis · Electra · Philoctetes · The Trackers', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311554",
         "bilingual": false,
-        "has_style": false,
         "pages": 336
       }
     ]
@@ -2513,7 +2711,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides I: Alcestis · Medea · Heraclidae · Hippolytus', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308804",
         "bilingual": false,
-        "has_style": true,
         "pages": 272
       },
       {
@@ -2522,7 +2719,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1995 (Volume II: Children of Heracles · Hippolytus · Andromache · Hecuba) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995333",
         "bilingual": true,
-        "has_style": false,
         "pages": 512
       },
       {
@@ -2531,7 +2727,6 @@ const modalData = {
         "publisher": "Aris & Phillips Classical Texts, Oxbow Books, 1995 (Greek text with facing English translation and commentary) — Paperback",
         "link": "https://www.amazon.in/dp/0856682411",
         "bilingual": false,
-        "has_style": false,
         "pages": 236
       }
     ]
@@ -2545,7 +2740,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 2008 (with introduction, notes, map, and genealogical tables) — Paperback",
         "link": "https://www.amazon.in/dp/0199536325",
         "bilingual": false,
-        "has_style": true,
         "pages": 336
       },
       {
@@ -2554,7 +2748,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1921 (2 vols: Vol. I Books 1–3.9 · Vol. II Books 3.10–end & Epitome) — Hardcover",
         "link": "https://www.amazon.in/Apollodorus-Library-English-Loeb-Classical/dp/0674991354",
         "bilingual": true,
-        "has_style": false,
         "pages": 464
       },
       {
@@ -2563,7 +2756,6 @@ const modalData = {
         "publisher": "Coronado Press, Lawrence, Kansas, 1975 (with notes, indices, and drawings by Voula Tsouvelli) — Hardcover",
         "link": "https://www.amazon.in/dp/0872910725",
         "bilingual": false,
-        "has_style": false,
         "pages": 297
       }
     ]
@@ -2577,7 +2769,6 @@ const modalData = {
         "publisher": "W. W. Norton & Company, 2005 (with introduction by Bernard Knox; includes endnotes and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/039332642X",
         "bilingual": false,
-        "has_style": true,
         "pages": 624
       },
       {
@@ -2586,7 +2777,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1916/1984 (2 vols: Vol. I Books 1–8 · Vol. II Books 9–15) — Hardcover",
         "link": "https://www.amazon.in/dp/0674990463",
         "bilingual": true,
-        "has_style": false,
         "pages": 484
       },
       {
@@ -2595,7 +2785,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 2009 (with introduction and notes by E. J. Kenney) — Paperback",
         "link": "https://www.amazon.in/dp/0199537372",
         "bilingual": false,
-        "has_style": false,
         "pages": 528
       }
     ]
@@ -2609,7 +2798,6 @@ const modalData = {
         "publisher": "Penguin Classics Deluxe Edition, Penguin Books, 2008 (with introduction by Bernard Knox) — Paperback",
         "link": "https://www.barnesandnoble.com/w/the-aeneid-virgil/1116742515",
         "bilingual": false,
-        "has_style": true,
         "pages": 384
       },
       {
@@ -2618,7 +2806,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1999 (Volume I: Eclogues · Georgics · Aeneid Books 1–6) — Hardcover",
         "link": "https://www.amazon.in/dp/067499583X",
         "bilingual": true,
-        "has_style": false,
         "pages": 606
       },
       {
@@ -2627,7 +2814,6 @@ const modalData = {
         "publisher": "Vintage Classics, Vintage Books, 1990 — Paperback",
         "link": "https://www.amazon.in/dp/0679729526",
         "bilingual": false,
-        "has_style": false,
         "pages": 464
       }
     ]
@@ -2641,7 +2827,6 @@ const modalData = {
         "publisher": "Harcourt Brace Jovanovich, 1977 (in 'The Oedipus Cycle: Oedipus Rex, Oedipus at Colonus, Antigone', trans. Fitts & Fitzgerald) — Paperback",
         "link": "https://www.amazon.in/dp/0156838389",
         "bilingual": false,
-        "has_style": true,
         "pages": 257
       },
       {
@@ -2650,7 +2835,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume II: Antigone · Women of Trachis · Philoctetes · Oedipus at Colonus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
-        "has_style": false,
         "pages": 608
       },
       {
@@ -2659,7 +2843,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Sophocles I: Oedipus the King · Oedipus at Colonus · Antigone', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311511",
         "bilingual": false,
-        "has_style": false,
         "pages": 256
       }
     ]
@@ -2673,7 +2856,6 @@ const modalData = {
         "publisher": "Hackett Publishing Company, 2007 (in 'Alcestis, Medea, Hippolytus', Hackett Classics) — Paperback",
         "link": "https://www.amazon.in/dp/0872208222",
         "bilingual": false,
-        "has_style": true,
         "pages": 205
       },
       {
@@ -2682,7 +2864,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume I: Cyclops · Alcestis · Medea) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995600",
         "bilingual": true,
-        "has_style": false,
         "pages": 432
       },
       {
@@ -2691,7 +2872,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides I: Alcestis · Medea · The Children of Heracles · Hippolytus', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308804",
         "bilingual": false,
-        "has_style": false,
         "pages": 288
       }
     ]
@@ -2705,7 +2885,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1991 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195068742",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -2714,7 +2893,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1995 (Volume II: Children of Heracles · Hippolytus · Andromache · Hecuba) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995333",
         "bilingual": true,
-        "has_style": false,
         "pages": 519
       },
       {
@@ -2723,7 +2901,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides II: Andromache · Hecuba · The Suppliant Women · Electra', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308782",
         "bilingual": false,
-        "has_style": false,
         "pages": 267
       }
     ]
@@ -2737,7 +2914,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2003 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195136578",
         "bilingual": false,
-        "has_style": true,
         "pages": 128
       },
       {
@@ -2746,7 +2922,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume II: Antigone · Women of Trachis · Philoctetes · Oedipus at Colonus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
-        "has_style": false,
         "pages": 608
       },
       {
@@ -2755,7 +2930,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Sophocles II: Ajax · The Women of Trachis · Electra · Philoctetes · The Trackers', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311554",
         "bilingual": false,
-        "has_style": false,
         "pages": 336
       }
     ]
@@ -2769,7 +2943,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1992 (Revised ed., Greek Tragedy in New Translations series; with introduction, notes, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195077091",
         "bilingual": false,
-        "has_style": true,
         "pages": 128
       },
       {
@@ -2778,7 +2951,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2002 (Volume VI: Bacchae · Iphigenia at Aulis · Rhesus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996011",
         "bilingual": true,
-        "has_style": false,
         "pages": 480
       },
       {
@@ -2787,7 +2959,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides V: Bacchae · Iphigenia in Aulis · The Cyclops · Rhesus', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308987",
         "bilingual": false,
-        "has_style": false,
         "pages": 296
       }
     ]
@@ -2801,7 +2972,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1992 (Greek Tragedy in New Translations series; with introduction, notes, and glossary) — Paperback",
         "link": "https://www.amazon.com/dp/0195077105",
         "bilingual": false,
-        "has_style": true,
         "pages": 128
       },
       {
@@ -2810,7 +2980,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2002 (Volume V: Helen · Phoenician Women · Orestes) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996003",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -2819,7 +2988,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides IV: Helen · The Phoenician Women · Orestes', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308960",
         "bilingual": false,
-        "has_style": false,
         "pages": 289
       }
     ]
@@ -2833,7 +3001,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1992 (Revised ed., Greek Tragedy in New Translations series; with critical introduction, stage directions, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195077083",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -2842,7 +3009,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2002 (Volume V: Helen · Phoenician Women · Orestes) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996003",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -2851,7 +3017,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides IV: Helen · The Phoenician Women · Orestes', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308952",
         "bilingual": false,
-        "has_style": false,
         "pages": 272
       }
     ]
@@ -2865,7 +3030,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2001 (Greek Tragedy in New Translations series; with introduction, notes, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195131169",
         "bilingual": false,
-        "has_style": true,
         "pages": 128
       },
       {
@@ -2874,7 +3038,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1998 (Volume III: Suppliant Women · Electra · Heracles) — Hardcover",
         "link": "https://www.amazon.in/dp/067499566X",
         "bilingual": true,
-        "has_style": false,
         "pages": 464
       },
       {
@@ -2883,7 +3046,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides III: Heracles · The Trojan Women · Iphigenia among the Taurians · Ion', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308820",
         "bilingual": false,
-        "has_style": false,
         "pages": 306
       }
     ]
@@ -2897,7 +3059,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1995 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195096592",
         "bilingual": false,
-        "has_style": true,
         "pages": 128
       },
       {
@@ -2906,7 +3067,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2002 (Volume V: Helen · Phoenician Women · Orestes) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996003",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -2915,7 +3075,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides IV: Helen · The Phoenician Women · Orestes', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308952",
         "bilingual": false,
-        "has_style": false,
         "pages": 272
       }
     ]
@@ -2929,7 +3088,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1992 (Greek Tragedy in New Translations series; with introduction, notes, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/019507291X",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -2938,7 +3096,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1999 (Volume IV: Trojan Women · Iphigenia among the Taurians · Ion) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995740",
         "bilingual": true,
-        "has_style": false,
         "pages": 528
       },
       {
@@ -2947,7 +3104,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides III: Heracles · The Trojan Women · Iphigenia among the Taurians · Ion', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308820",
         "bilingual": false,
-        "has_style": false,
         "pages": 306
       }
     ]
@@ -2961,7 +3117,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2009 (in 'The Complete Aeschylus Vol. II: Persians and Other Plays', Greek Tragedy in New Translations series; with introduction and notes) — Paperback",
         "link": "https://www.amazon.in/dp/0195373286",
         "bilingual": false,
-        "has_style": true,
         "pages": 432
       },
       {
@@ -2970,7 +3125,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2009 (Volume I: Persians · Seven Against Thebes · Suppliants · Prometheus Bound) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996275",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -2979,7 +3133,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Aeschylus I: The Persians · The Seven Against Thebes · The Suppliant Maidens · Prometheus Bound', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311449",
         "bilingual": false,
-        "has_style": false,
         "pages": 243
       }
     ]
@@ -2993,7 +3146,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2009 (in 'The Complete Aeschylus Vol. II: Persians and Other Plays', Greek Tragedy in New Translations series; with introduction and notes) — Paperback",
         "link": "https://www.amazon.in/dp/0195373286",
         "bilingual": false,
-        "has_style": true,
         "pages": 432
       },
       {
@@ -3002,7 +3154,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2009 (Volume I: Persians · Seven Against Thebes · Suppliants · Prometheus Bound) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996275",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -3011,7 +3162,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Aeschylus I: The Persians · The Seven Against Thebes · The Suppliant Maidens · Prometheus Bound', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311449",
         "bilingual": false,
-        "has_style": false,
         "pages": 243
       }
     ]
@@ -3025,7 +3175,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2009 (in 'The Complete Aeschylus Vol. II: Persians and Other Plays', Greek Tragedy in New Translations series; with introduction and notes) — Paperback",
         "link": "https://www.amazon.in/dp/0195373286",
         "bilingual": false,
-        "has_style": true,
         "pages": 432
       },
       {
@@ -3034,7 +3183,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2009 (Volume I: Persians · Seven Against Thebes · Suppliants · Prometheus Bound) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996275",
         "bilingual": true,
-        "has_style": false,
         "pages": 624
       },
       {
@@ -3043,7 +3191,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Aeschylus I: The Persians · The Seven Against Thebes · The Suppliant Maidens · Prometheus Bound', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311449",
         "bilingual": false,
-        "has_style": false,
         "pages": 243
       }
     ]
@@ -3057,7 +3204,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2001 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195125614",
         "bilingual": false,
-        "has_style": true,
         "pages": 80
       },
       {
@@ -3066,7 +3212,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1995 (Volume II: Children of Heracles · Hippolytus · Andromache · Hecuba) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995333",
         "bilingual": true,
-        "has_style": false,
         "pages": 528
       },
       {
@@ -3075,7 +3220,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides II: Andromache · Hecuba · The Suppliant Women · Electra', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308782",
         "bilingual": false,
-        "has_style": false,
         "pages": 267
       }
     ]
@@ -3089,7 +3233,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1995 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/019504553X",
         "bilingual": false,
-        "has_style": true,
         "pages": 92
       },
       {
@@ -3098,7 +3241,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1998 (Volume III: Suppliant Women · Electra · Heracles) — Hardcover",
         "link": "https://www.amazon.in/dp/067499566X",
         "bilingual": true,
-        "has_style": false,
         "pages": 455
       },
       {
@@ -3107,7 +3249,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides II: Andromache · Hecuba · The Suppliant Women · Electra', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308782",
         "bilingual": false,
-        "has_style": false,
         "pages": 267
       }
     ]
@@ -3121,7 +3262,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1996 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195094514",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -3130,7 +3270,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1999 (Volume IV: Trojan Women · Iphigenia among the Taurians · Ion) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995740",
         "bilingual": true,
-        "has_style": false,
         "pages": 528
       },
       {
@@ -3139,7 +3278,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides III: Heracles · The Trojan Women · Iphigenia among the Taurians · Ion', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308820",
         "bilingual": false,
-        "has_style": false,
         "pages": 306
       }
     ]
@@ -3153,7 +3291,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1991 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195070097",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -3162,7 +3299,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume II: Antigone · The Women of Trachis · Philoctetes · Oedipus at Colonus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995589",
         "bilingual": true,
-        "has_style": false,
         "pages": 608
       },
       {
@@ -3171,7 +3307,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Sophocles II: Ajax · The Women of Trachis · Electra · Philoctetes · The Trackers', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226311554",
         "bilingual": false,
-        "has_style": false,
         "pages": 336
       }
     ]
@@ -3185,7 +3320,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1992 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/019507288X",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -3194,7 +3328,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1995 (Volume II: Children of Heracles · Hippolytus · Andromache · Hecuba) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995333",
         "bilingual": true,
-        "has_style": false,
         "pages": 519
       },
       {
@@ -3203,7 +3336,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides I: Alcestis · Medea · The Heracleidae · Hippolytus', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226307808",
         "bilingual": false,
-        "has_style": false,
         "pages": 272
       }
     ]
@@ -3217,7 +3349,6 @@ const modalData = {
         "publisher": "Oxford University Press, 1994 (Greek Tragedy in New Translations series; with introduction, commentary, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195085760",
         "bilingual": false,
-        "has_style": true,
         "pages": 112
       },
       {
@@ -3226,7 +3357,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1998 (Volume III: Suppliant Women · Electra · Heracles) — Hardcover",
         "link": "https://www.amazon.in/dp/067499566X",
         "bilingual": true,
-        "has_style": false,
         "pages": 455
       },
       {
@@ -3235,7 +3365,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides II: Andromache · Hecuba · The Suppliant Women · Electra', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308782",
         "bilingual": false,
-        "has_style": false,
         "pages": 272
       }
     ]
@@ -3249,7 +3378,6 @@ const modalData = {
         "publisher": "Oxford University Press, 2001 (Greek Tragedy in New Translations series; with critical introduction, commentary, stage directions, and glossary) — Paperback",
         "link": "https://www.amazon.in/dp/0195143035",
         "bilingual": false,
-        "has_style": true,
         "pages": 96
       },
       {
@@ -3258,7 +3386,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1994 (Volume I: Cyclops · Alcestis · Medea) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995600",
         "bilingual": true,
-        "has_style": false,
         "pages": 440
       },
       {
@@ -3267,7 +3394,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides V: Bacchae · Iphigenia in Aulis · The Cyclops · Rhesus', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308987",
         "bilingual": false,
-        "has_style": false,
         "pages": 296
       }
     ]
@@ -3281,7 +3407,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 2008 (in 'Bacchae and Other Plays: Iphigenia among the Taurians · Bacchae · Iphigenia at Aulis · Rhesus') — Paperback",
         "link": "https://www.amazon.in/dp/0199540527",
         "bilingual": false,
-        "has_style": true,
         "pages": 288
       },
       {
@@ -3290,7 +3415,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 2002 (Volume VI: Bacchae · Iphigenia at Aulis · Rhesus) — Hardcover",
         "link": "https://www.amazon.in/dp/0674996011",
         "bilingual": true,
-        "has_style": false,
         "pages": 455
       },
       {
@@ -3299,7 +3423,6 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides V: Bacchae · Iphigenia in Aulis · The Cyclops · Rhesus', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308987",
         "bilingual": false,
-        "has_style": false,
         "pages": 296
       }
     ]
@@ -3313,7 +3436,6 @@ const modalData = {
         "publisher": "University of California Press, 2008 (expanded paperback ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0520253930",
         "bilingual": false,
-        "has_style": true,
         "pages": 317
       },
       {
@@ -3322,7 +3444,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard UP, 2009 — Hardcover",
         "link": "https://www.amazon.in/dp/0674996305",
         "bilingual": true,
-        "has_style": false,
         "pages": 511
       },
       {
@@ -3331,7 +3452,6 @@ const modalData = {
         "publisher": "Oxford World's Classics, Oxford University Press, 2009 (titled 'Jason and the Golden Fleece') — Paperback",
         "link": "https://www.amazon.in/dp/0199538727",
         "bilingual": false,
-        "has_style": false,
         "pages": 248
       }
     ]
@@ -3345,7 +3465,6 @@ const modalData = {
         "publisher": "Focus Classical Library, Hackett Publishing, 2005 (with introduction, notes and appendices) — Paperback",
         "link": "https://www.amazon.in/dp/1585101117",
         "bilingual": false,
-        "has_style": true,
         "pages": 122
       },
       {
@@ -3354,7 +3473,6 @@ const modalData = {
         "publisher": "Loeb Classical Library, Harvard University Press, 1999 (Volume IV: Trojan Women · Iphigenia among the Taurians · Ion) — Hardcover",
         "link": "https://www.amazon.in/dp/0674995740",
         "bilingual": true,
-        "has_style": false,
         "pages": 528
       },
       {
@@ -3363,14 +3481,60 @@ const modalData = {
         "publisher": "University of Chicago Press, 2013 (in 'Euripides III: Heracles · The Trojan Women · Iphigenia among the Taurians · Ion', Grene & Lattimore series, 3rd ed.) — Paperback",
         "link": "https://www.amazon.in/dp/0226308820",
         "bilingual": false,
-        "has_style": false,
         "pages": 288
       }
     ]
   }
 };
 
+// ── MOBILE DRAWER ────────────────────────────────────────────────────────────
+const drawerToggle = document.getElementById('drawerToggle');
+const drawerBackdrop = document.getElementById('drawerBackdrop');
+const readingOrder = document.querySelector('.reading-order');
+
+function openDrawer() {
+    readingOrder.classList.add('drawer-open');
+    drawerBackdrop.classList.add('active');
+    drawerToggle.innerHTML = '<i class="fas fa-times" ></i> Close';
+}
+
+function closeDrawer() {
+    readingOrder.classList.remove('drawer-open');
+    drawerBackdrop.classList.remove('active');
+    drawerToggle.innerHTML = '<i class="fas fa-book-open"></i> Reading Order';
+}
+
+drawerToggle.addEventListener('click', function() {
+    readingOrder.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+});
+
+drawerBackdrop.addEventListener('click', closeDrawer);
+
 // ── MODAL ────────────────────────────────────────────────────────────────────
+function scrollToBook(anchorId) {
+    const el = document.getElementById(anchorId);
+    if (!el) return;
+    // On mobile the drawer must close before we scroll —
+    // otherwise the 70vh panel physically covers the target.
+    const drawerIsOpen = readingOrder.classList.contains('drawer-open');
+    if (drawerIsOpen) {
+        closeDrawer();
+        setTimeout(() => {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            el.classList.remove('book-flash');
+            void el.offsetWidth;
+            el.classList.add('book-flash');
+            setTimeout(() => el.classList.remove('book-flash'), 2600);
+        }, 320);
+    } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.remove('book-flash');
+        void el.offsetWidth;
+        el.classList.add('book-flash');
+        setTimeout(() => el.classList.remove('book-flash'), 2600);
+    }
+}
+
 function showVersions(bookId) {
     const data = modalData[bookId];
     if (!data) return;
@@ -3382,7 +3546,9 @@ function showVersions(bookId) {
 
     data.versions.forEach(version => {
         const versionItem = document.createElement('div');
-        versionItem.className = 'version-item';
+        const isRec = version.label.toLowerCase().includes('recommended');
+        const isBil = version.bilingual;
+        versionItem.className = 'version-item' + (isRec ? ' is-recommended' : '') + (isBil ? ' is-bilingual' : '');
 
         let labelClass = 'version-label';
         if (version.bilingual) labelClass += ' bilingual';
@@ -3425,7 +3591,7 @@ let currentScope = 'section';
 let originalBookOrder = [];
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.sortable-grid, .epic-list').forEach(grid => {
+    document.querySelectorAll('.epic-list').forEach(grid => {
         Array.from(grid.querySelectorAll('.epic-book')).forEach(book => {
             originalBookOrder.push({ element: book, grid: grid });
         });
@@ -3438,6 +3604,7 @@ document.querySelectorAll('.sort-btn[data-sort]').forEach(btn => {
         this.classList.add('active');
         document.getElementById('directionButtons').classList.add('active');
         document.getElementById('clearBtn').classList.add('active');
+        document.getElementById('scopeWrapper').classList.add('active');
         currentSort = this.dataset.sort;
         sortAllBooks();
     });
@@ -3463,6 +3630,7 @@ document.getElementById('scopeBtn').addEventListener('click', function() {
 document.getElementById('clearBtn').addEventListener('click', function() {
     document.querySelectorAll('.sort-btn[data-sort]').forEach(b => b.classList.remove('active'));
     document.getElementById('directionButtons').classList.remove('active');
+    document.getElementById('scopeWrapper').classList.remove('active');
     this.classList.remove('active');
     document.querySelectorAll('.dir-btn').forEach(b => b.classList.remove('active'));
     document.querySelector('.dir-btn[data-dir="asc"]').classList.add('active');
@@ -3503,29 +3671,6 @@ function sortAllBooks() {
         sortBooks(originalBookOrder).forEach(item => firstGrid.appendChild(item.element));
     }
 }
-
-// ── MOBILE DRAWER ────────────────────────────────────────────────────────────
-const drawerToggle = document.getElementById('drawerToggle');
-const drawerBackdrop = document.getElementById('drawerBackdrop');
-const readingOrder = document.querySelector('.reading-order');
-
-function openDrawer() {
-    readingOrder.classList.add('drawer-open');
-    drawerBackdrop.classList.add('active');
-    drawerToggle.textContent = '✕ Close';
-}
-
-function closeDrawer() {
-    readingOrder.classList.remove('drawer-open');
-    drawerBackdrop.classList.remove('active');
-    drawerToggle.textContent = '📖 Reading Order';
-}
-
-drawerToggle.addEventListener('click', function() {
-    readingOrder.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
-});
-
-drawerBackdrop.addEventListener('click', closeDrawer);
 
 </script>
 
